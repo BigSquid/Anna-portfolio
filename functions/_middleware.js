@@ -1,4 +1,4 @@
-const PASSWORD = "lesm1lls";
+const PASSWORD = "PurpleMesh26_";
 const COOKIE_NAME = "anna_auth";
 
 const PASSWORD_PAGE = `<!DOCTYPE html>
