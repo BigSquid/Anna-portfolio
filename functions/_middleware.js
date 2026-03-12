@@ -63,6 +63,7 @@ const PASSWORD_PAGE = `<!DOCTYPE html>
       color: #f0ead8;
       letter-spacing: -0.01em;
       line-height: 1;
+      text-transform: uppercase;
     }
     .name-role {
       display: block;
