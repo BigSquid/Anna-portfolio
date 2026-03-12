@@ -15,7 +15,7 @@
     --blue-muted:  rgba(255,255,255,0.18);
     --green:       #c8daf0;
     --green-dark:  #1a4470;
-    --purple-text: #9bb3d4;
+    --purple-text: #f0ead8;
     --purple-fill: #1a4470;
     --white:       #ffffff;
     --off-white:   #f0f4ff;
@@ -61,7 +61,7 @@
 
   .hero-name {
     font-family: 'Kalnia', serif;
-    font-size: clamp(50px, 9vw, 106px);
+    font-size: clamp(50px, 8.55vw, 101px);
     line-height: 0.92;
     color: #f0ead8;
     font-weight: 700;
@@ -566,17 +566,17 @@
   /* ── MODALS ── */
   .modal-overlay {
     position: fixed; inset: 0;
-    background: rgba(14,26,46,0.7);
-    backdrop-filter: blur(8px);
+    background: rgba(10,8,20,0.65);
+    backdrop-filter: blur(10px);
     z-index: 100; display: flex; align-items: center; justify-content: center;
     opacity: 0; pointer-events: none; transition: opacity 0.25s;
   }
   .modal-overlay.active { opacity: 1; pointer-events: all; }
 
   .modal {
-    background: var(--blue-dark);
-    border: 1px solid var(--border);
-    border-radius: 6px; padding: 44px 48px;
+    background: #1a2e4a;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px; padding: 44px 48px;
     max-width: 460px; width: 90%; position: relative;
     transform: translateY(20px) scale(0.98);
     transition: transform 0.3s ease;
@@ -587,7 +587,7 @@
   .modal-close {
     position: absolute; top: 16px; right: 20px;
     width: 32px; height: 32px; border-radius: 50%;
-    background: var(--blue-muted); border: 1px solid var(--border);
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
     cursor: pointer; color: var(--muted); font-size: 16px;
     display: flex; align-items: center; justify-content: center;
     transition: all 0.15s;
@@ -596,12 +596,12 @@
 
   .modal-eyebrow {
     font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--blue-light); font-weight: 500; margin-bottom: 12px;
+    color: #9bb3d4; font-weight: 500; margin-bottom: 12px;
   }
 
   .modal h2 {
     font-family: 'Kalnia', serif;
-    font-size: 28px; color: var(--white); font-weight: 600; margin-bottom: 16px; letter-spacing: -0.01em;
+    font-size: 28px; color: #f0ead8; font-weight: 600; margin-bottom: 16px; letter-spacing: -0.01em;
     text-transform: uppercase;
   }
 
@@ -609,7 +609,7 @@
 
   .modal-btn {
     display: inline-flex; align-items: center; gap: 8px; margin-top: 12px;
-    background: var(--blue-light); color: var(--ink);
+    background: #f0ead8; color: #1a2e4a;
     font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500;
     padding: 12px 24px; border-radius: 50px;
     text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase;
@@ -622,25 +622,25 @@
 
   /* Contact modal overrides */
   .modal-contact {
-    background: var(--purple-fill);
-    border-color: rgba(255,255,255,0.15);
+    background: #1a2e4a;
+    border-color: rgba(255,255,255,0.12);
   }
   .modal-contact .modal-eyebrow {
-    color: var(--blue);
-    background: rgba(255,255,255,0.2);
+    color: #9bb3d4;
+    background: rgba(255,255,255,0.08);
     display: inline-block;
     padding: 3px 10px;
     border-radius: 50px;
     font-size: 9px;
   }
-  .modal-contact h2 { color: var(--white); }
-  .modal-contact p { color: var(--blue-light); }
+  .modal-contact h2 { color: #f0ead8; text-transform: uppercase; }
+  .modal-contact p { color: rgba(255,255,255,0.7); }
   .contact-email {
     font-size: 15px !important; font-weight: 500 !important;
     margin-top: 4px !important;
   }
   .contact-email a {
-    color: var(--white) !important;
+    color: #f0ead8 !important;
     text-decoration: none;
     border-bottom: 1px solid rgba(255,255,255,0.3);
     transition: border-color 0.2s;
@@ -702,7 +702,7 @@
 
   .cs-panel {
     position: relative; z-index: 1;
-    width: min(820px, 100%);
+    width: min(1230px, 100%);
     background: #f0ead8;
     display: flex; flex-direction: column;
     transform: translateX(40px);
@@ -1050,16 +1050,12 @@
 
   .about-leadin {
     font-family: 'Kalnia', serif;
-    font-size: 26px; color: var(--purple-text); font-weight: 600;
+    font-size: 26px; color: #9bb3d4; font-weight: 600;
     letter-spacing: -0.01em; margin-bottom: 20px;
+    text-transform: uppercase;
   }
-  .about-bio-section {
-    display: block !important;
-    padding: 56px 40px 36px 40px !important;
-    background: #f0ead8;
-    border-bottom: none !important;
-  }
-  .about-bio-section .cs-section-num { display: none; }
+  .about-bio-section{display:block!important;padding:56px 40px 36px!important;background:#f0ead8;border-bottom:none!important}
+  .about-bio-section .cs-section-num{display:none}
   .about-linkedin-btn {
     display: inline-flex; align-items: center; gap: 6px;
     margin-top: 20px;
@@ -1107,61 +1103,126 @@
   .about-interest-by { opacity: 0.6; }
 
   /* Photo grid */
-  .about-photo-grid {
-    display: flex; flex-direction: column;
-    gap: 8px; padding: 0 40px; background: #f0ead8;
-  }
-  .about-photo-row { display: flex; flex-direction: row; gap: 8px; align-items: stretch; }
-  .about-photo-cell { border-radius: 6px; overflow: hidden; position: relative; flex-shrink: 0; }
-  .about-photo-cell img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .row1 .left  { flex: 1.86; aspect-ratio: 4/3; }
-  .row1 .right { flex: 1.4;  height: 100%; }
-  .row2 .left  { flex: 0.79; aspect-ratio: 1/1; }
-  .row2 .right { flex: 1;    height: 100%; }
-  .row3 .left  { flex: 1.86; aspect-ratio: 5/3; }
-  .row3 .right { flex: 1;    height: 100%; }
-  .row1 .right img, .row2 .right img, .row3 .right img, .row3 .left img {
-    transform: scale(1.08); transform-origin: center center;
-  }
-  @media (max-width: 640px) {
-    .about-hero-top { flex-direction: column; }
-    .about-quick-facts { gap: 0; }
-    .about-section-divider, .about-interests-section { padding-left: 20px; padding-right: 20px; }
-    .about-interest-cat { min-width: 110px; }
-    .about-photo-grid { padding: 0 20px; }
-    .about-photo-row { flex-direction: column; }
-    .about-photo-cell,
-    .row1 .left, .row1 .right, .row2 .left, .row2 .right, .row3 .left, .row3 .right {
-      flex: unset !important; width: 100% !important;
-      aspect-ratio: 4/3 !important; height: auto !important;
-    }
-  }
+  .about-photo-grid{display:flex;flex-direction:column;gap:8px;padding:0 40px;background:#f0ead8}
+  .about-photo-row{display:flex;gap:8px;align-items:stretch}
+  .about-photo-cell{border-radius:6px;overflow:hidden;position:relative;flex-shrink:0}
+  .about-photo-cell img{width:100%;height:100%;object-fit:cover;display:block}
+  .row1 .left{flex:1.86;aspect-ratio:4/3}.row1 .right{flex:1.4;height:100%}
+  .row2 .left{flex:0.79;aspect-ratio:1/1}.row2 .right{flex:1;height:100%}
+  .row3 .left{flex:1.86;aspect-ratio:5/3}.row3 .right{flex:1;height:100%}
+  .row1 .right img,.row2 .right img,.row3 .right img,.row3 .left img{transform:scale(1.08);transform-origin:center}
+  @media(max-width:640px){.about-hero-top{flex-direction:column}.about-quick-facts{gap:0}.about-section-divider,.about-interests-section{padding-left:20px;padding-right:20px}.about-interest-cat{min-width:110px}.about-photo-grid{padding:0 20px}.about-photo-row{flex-direction:column}.about-photo-cell,.row1 .left,.row1 .right,.row2 .left,.row2 .right,.row3 .left,.row3 .right{flex:unset!important;width:100%!important;aspect-ratio:4/3!important;height:auto!important}}
 
-  .lm-diagram { margin-top: 28px; border-radius: 12px; background: #7b8fd4; padding: 32px 24px 36px; display: flex; flex-direction: column; align-items: center; }
-  .lm-ellipse { background: #b8f0d8; border-radius: 50%; width: 88%; padding: 28px 40px 22px; display: flex; flex-direction: column; align-items: center; gap: 6px; }
-  .lm-logo { font-size: 42px; font-weight: 900; font-style: italic; color: #1a2e5a; letter-spacing: -1px; line-height: 1; font-family: 'DM Sans', sans-serif; }
-  .lm-programs-label { font-size: 11px; color: #3a4a6e; letter-spacing: 0.04em; margin-top: 4px; }
-  .lm-program-logos { display: flex; gap: 24px; align-items: center; margin-top: 6px; }
-  .lm-prog-logo { display: flex; flex-direction: column; align-items: center; line-height: 1; }
-  .lm-prog-sub { font-size: 8px; font-weight: 700; letter-spacing: 0.12em; color: #1a2e5a; text-transform: uppercase; }
-  .lm-prog-name { font-size: 18px; font-weight: 900; color: #1a2e5a; font-style: italic; letter-spacing: -0.5px; font-family: 'DM Sans', sans-serif; text-transform: uppercase; }
-  .lm-sprint-name { font-size: 22px; }
-  .lm-plus { font-size: 22px; color: #1a2e5a; font-weight: 300; margin-top: 2px; }
-  .lm-flow { display: flex; flex-direction: column; align-items: center; gap: 4px; margin: 8px 0 4px; width: 100%; }
-  .lm-flow-label { font-size: 11px; color: #2a3a6e; letter-spacing: 0.04em; }
-  .lm-arrows { display: flex; align-items: center; justify-content: center; width: 100%; }
-  .lm-arrow-line { flex: 1; display: flex; align-items: center; justify-content: center; }
-  .lm-arrow-center { display: flex; flex-direction: column; align-items: center; }
-  .lm-nodes { display: flex; justify-content: space-around; width: 100%; margin-top: 8px; gap: 8px; }
-  .lm-node { display: flex; flex-direction: column; align-items: center; gap: 10px; flex: 1; }
-  .lm-node-label { font-size: 13px; color: #1a2e5a; font-weight: 400; }
-  .lm-node-label-highlighted { background: #b8f0d8; padding: 4px 14px; border-radius: 20px; font-weight: 500; }
-  .lm-node-circle { width: 80px; height: 80px; border-radius: 50%; background: #1a2e5a; display: flex; align-items: center; justify-content: center; }
+  .lm-diagram{margin-top:28px;border-radius:12px;background:#7b8fd4;padding:32px 24px 36px;display:flex;flex-direction:column;align-items:center}
+  .lm-ellipse{background:#b8f0d8;border-radius:50%;width:88%;padding:28px 40px 22px;display:flex;flex-direction:column;align-items:center;gap:6px}
+  .lm-logo{font-size:42px;font-weight:900;font-style:italic;color:#1a2e5a;letter-spacing:-1px;line-height:1;font-family:'DM Sans',sans-serif}
+  .lm-programs-label{font-size:11px;color:#3a4a6e;letter-spacing:.04em;margin-top:4px}
+  .lm-program-logos{display:flex;gap:24px;align-items:center;margin-top:6px}
+  .lm-prog-logo{display:flex;flex-direction:column;align-items:center;line-height:1}
+  .lm-prog-sub{font-size:8px;font-weight:700;letter-spacing:.12em;color:#1a2e5a;text-transform:uppercase}
+  .lm-prog-name{font-size:18px;font-weight:900;color:#1a2e5a;font-style:italic;letter-spacing:-.5px;font-family:'DM Sans',sans-serif;text-transform:uppercase}
+  .lm-sprint-name{font-size:22px}
+  .lm-plus{font-size:22px;color:#1a2e5a;font-weight:300;margin-top:2px}
+  .lm-flow{display:flex;flex-direction:column;align-items:center;gap:4px;margin:8px 0 4px;width:100%}
+  .lm-flow-label{font-size:11px;color:#2a3a6e;letter-spacing:.04em}
+  .lm-arrows{display:flex;align-items:center;justify-content:center;width:100%}
+  .lm-arrow-line{flex:1;display:flex;align-items:center;justify-content:center}
+  .lm-arrow-center{display:flex;flex-direction:column;align-items:center}
+  .lm-nodes{display:flex;justify-content:space-around;width:100%;margin-top:8px;gap:8px}
+  .lm-node{display:flex;flex-direction:column;align-items:center;gap:10px;flex:1}
+  .lm-node-label{font-size:13px;color:#1a2e5a;font-weight:400}
+  .lm-node-label-highlighted{background:#b8f0d8;padding:4px 14px;border-radius:20px;font-weight:500}
+  .lm-node-circle{width:80px;height:80px;border-radius:50%;background:#1a2e5a;display:flex;align-items:center;justify-content:center}
+</style>
+<style id=pn>
+#bg-img{position:fixed;inset:0;z-index:-1;overflow:hidden}
+#bg-img-inner{position:absolute;top:50%;left:50%;width:177.78vh;height:100vw;transform:translate(-50%,-50%) rotate(90deg);background-image:url('https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/AdobeStock_618400349.jpeg');background-size:cover;background-position:center}
+#bg-overlay{position:fixed;inset:0;z-index:-1;background:rgba(20,10,30,.42);pointer-events:none}
+.hero-name{color:#f0ead8}
+.hero-first{color:#1a2e4a!important}
+.hero-nav{display:flex;align-items:flex-end;gap:28px;padding-top:18px;padding-bottom:12px;flex-shrink:0;margin-left:auto;align-self:flex-end;margin-right:8px}
+.hero-nav a{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#f0ead8;text-decoration:none;transition:color .2s;font-weight:500}
+.hero-nav a:hover{color:#9bb3d4!important}
+.hero-nav a+a{position:relative}
+.hero-nav a+a::before{content:'';position:absolute;left:-14px;top:50%;transform:translateY(-50%);width:1px;height:12px;background:rgba(255,255,255,.2)}
+.tile-stack{display:flex;flex-direction:column;gap:14px;margin-top:16px}
+.act1{display:grid;grid-template-columns:52fr 48fr;gap:14px;min-height:460px;animation:fadeUp .5s ease both;animation-delay:.05s}
+.act2{animation:fadeUp .5s ease both;animation-delay:.15s}
+.act3{border-radius:8px;overflow:hidden;animation:fadeUp .5s ease both;animation-delay:.25s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.cell-illus{background:#f0ead8;position:relative;overflow:hidden;border-radius:8px}
+.cell-illus img{width:100%;height:100%;object-fit:cover;object-position:42% 50%;display:block;position:absolute;inset:0}
+.cell-bio{background:#1a4470;border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:36px 40px 32px;display:flex;flex-direction:column;justify-content:center}
+.bio-title{font-size:16px;font-weight:500;color:#9bb3d4;margin-bottom:5px}
+.bio-loc{font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px}
+.bio-blurb{font-size:15px;line-height:1.78;color:rgba(255,255,255,.8);border-top:1px solid rgba(255,255,255,.08);padding-top:18px}
+.tile-case{cursor:pointer;position:relative;background:#f0ead8;border-color:#ddd5c0;border-radius:8px;overflow:hidden;transition:background .2s,transform .2s}
+.tile-case:hover{background:#e8e0ce;transform:translateY(-1px)}
+.tile-case::before{display:none}
+.tile-case-inner{display:grid;grid-template-columns:1fr auto}
+.case-main{padding:24px 24px 28px 28px}
+.case-eyebrow{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#2e6fad;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:10px;opacity:.7}
+.case-eyebrow::before{content:'';width:20px;height:1px;background:#2e6fad;opacity:.6}
+.case-title{font-family:'Kalnia',serif;font-size:32px;color:#1a2e4a;font-weight:700;line-height:1;letter-spacing:-.01em;margin-bottom:8px;text-transform:uppercase}
+.case-company{font-size:12px;color:#2e6fad;margin-bottom:18px;letter-spacing:.04em;opacity:.7}
+.case-blurb{font-size:12px;line-height:1.7;color:#1a2e4a;opacity:.75;max-width:460px;margin-bottom:14px}
+.case-tags{display:flex;flex-wrap:wrap;gap:7px}
+.case-stats{display:flex;flex-direction:column;min-width:150px;padding:28px 90px 28px 20px;gap:20px;justify-content:center;border-left:1px solid rgba(42,74,127,.12)}
+.case-stat-num{font-family:'Kalnia',serif;font-size:30px;color:#1a2e4a;line-height:1;margin-bottom:4px;font-weight:700;text-transform:uppercase}
+.case-stat-desc{font-size:10px;letter-spacing:.05em;color:#2e6fad;line-height:1.4;opacity:.7}
+.case-arrow{position:absolute;bottom:24px;right:24px;width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(42,74,127,.25);display:flex;align-items:center;justify-content:center;color:#2e6fad;font-size:16px;transition:all .2s}
+.tile-case:hover .case-arrow{background:#1a4470;border-color:#1a4470;color:#f0ead8;transform:rotate(45deg)}
+.tag{font-size:10.5px;padding:5px 12px;border-radius:50px;background:var(--blue-muted);border:1px solid var(--border);color:rgba(255,255,255,.65)}
+.tag-green{color:var(--green);border-color:rgba(122,159,212,.35);background:rgba(122,159,212,.12)}
+.tag-case{color:var(--white);font-weight:500;border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.08);display:inline-flex;align-items:center;gap:5px}
+.tile-case .tag{background:rgba(42,74,127,.08);border-color:rgba(42,74,127,.2);color:#1a4470}
+.tile-case .tag-green{color:#1a4470;border-color:rgba(42,74,127,.3);background:rgba(42,74,127,.08)}
+.tile-case .tag-case{color:#1a2e4a;font-weight:500;border-color:rgba(42,74,127,.35);background:rgba(42,74,127,.1)}
+.tag-case .arrow-icon{font-size:10px}
+.work-carousel-full{position:relative;border-radius:8px;overflow:hidden;height:420px}
+.wcf-slide{position:absolute;inset:0;opacity:0;transition:opacity .7s ease;pointer-events:none}
+.wcf-slide.active{opacity:1;pointer-events:auto}
+.wcf-slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.wcf-grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,16,40,.82) 0%,rgba(8,16,40,.15) 55%,transparent 100%);z-index:1}
+.wcf-label{position:absolute;bottom:0;left:0;right:0;padding:0 32px 28px;z-index:2;display:flex;align-items:flex-end;justify-content:space-between}
+.wcf-label-text{display:flex;flex-direction:column;gap:5px}
+.wcf-eyebrow{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.wcf-title{font-family:'Kalnia',serif;font-size:20px;font-weight:600;color:white;line-height:1.2;text-transform:uppercase;letter-spacing:.02em}
+.wcf-dots{display:flex;gap:8px;align-items:center;padding-bottom:4px}
+.wcf-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.25);cursor:pointer;transition:background .25s,transform .25s;border:none;padding:0}
+.wcf-dot.active{background:white;transform:scale(1.3)}
+.act3 .timeline-header{background:rgba(26,68,112,.55);border-radius:8px 8px 0 0;backdrop-filter:blur(6px)}
+.act3 .timeline-group{background:transparent}
+.act3 .timeline-row{background:rgba(26,68,112,.55);backdrop-filter:blur(6px)}
+.act3 .timeline-row:last-child{border-radius:0 0 8px 8px;border-bottom:none}
+.act3 .timeline-row:hover{background:rgba(26,68,112,.72)}
+.timeline-header{padding:28px 32px 22px;display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.12)}
+.timeline-header h2{font-family:'Kalnia',serif;font-size:26px;color:#f0ead8;font-weight:600;letter-spacing:-.01em;text-transform:uppercase}
+.timeline-header p{font-size:11px;color:rgba(255,255,255,.4);margin-top:4px;letter-spacing:.03em}
+.timeline-years{font-family:'Kalnia',serif;font-size:13px;letter-spacing:.06em;color:rgba(255,255,255,.55);font-weight:400}
+.timeline-group{padding:12px 32px 6px 72px;font-size:8.5px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:500;border-top:1px solid rgba(255,255,255,.1);background:transparent;margin-top:0}
+.timeline-group:first-of-type{border-top:none;padding-top:10px}
+.timeline-row{display:grid;grid-template-columns:52px 1fr;border-bottom:1px solid rgba(255,255,255,.08);transition:background .15s;min-height:64px}
+.timeline-row:last-child{border-bottom:none}
+.timeline-row.is-case-study{cursor:pointer}
+.trow-year{display:flex;align-items:center;justify-content:center;padding:16px 0;border-right:1px solid rgba(255,255,255,.08)}
+.trow-year span{font-family:'Kalnia',serif;font-size:11px;color:rgba(255,255,255,.5);font-weight:700;letter-spacing:.08em;writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap}
+.trow-content{padding:14px 24px 14px 18px;display:flex;flex-direction:column;gap:4px}
+.trow-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.trow-title{font-size:13px;font-weight:500;color:rgba(255,255,255,.9);line-height:1.4;flex:1;letter-spacing:.01em}
+.trow-co{font-size:9px;color:rgba(255,255,255,.42);white-space:nowrap;flex-shrink:0;letter-spacing:.06em;text-transform:uppercase;font-style:italic}
+.trow-tags{display:flex;flex-wrap:wrap;gap:0}
+.trow-tags .tag,.trow-tags .tag-green,.trow-tags .tag-case{background:none!important;border:none!important;padding:0!important;border-radius:0!important;font-size:10px;color:rgba(255,255,255,.38)!important;letter-spacing:.04em;font-weight:400}
+.trow-tags .tag+.tag::before,.trow-tags .tag-green+.tag::before,.trow-tags .tag+.tag-green::before,.trow-tags .tag-green+.tag-green::before,.trow-tags .tag-case+.tag::before,.trow-tags .tag+.tag-case::before,.trow-tags .tag-green+.tag-case::before{content:' · ';color:rgba(255,255,255,.18)}
+.trow-tags .tag-case{color:rgba(255,255,255,.5)!important}
+.trow-tags .arrow-icon{display:none}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
+<div id="bg-img"><div id="bg-img-inner"></div></div>
+<div id="bg-overlay"></div>
 <div class="page">
 
   <!-- HERO NAME -->
@@ -1178,117 +1239,45 @@
   </div>
 
   <div class="tile-stack">
-
-    <!-- TILE 1: ABOUT -->
-    <div class="tile tile-about">
-      <div class="about-illustration">
-        <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/annaandmelvin.jpeg" alt="Anna and Melvin" />
-        <div class="hotspot hotspot-face"   onclick="openModal('about')"   title="About me"></div>
+<div class="act1">
+  <div class="cell-illus"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/annaandmelvin.jpeg" alt="Anna and Melvin"/><div class="hotspot hotspot-face"   onclick="openModal('about')"   title="About me"></div>
         <div class="hotspot hotspot-laptop" onclick="openModal('contact')" title="Contact"></div>
-        <div class="hotspot hotspot-dog"    onclick="openModal('melvin')"  title="..."></div>
-      </div>
-      <div class="about-text">
-        <div class="about-role">
-          <span class="green">Product Designer / Doodler</span>
-          <span class="divider">|</span>
-          <span class="loc">San Francisco</span>
-        </div>
-
-        <div class="about-blurb">
-          I love scrappy yet strategic designing, quick pivots, and heaps of user feedback.<br><br>
-          12+ years spanning automotive HMI, health &amp; wellness, B2B &amp; D2C products.
-        </div>
-
-        <div class="work-carousel">
-          <div class="work-slides">
-
-            <div class="work-slide active">
-              <div class="work-slide-img-wrap">
-                <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/passenger-screen.png" alt="Passenger Screen + Rear Seat Entertainment" />
-              </div>
-              <div class="work-slide-label">
-                <span class="work-slide-eyebrow">Fiat Chrysler Automobiles · 2019–2020</span>
-                <span class="work-slide-title">Industry-first Passenger Screen + Amazon Fire TV</span>
-              </div>
-            </div>
-
-            <div class="work-slide">
-              <div class="work-slide-img-wrap">
-                <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/les-mills-website.png" alt="Les Mills Global Website Redesign" />
-              </div>
-              <div class="work-slide-label">
-                <span class="work-slide-eyebrow">Les Mills International · 2024</span>
-                <span class="work-slide-title">Global website redesign at Les Mills</span>
-              </div>
-            </div>
-
-            <div class="work-slide">
-              <div class="work-slide-img-wrap work-slide-placeholder">
-                <div class="placeholder-inner">
-                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#7a9fd4" stroke-width="1.5" fill="none"/><path d="M12 8v4l3 3" stroke="#7a9fd4" stroke-width="1.5" stroke-linecap="round"/></svg>
-                  <span>Coming soon</span>
-                </div>
-              </div>
-              <div class="work-slide-label">
-                <span class="work-slide-eyebrow">SE1FMADE · Current</span>
-                <span class="work-slide-title">Mental performance coaching at your fingertips</span>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="work-carousel-nav">
-            <div class="carousel-dots">
-              <span class="dot active" onclick="carouselGo(0)"></span>
-              <span class="dot" onclick="carouselGo(1)"></span>
-              <span class="dot" onclick="carouselGo(2)"></span>
-            </div>
-          </div>
-        </div>
-
-
+        <div class="hotspot hotspot-dog"    onclick="openModal('melvin')"  title="..."></div></div>
+  <div class="cell-bio">
+    <div class="bio-title">Product Designer / Doodler</div>
+    <div class="bio-loc">San Francisco</div>
+    <div class="bio-blurb">I love scrappy yet strategic designing, quick pivots, and heaps of user feedback.<br><br>12+ years spanning automotive HMI, health &amp; wellness, B2B &amp; D2C products.<br><br>Comfortable leading teams and working independently.</div>
+  </div>
+</div>
+<div class="tile tile-case" onclick="openModal('casestudy')">
+  <div class="tile-case-inner">
+    <div class="case-main">
+      <div class="case-eyebrow">Featured Case Study</div>
+      <div class="case-title">Instructor<br>Experience App</div>
+      <div class="case-company">Les Mills International · 2024–2025</div>
+      <div class="case-blurb">Unified four instructor platforms into one — replacing a decade-old app, PDFs, and manual playlist-building with a smart, research-driven mobile tool with AI-powered suggestions and digital choreo notes.</div>
+      <div class="case-tags">
+        <span class="tag tag-case">Case Study <span class="arrow-icon">↗</span></span>
+        <span class="tag tag-green">AI Features</span>
+        <span class="tag tag-green">Mobile · iOS/Android</span>
+        <span class="tag">User Research</span>
+        <span class="tag">IA Design</span>
       </div>
     </div>
-
-    <!-- TILE 2: CASE STUDY -->
-    <div class="tile tile-case" onclick="openModal('casestudy')">
-      <div class="tile-case-inner">
-        <div class="case-main">
-          <div class="case-eyebrow">Featured Case Study</div>
-          <div class="case-title">Instructor<br>Experience App</div>
-          <div class="case-company">Les Mills International · 2024–2025</div>
-          <div class="case-blurb">Unified four instructor platforms into one — replacing a decade-old app, printed PDFs, and manual playlist-building with a smart, research-driven mobile tool. Led discovery through shipped, including AI-powered suggestions and digital choreo notes.</div>
-          <div class="case-tags">
-            <span class="tag tag-case">Case Study <span class="arrow-icon">↗</span></span>
-            <span class="tag tag-green">AI Features</span>
-            <span class="tag tag-green">Mobile · iOS/Android</span>
-            <span class="tag">User Research</span>
-            <span class="tag">IA Design</span>
-          </div>
-        </div>
-        <div class="case-stats">
-          <div class="case-stat-pill">
-            <div class="case-stat-num">39.5%</div>
-            <div class="case-stat-desc">prep time reduction</div>
-          </div>
-          <div class="case-stat-pill">
-            <div class="case-stat-num">4→1</div>
-            <div class="case-stat-desc">platforms unified</div>
-          </div>
-          <div class="case-stat-pill">
-            <div class="case-stat-num">−58%</div>
-            <div class="case-stat-desc">playlist creation time</div>
-          </div>
-        </div>
-      </div>
-      <div class="case-arrow">↗</div>
+    <div class="case-stats">
+      <div class="case-stat-pill"><div class="case-stat-num">39.5%</div><div class="case-stat-desc">prep time reduction</div></div>
+      <div class="case-stat-pill"><div class="case-stat-num">4→1</div><div class="case-stat-desc">platforms unified</div></div>
+      <div class="case-stat-pill"><div class="case-stat-num">−58%</div><div class="case-stat-desc">playlist creation time</div></div>
     </div>
-
-    <!-- TILE 3: TIMELINE -->
-    <div class="tile tile-timeline">
-      <div class="timeline-header">
+  </div>
+  <div class="case-arrow">↗</div>
+</div>
+<div class="act2">
+  <div class="work-carousel-full" id="wcf"><div class="wcf-slide active"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/cabin.png" alt="Cabin"/><div class="wcf-grad"></div><div class="wcf-label"><div class="wcf-label-text"><span class="wcf-eyebrow">Fiat Chrysler Automobiles · 2019–2020</span><span class="wcf-title">Industry-first Passenger Screen + Amazon Fire TV</span></div><div class="wcf-dots"><button class="wcf-dot active" onclick="wcfGo(0)"></button><button class="wcf-dot" onclick="wcfGo(1)"></button><button class="wcf-dot" onclick="wcfGo(2)"></button><button class="wcf-dot" onclick="wcfGo(3)"></button></div></div></div><div class="wcf-slide"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/szonez.jpg" alt="Sound Zones"/><div class="wcf-grad"></div><div class="wcf-label"><div class="wcf-label-text"><span class="wcf-eyebrow">Ford Motor Company · 2021</span><span class="wcf-title">Sound Zones — Personalized Audio for Every Seat</span></div><div class="wcf-dots"><button class="wcf-dot" onclick="wcfGo(0)"></button><button class="wcf-dot active" onclick="wcfGo(1)"></button><button class="wcf-dot" onclick="wcfGo(2)"></button><button class="wcf-dot" onclick="wcfGo(3)"></button></div></div></div><div class="wcf-slide"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/redesignsite.jpg" alt="Les Mills Site" style="object-position:center top;"/><div class="wcf-grad"></div><div class="wcf-label"><div class="wcf-label-text"><span class="wcf-eyebrow">Les Mills International · 2024</span><span class="wcf-title">A New Digital Front Door for 20,000+ Clubs Worldwide</span></div><div class="wcf-dots"><button class="wcf-dot" onclick="wcfGo(0)"></button><button class="wcf-dot" onclick="wcfGo(1)"></button><button class="wcf-dot active" onclick="wcfGo(2)"></button><button class="wcf-dot" onclick="wcfGo(3)"></button></div></div></div><div class="wcf-slide"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/SMthezone.jpg" alt="SMthezone"/><div class="wcf-grad"></div><div class="wcf-label"><div class="wcf-label-text"><span class="wcf-eyebrow">SE1FMADE · Currently Building</span><span class="wcf-title">AI-Powered Mental Coaching for Competitive Athletes</span></div><div class="wcf-dots"><button class="wcf-dot" onclick="wcfGo(0)"></button><button class="wcf-dot" onclick="wcfGo(1)"></button><button class="wcf-dot" onclick="wcfGo(2)"></button><button class="wcf-dot active" onclick="wcfGo(3)"></button></div></div></div></div>
+</div>
+<div class="act3"><div class="timeline-header">
         <div>
-          <h2>Experience</h2>
+          <h2>How I Got Here</h2>
           <p>12+ years across automotive, fitness &amp; AI products</p>
         </div>
         <div class="timeline-years">2012 — Present</div>
@@ -1300,7 +1289,7 @@
         <div class="trow-year"><span>2026</span></div>
         <div class="trow-content">
           <div class="trow-top">
-            <div class="trow-title">SE1FMADE — AI Mental Performance Coach for Athletes</div>
+            <div class="trow-title"><a href="https://www.se1fmade.io" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.2);">SE1FMADE — AI Mental Performance Coach for Athletes</a></div>
             <div class="trow-co">Lead Product Designer</div>
           </div>
           <div class="trow-tags">
@@ -1317,7 +1306,7 @@
       <div class="timeline-group">Les Mills International · Fitness Tech</div>
 
       <div class="timeline-row is-case-study" onclick="openModal('casestudy')">
-        <div class="trow-year"><span>2024–2025</span></div>
+        <div class="trow-year"><span>2025</span></div>
         <div class="trow-content">
           <div class="trow-top">
             <div class="trow-title">Instructor Experience App</div>
@@ -1337,7 +1326,7 @@
         <div class="trow-year"><span>2024</span></div>
         <div class="trow-content">
           <div class="trow-top">
-            <div class="trow-title">lesmills.com Redesign</div>
+            <div class="trow-title"><a href="https://www.lesmills.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.2);">Virtual Studio Controller &amp; Experience</a></div>
             <div class="trow-co">Lead Product Designer</div>
           </div>
           <div class="trow-tags">
@@ -1354,7 +1343,7 @@
         <div class="trow-content">
           <div class="trow-top">
             <div class="trow-title">Content Distribution Portal</div>
-            <div class="trow-co">Senior Product Designer</div>
+            <div class="trow-co">Lead Product Designer</div>
           </div>
           <div class="trow-tags">
             <span class="tag tag-green">B2B</span>
@@ -1489,18 +1478,12 @@
             <span class="tag">M.S. Mechanical Eng.</span>
           </div>
         </div>
-      </div>
-
-    </div><!-- /tile-timeline -->
-
-  </div><!-- /tile-stack -->
-
-  <div class="page-footer">
-    <span>© 2025 Anna Macherkevich</span>
-    <span>annamacherkevich.com</span>
-  </div>
+      </div></div>
+</div>
 
 </div><!-- /page -->
+<footer style="text-align:center;padding:32px 0 28px;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.25);font-family:'DM Sans',sans-serif;font-weight:400;">www.annamacherkevich.com &nbsp;·&nbsp; 2026</footer>
+
 
 <!-- MODALS -->
 <!-- ABOUT ME FULL-PAGE OVERLAY -->
@@ -1536,11 +1519,11 @@
             <span class="about-interest-val">Project Hail Mary <span class="about-interest-by">- Andy Weir</span></span>
           </div>
           <div class="about-interest-row">
-            <span class="about-interest-cat">Learning</span>
-            <span class="about-interest-val">New digital illustration techniques via Procreate</span>
+            <span class="about-interest-cat">Traveling to</span>
+            <span class="about-interest-val">Puerto Rico</span>
           </div>
           <div class="about-interest-row">
-            <span class="about-interest-cat">Listening / Looping</span>
+            <span class="about-interest-cat">Listening</span>
             <span class="about-interest-val">Easy Lee <span class="about-interest-by">- Pale Jay</span></span>
           </div>
         </div>
@@ -1548,19 +1531,7 @@
 
       <!-- Photo grid -->
       <div class="about-photo-grid">
-        <div class="about-photo-row row1">
-          <div class="about-photo-cell left"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/Photo%20Copy-1.png" alt="Anna at Lake Louise" /></div>
-          <div class="about-photo-cell right"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/Photo%20Copy-2.png" alt="Mountain trail" /></div>
-        </div>
-        <div class="about-photo-row row2">
-          <div class="about-photo-cell left"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/Photo%20Copy-3.png" alt="Artist studio" /></div>
-          <div class="about-photo-cell right"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/Photo%20Copy-4.png" alt="Melvin the dog" /></div>
-        </div>
-        <div class="about-photo-row row3">
-          <div class="about-photo-cell left"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/Photo%20Copy-5.png" alt="Hiking in mountains" /></div>
-          <div class="about-photo-cell right"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/Photo%20Copy-6.png" alt="Marathon finish" /></div>
-        </div>
-      </div>
+<div class="about-photo-row row1"><div class="about-photo-cell left"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/Photo%20Copy-1.png" alt="p1"/></div><div class="about-photo-cell right"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/Photo%20Copy-2.png" alt="p2"/></div></div><div class="about-photo-row row2"><div class="about-photo-cell left"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/Photo%20Copy-3.png" alt="p3"/></div><div class="about-photo-cell right"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/Photo%20Copy-4.png" alt="p4"/></div></div><div class="about-photo-row row3"><div class="about-photo-cell left"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/Photo%20Copy-5.png" alt="p5"/></div><div class="about-photo-cell right"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/Photo%20Copy-6.png" alt="p6"/></div></div></div>
 
       <div style="height:48px;"></div>
 
@@ -1571,11 +1542,10 @@
 <div class="modal-overlay" id="modal-contact" onclick="closeModal('contact')">
   <div class="modal modal-contact" onclick="event.stopPropagation()">
     <button class="modal-close" onclick="closeModal('contact')">×</button>
-    <div class="modal-eyebrow">Get in touch</div>
-    <h2>Let's talk.</h2>
+    <h2>LET'S CONNECT!</h2>
     <p>I'm open to full-time hybrid roles in San Francisco — particularly at companies with strong product and design culture where I can do meaningful IC work.</p>
-    <p class="contact-email"><a href="mailto:annamacherkevich@gmail.com">annamacherkevich@gmail.com</a></p>
-    <a href="mailto:annamacherkevich@gmail.com" class="modal-btn modal-btn-contact">Send me an email ↗</a>
+    <p class="contact-email"><a href="/cdn-cgi/l/email-protection#a2c3ccccc3cfc3c1cac7d0c9c7d4cbc1cae2c5cfc3cbce8cc1cdcf"><span class="__cf_email__" data-cfemail="3f5e51515e525e5c575a4d545a49565c577f58525e5653115c5052">[email&#160;protected]</span></a></p>
+    <a href="/cdn-cgi/l/email-protection#afcec1c1cec2ceccc7caddc4cad9c6ccc7efc8c2cec6c381ccc0c2" class="modal-btn modal-btn-contact">Send me an email ↗</a>
   </div>
 </div>
 
@@ -1655,8 +1625,7 @@
         <div class="cs-section-content">
           <h3 class="cs-section-title">Overview</h3>
           <p class="cs-body-text">Les Mills International is a global fitness company behind 16 signature group fitness programs (BODYPUMP, BODYCOMBAT, LES MILLS SPRINT & more) delivered in 20,000+ clubs worldwide. Instructors are the lifeblood of this business: certified, passionate fitness professionals who teach quarterly-updated releases to club members.</p>
-          <p class="cs-body-text">The Instructor Experience App was a ground-up redesign of the company's primary instructor-facing digital product, unifying four disconnected platforms into a single, cohesive tool and fundamentally changing how instructors learn, prepare, and teach.</p>
-          <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/Companyintrographic.jpg" alt="Les Mills company overview infographic" style="width:100%; border-radius:6px; margin-top:20px; display:block;" />
+          <p class="cs-body-text">The Instructor Experience App was a ground-up redesign of the company's primary instructor-facing digital product, unifying four disconnected platforms into a single, cohesive tool and fundamentally changing how instructors learn, prepare, and teach.</p><div style="width:100%;height:280px;background:rgba(26,68,112,0.18);border:1.5px dashed rgba(26,68,112,0.35);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:20px 0;box-sizing:border-box;"><span style="font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,68,112,0.5);">App Hero — Full Product Shot / Key Screens</span></div><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/Companyintrographic.jpg" alt="LM infographic" style="width:100%;border-radius:6px;margin-top:20px;display:block"/>
         </div>
       </div>
 
@@ -1686,7 +1655,7 @@
             </div>
           </div>
 
-          <h4 class="cs-subsection-title" style="margin-top:28px;">The macro user problem</h4>
+          <div style="width:100%;height:200px;background:rgba(26,68,112,0.18);border:1.5px dashed rgba(26,68,112,0.35);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:20px 0;box-sizing:border-box;"><span style="font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,68,112,0.5);">Before State — Fragmented 4-Platform Journey Diagram</span></div><h4 class="cs-subsection-title" style="margin-top:28px;">The macro user problem</h4>
           <blockquote class="cs-quote">
             Instructors struggle with unsustainable prep-to-teaching ratios: mastering quarterly content demands excessive time unaligned with earnings.
           </blockquote>
@@ -1716,7 +1685,7 @@
             </div>
           </div>
 
-          <div class="cs-hmw">
+          <div style="width:100%;height:240px;background:rgba(26,68,112,0.18);border:1.5px dashed rgba(26,68,112,0.35);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:20px 0;box-sizing:border-box;"><span style="font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,68,112,0.5);">User Research Synthesis — Journey Map or Affinity Diagram</span></div><div class="cs-hmw">
             <div class="cs-hmw-label">How might we…</div>
             <div class="cs-hmw-text">Streamline the learning and preparation process for instructors to ultimately increase the overall value of being an instructor?</div>
           </div>
@@ -1772,6 +1741,7 @@
               <p class="cs-pillar-desc">Destination for skill-building and professional development. Refine teaching, master new techniques.</p>
             </div>
           </div>
+          <div style="width:100%;height:260px;background:rgba(26,68,112,0.18);border:1.5px dashed rgba(26,68,112,0.35);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:20px 0;box-sizing:border-box;"><span style="font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,68,112,0.5);">App Screen Flow — Learn → Prep → Teach Journey</span></div><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/SmartSuggestions.jpg" alt="Smart Suggestions" style="width:100%;border-radius:6px;margin-top:20px;display:block"/>
         </div>
       </div>
 
@@ -1809,7 +1779,7 @@
             </div>
           </div>
 
-          <h4 class="cs-subsection-title" style="margin-top:24px;">Decision &amp; rationale</h4>
+          <div style="width:100%;height:220px;background:rgba(26,68,112,0.18);border:1.5px dashed rgba(26,68,112,0.35);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:20px 0;box-sizing:border-box;"><span style="font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,68,112,0.5);">IA Options — Annotated Wireframe Comparison (A / B / C)</span></div><h4 class="cs-subsection-title" style="margin-top:24px;">Decision &amp; rationale</h4>
           <p class="cs-body-text">We chose option C — a combined solution: tab structure update plus show/hide video toggle. The reasoning: options A and B treated symptoms. The real issue was that the existing tab structure didn't match how instructors thought about learning modes. Resetting expectations through a clearer IA cost minimal additional dev effort but had substantially higher long-term usability payoff.</p>
           <p class="cs-body-text">This was validated through usability testing, where we confirmed that the revised tab labeling and entry state significantly reduced navigation errors and time-to-task on first use.</p>
         </div>
@@ -1854,7 +1824,7 @@
 
           <p class="cs-body-text" style="margin-top:20px;">The final Smart Suggestions feature used AI-driven recommendations to propose balanced, varied playlists based on instructor history and class-building best practices — surfacing the right tracks at the right time without requiring manual input.</p>
 
-          <h4 class="cs-subsection-title" style="margin-top:28px;">Digital choreo notes: eliminating the PDF</h4>
+          <div style="width:100%;height:240px;background:rgba(26,68,112,0.18);border:1.5px dashed rgba(26,68,112,0.35);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:20px 0;box-sizing:border-box;"><span style="font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,68,112,0.5);">Smart Suggestions UI — AI Playlist Recommendation Screen</span></div><h4 class="cs-subsection-title" style="margin-top:28px;">Digital choreo notes: eliminating the PDF</h4>
           <p class="cs-body-text">A parallel high-impact feature: replacing printed PDF choreo notes with a fully digital, track-synced experience.</p>
           <div class="cs-features-grid">
             <div class="cs-feature-item">
@@ -1881,8 +1851,7 @@
               <div class="cs-feature-icon">✕</div>
               <div class="cs-feature-label">PDF-free — eliminated printing for 96% of instructors</div>
             </div>
-          </div>
-          <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/SmartSuggestions.jpg" alt="Smart Suggestions feature" style="width:100%; border-radius:6px; margin-top:20px; display:block;" />
+          <div style="width:100%;height:240px;background:rgba(26,68,112,0.18);border:1.5px dashed rgba(26,68,112,0.35);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:20px 0;box-sizing:border-box;"><span style="font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,68,112,0.5);">Digital Choreo Notes — In-App Screen, Track-Synced View</span></div></div>
         </div>
       </div>
 
@@ -1918,7 +1887,7 @@
               <div class="cs-result-delta cs-delta-big">−39.5%</div>
             </div>
           </div>
-          <div class="cs-context-note" style="margin-top:16px;">
+          <div style="width:100%;height:180px;background:rgba(26,68,112,0.18);border:1.5px dashed rgba(26,68,112,0.35);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:20px 0;box-sizing:border-box;"><span style="font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,68,112,0.5);">Before / After — Time Savings Visual Comparison</span></div><div class="cs-context-note" style="margin-top:16px;">
             <div class="cs-context-icon">→</div>
             <p>The 39.5% figure reflects only Masterclass and Playlists contributions. New E2E app functionality (Studio, Training, consolidated journey) is expected to further increase quarterly prep time savings as adoption grows.</p>
           </div>
@@ -1965,10 +1934,10 @@
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function fitLastName() {
     const el = document.getElementById('last-name');
-    const tile = document.querySelector('.tile-stack .tile');
+    const tile = document.querySelector('.tile-stack');
     const firstRow = document.querySelector('.hero-first-row');
     if (!el || !tile) return;
 
@@ -2058,6 +2027,19 @@
       });
     }
   });
+
+  
+  let wcfIndex=0,wcfTimer=null;
+  function wcfGo(n){
+    document.querySelectorAll('.wcf-slide').forEach(s=>s.classList.remove('active'));
+    document.querySelectorAll('.wcf-dot').forEach((d,i)=>d.classList.toggle('active',i%4===n));
+    document.querySelectorAll('.wcf-slide')[n].classList.add('active');
+    wcfIndex=n;
+    clearInterval(wcfTimer);
+    wcfTimer=setInterval(wcfNext,4000);
+  }
+  function wcfNext(){wcfGo((wcfIndex+1)%4);}
+  wcfTimer=setInterval(wcfNext,4000);
 </script>
 </body>
 </html>
