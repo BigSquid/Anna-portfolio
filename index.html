@@ -25,9 +25,9 @@
     --tile-bg:     rgba(255,255,255,0.06);
     --tile-hover:  rgba(255,255,255,0.1);
   }
-
+ 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
   body {
     background: var(--blue);
     font-family: 'DM Sans', sans-serif;
@@ -36,7 +36,7 @@
     min-height: 100vh;
     padding: 0 0 80px;
   }
-
+ 
   /* ── NAV ── */
   /* ── PAGE WRAPPER ── */
   .page {
@@ -44,13 +44,13 @@
     margin: 0 auto;
     padding: 0 40px;
   }
-
+ 
   /* ── HERO NAME ── */
   .hero {
     padding: 52px 0 8px;
     position: relative;
   }
-
+ 
   .hero-first-row {
     display: flex;
     align-items: flex-start;
@@ -58,7 +58,7 @@
     line-height: 0.92;
     width: 100%;
   }
-
+ 
   .hero-name {
     font-family: 'Kalnia', serif;
     font-size: clamp(50px, 8.55vw, 101px);
@@ -70,13 +70,13 @@
     display: block;
     white-space: nowrap;
   }
-
+ 
   .hero-name.last {
     color: var(--purple-text);
     display: block;
     transform-origin: left top;
   }
-
+ 
   .hero-nav {
     display: flex;
     flex-direction: row;
@@ -85,7 +85,7 @@
     flex-shrink: 0;
     margin-left: auto;
   }
-
+ 
   .hero-nav a {
     font-size: 11px;
     letter-spacing: 0.18em;
@@ -96,10 +96,10 @@
     line-height: 1.4;
     white-space: nowrap;
   }
-
+ 
   .hero-nav a:hover { color: var(--green); }
   .hero-nav a.nav-personal:hover { color: var(--purple-text); }
-
+ 
   /* ── TILES ── */
   .tile-stack {
     display: flex;
@@ -107,7 +107,7 @@
     gap: 20px;
     margin-top: 40px;
   }
-
+ 
   .tile {
     background: var(--tile-bg);
     border: 1px solid var(--border);
@@ -116,16 +116,16 @@
     transition: background 0.2s;
     animation: fadeUp 0.5s ease both;
   }
-
+ 
   .tile:nth-child(1) { animation-delay: 0.05s; }
   .tile:nth-child(2) { animation-delay: 0.15s; }
   .tile:nth-child(3) { animation-delay: 0.25s; }
-
+ 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(12px); }
     to   { opacity: 1; transform: translateY(0); }
   }
-
+ 
   /* ════════════════════════
      TILE 1 — ABOUT
   ════════════════════════ */
@@ -134,7 +134,7 @@
     grid-template-columns: 3fr 2fr;
     min-height: 380px;
   }
-
+ 
   /* Illustration side */
   .about-illustration {
     position: relative;
@@ -142,7 +142,7 @@
     border-radius: 8px 0 0 8px;
     background: var(--blue-dark);
   }
-
+ 
   .about-illustration img {
     width: 100%;
     height: 100%;
@@ -153,7 +153,7 @@
     opacity: 1;
     filter: none;
   }
-
+ 
   /* Very subtle cream overlay to blend with tile bg */
   .about-illustration::after {
     content: '';
@@ -163,7 +163,7 @@
     opacity: 0.04;
     pointer-events: none;
   }
-
+ 
   /* Hotspots */
   .hotspot {
     position: absolute;
@@ -172,7 +172,7 @@
     transition: all 0.2s;
     z-index: 10;
   }
-
+ 
   .hotspot-face { top: 8%; left: 22%; width: 48%; height: 44%; }
   .hotspot-face:hover { background: none; box-shadow: none; }
   .hotspot-face:hover::after {
@@ -184,7 +184,7 @@
     padding: 7px 14px; border-radius: 50px; white-space: nowrap;
     letter-spacing: 0.08em; text-transform: uppercase; pointer-events: none;
   }
-
+ 
   .hotspot-laptop { top: 46%; left: 18%; width: 50%; height: 34%; }
   .hotspot-laptop:hover { background: none; box-shadow: none; border-radius: 6px; }
   .hotspot-laptop:hover::after {
@@ -196,7 +196,7 @@
     padding: 7px 14px; border-radius: 50px; white-space: nowrap;
     letter-spacing: 0.08em; text-transform: uppercase; pointer-events: none;
   }
-
+ 
   .hotspot-dog { top: 8%; right: 0%; width: 42%; height: 82%; }
   .hotspot-dog:hover { background: none; box-shadow: none; border-radius: 40% 50% 50% 40%; }
   .hotspot-dog:hover::after {
@@ -207,7 +207,7 @@
     font-family: 'DM Sans', sans-serif; font-size: 11px;
     padding: 7px 14px; border-radius: 50px; white-space: nowrap; pointer-events: none;
   }
-
+ 
   /* About text side */
   .about-text {
     padding: 40px 40px 36px 36px;
@@ -216,27 +216,27 @@
     justify-content: center;
     gap: 0;
   }
-
+ 
   .about-role {
     font-size: 13px;
     font-weight: 500;
     letter-spacing: 0.04em;
     margin-bottom: 6px;
   }
-
+ 
   .about-role .green { color: var(--green); }
   .about-role .divider { color: var(--muted); margin: 0 8px; }
   .about-role .loc { color: var(--muted); }
-
+ 
   .about-blurb {
     font-size: 15px;
     line-height: 1.75;
     color: rgba(255,255,255,0.82);
     margin: 18px 0 20px;
   }
-
+ 
   .about-blurb strong { color: var(--white); font-weight: 500; }
-
+ 
   /* ════════════════════════
      WORK CAROUSEL
   ════════════════════════ */
@@ -247,7 +247,7 @@
     gap: 0;
     flex: 1;
   }
-
+ 
   .work-slides {
     position: relative;
     border-radius: 6px;
@@ -256,7 +256,7 @@
     aspect-ratio: 4/3;
     flex-shrink: 0;
   }
-
+ 
   .work-slide {
     position: absolute;
     inset: 0;
@@ -268,7 +268,7 @@
     opacity: 1;
     pointer-events: auto;
   }
-
+ 
   .work-slide-img-wrap {
     position: absolute;
     inset: 0;
@@ -280,7 +280,7 @@
     object-position: center center;
     display: block;
   }
-
+ 
   /* Gradient overlay at bottom */
   .work-slide-img-wrap::after {
     content: '';
@@ -288,7 +288,7 @@
     inset: 0;
     background: linear-gradient(to top, rgba(10,15,40,0.82) 0%, rgba(10,15,40,0.3) 45%, transparent 70%);
   }
-
+ 
   /* Placeholder slide */
   .work-slide-placeholder {
     background: rgba(255,255,255,0.04);
@@ -307,7 +307,7 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
   }
-
+ 
   /* Label pinned to bottom of image */
   .work-slide-label {
     position: absolute;
@@ -337,7 +337,7 @@
     letter-spacing: 0.04em;
     line-height: 1.25;
   }
-
+ 
   /* Nav bar */
   .work-carousel-nav {
     display: flex;
@@ -345,7 +345,7 @@
     justify-content: center;
     padding: 10px 4px 2px;
   }
-
+ 
   .carousel-btn {
     background: none;
     border: none;
@@ -357,7 +357,7 @@
     transition: color 0.2s;
   }
   .carousel-btn:hover { color: rgba(255,255,255,0.85); }
-
+ 
   .carousel-dots {
     display: flex;
     gap: 7px;
@@ -374,7 +374,7 @@
     background: var(--green);
     transform: scale(1.3);
   }
-
+ 
   /* ════════════════════════
      TILE 2 — CASE STUDY
   ════════════════════════ */
@@ -387,37 +387,37 @@
   }
   .tile-case:hover { background: #e8e0ce; transform: translateY(-1px); }
   .tile-case:active { transform: translateY(0); }
-
+ 
   /* Remove the green left bar — not needed on light bg */
   .tile-case::before { display: none; }
-
+ 
   .tile-case-inner {
     display: grid;
     grid-template-columns: 1fr auto;
   }
-
+ 
   .case-main { padding: 32px 32px 48px 40px; }
-
+ 
   .case-eyebrow {
     font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
     color: var(--blue-mid); font-weight: 700; margin-bottom: 14px;
     display: flex; align-items: center; gap: 10px; opacity: 0.7;
   }
   .case-eyebrow::before { content: ''; width: 20px; height: 1px; background: var(--blue-mid); opacity: 0.6; }
-
+ 
   .case-title {
     font-family: 'Kalnia', serif;
     font-size: 38px; color: var(--blue-dark); font-weight: 700;
     line-height: 1.0; letter-spacing: -0.01em; margin-bottom: 8px;
     text-transform: uppercase;
   }
-
+ 
   .case-company { font-size: 12px; color: var(--blue-mid); margin-bottom: 18px; letter-spacing: 0.04em; opacity: 0.7; }
-
+ 
   .case-blurb { font-size: 14px; line-height: 1.8; color: var(--blue-dark); opacity: 0.75; max-width: 460px; margin-bottom: 22px; }
-
+ 
   .case-tags { display: flex; flex-wrap: wrap; gap: 7px; }
-
+ 
   /* Stats — bare, no pill container */
   .case-stats {
     display: flex; flex-direction: column;
@@ -425,7 +425,7 @@
     gap: 20px; justify-content: center;
     border-left: 1px solid rgba(42,74,127,0.12);
   }
-
+ 
   .case-stat-pill {
     background: transparent;
     border: none;
@@ -433,7 +433,7 @@
     padding: 0;
     text-align: center;
   }
-
+ 
   .case-stat-num {
     font-family: 'Kalnia', serif;
     font-size: 30px; color: var(--blue-dark);
@@ -441,9 +441,9 @@
     text-transform: uppercase;
     font-weight: 700;
   }
-
+ 
   .case-stat-desc { font-size: 10px; letter-spacing: 0.05em; color: var(--blue-mid); line-height: 1.4; opacity: 0.7; }
-
+ 
   .case-arrow {
     position: absolute; bottom: 24px; right: 24px;
     width: 40px; height: 40px; border-radius: 50%;
@@ -456,7 +456,7 @@
     background: var(--blue-dark); border-color: var(--blue-dark);
     color: #f0ead8; transform: rotate(45deg);
   }
-
+ 
   /* ════════════════════════
      TAGS — shared
   ════════════════════════ */
@@ -493,7 +493,7 @@
   }
   .tag-case .arrow-icon { font-size: 10px; transition: transform 0.2s; }
   .timeline-row:hover .tag-case .arrow-icon { transform: translate(2px,-2px); }
-
+ 
   /* ════════════════════════
      TILE 3 — TIMELINE
   ════════════════════════ */
@@ -502,20 +502,20 @@
     display: flex; justify-content: space-between; align-items: baseline;
     border-bottom: 1px solid var(--border);
   }
-
+ 
   .timeline-header h2 {
     font-family: 'Kalnia', serif;
     font-size: 22px; color: var(--white); font-weight: 600; letter-spacing: -0.01em;
     text-transform: uppercase;
   }
-
+ 
   .timeline-header p { font-size: 11px; color: var(--muted); margin-top: 4px; letter-spacing: 0.03em; }
-
+ 
   .timeline-years {
     font-family: 'Kalnia', serif;
     font-size: 13px; letter-spacing: 0.06em; color: var(--green); font-weight: 600;
   }
-
+ 
   .timeline-group {
     padding: 12px 32px 10px;
     font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase;
@@ -526,7 +526,7 @@
     margin-top: 4px;
   }
   .timeline-group:first-of-type { margin-top: 0; border-top: none; }
-
+ 
   .timeline-row {
     display: grid; grid-template-columns: 64px 1fr;
     border-bottom: 1px solid var(--border);
@@ -535,7 +535,7 @@
   .timeline-row:last-child { border-bottom: none; }
   .timeline-row:hover { background: var(--tile-hover); }
   .timeline-row.is-case-study { cursor: pointer; }
-
+ 
   .trow-year {
     padding: 18px 0 18px 24px;
     border-right: 1px solid var(--border);
@@ -545,24 +545,24 @@
     font-family: 'Kalnia', serif;
     font-size: 11px; color: rgba(255,255,255,0.25); font-weight: 400; letter-spacing: 0.04em;
   }
-
+ 
   .trow-content { padding: 16px 24px 18px; display: flex; flex-direction: column; gap: 8px; }
-
+ 
   .trow-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
-
+ 
   .trow-title {
     font-size: 13px; font-weight: 500; color: var(--white);
     line-height: 1.4; flex: 1; letter-spacing: 0.01em;
   }
-
+ 
   .trow-co {
     font-size: 10px; color: rgba(255,255,255,0.35); white-space: nowrap;
     flex-shrink: 0; padding-top: 2px; letter-spacing: 0.03em;
     font-style: italic;
   }
-
+ 
   .trow-tags { display: flex; flex-wrap: wrap; gap: 5px; }
-
+ 
   /* ── MODALS ── */
   .modal-overlay {
     position: fixed; inset: 0;
@@ -572,7 +572,7 @@
     opacity: 0; pointer-events: none; transition: opacity 0.25s;
   }
   .modal-overlay.active { opacity: 1; pointer-events: all; }
-
+ 
   .modal {
     background: #1a2e4a;
     border: 1px solid rgba(255,255,255,0.12);
@@ -583,7 +583,7 @@
     box-shadow: 0 32px 80px rgba(14,26,46,0.6);
   }
   .modal-overlay.active .modal { transform: translateY(0) scale(1); }
-
+ 
   .modal-close {
     position: absolute; top: 16px; right: 20px;
     width: 32px; height: 32px; border-radius: 50%;
@@ -593,20 +593,20 @@
     transition: all 0.15s;
   }
   .modal-close:hover { background: var(--blue-light); color: var(--ink); border-color: var(--blue-light); }
-
+ 
   .modal-eyebrow {
     font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
     color: #9bb3d4; font-weight: 500; margin-bottom: 12px;
   }
-
+ 
   .modal h2 {
     font-family: 'Kalnia', serif;
     font-size: 28px; color: #f0ead8; font-weight: 600; margin-bottom: 16px; letter-spacing: -0.01em;
     text-transform: uppercase;
   }
-
+ 
   .modal p { font-size: 14px; line-height: 1.82; color: rgba(255,255,255,0.72); margin-bottom: 12px; }
-
+ 
   .modal-btn {
     display: inline-flex; align-items: center; gap: 8px; margin-top: 12px;
     background: #f0ead8; color: #1a2e4a;
@@ -616,10 +616,10 @@
     transition: opacity 0.2s; cursor: pointer; border: none;
   }
   .modal-btn:hover { opacity: 0.85; }
-
+ 
   .modal-dog { text-align: center; }
   .modal-dog h2 { color: #f0ead8; }
-
+ 
   /* Contact modal overrides */
   .modal-contact {
     background: #1a2e4a;
@@ -659,7 +659,7 @@
   .modal-contact .modal-close:hover { background: var(--blue-light); color: var(--ink); border-color: var(--blue-light); }
   .dog-emoji { font-size: 52px; display: block; margin-bottom: 16px; animation: wag 0.55s ease-in-out infinite alternate; }
   @keyframes wag { from { transform: rotate(-10deg); } to { transform: rotate(10deg); } }
-
+ 
   /* ── FOOTER ── */
   .page-footer {
     max-width: 980px; margin: 0 auto;
@@ -667,41 +667,41 @@
     display: flex; justify-content: space-between;
     font-size: 11px; color: rgba(255,255,255,0.22); letter-spacing: 0.06em;
   }
-
+ 
   @media (max-width: 640px) {
     .page { padding: 0 12px; }
     .hero { padding: 24px 0 8px; }
-
+ 
     /* Name — scale way down so full last name is visible */
     .hero-name { font-size: 11vw; letter-spacing: -0.01em; }
     .hero-first { font-size: clamp(28px, 9vw, 52px) !important; }
-
+ 
     /* Nav — keep horizontal, smaller */
     .hero-nav { flex-direction: row; gap: 12px; padding-bottom: 8px; font-size: 11px; }
     .hero-nav a { font-size: 11px; }
-
+ 
     /* Tile stack — tighten gap */
     .tile-stack { gap: 12px; margin-top: 24px; }
-
+ 
     /* act1: photo + bio → stack vertically, full width */
     .act1 { grid-template-columns: 1fr !important; min-height: unset; gap: 12px; }
     .cell-illus { height: 280px; border-radius: 8px; }
     .cell-bio { padding: 24px 20px 20px; border-radius: 8px; }
-
+ 
     /* case study tile */
     .tile-case-inner { grid-template-columns: 1fr; }
     .case-stats { flex-direction: row; padding: 12px; gap: 6px; }
-
+ 
     /* carousel full width */
     .work-carousel-full { border-radius: 8px; }
-
+ 
     /* timeline */
     .trow-co { display: none; }
     .tile-about { grid-template-columns: 1fr; }
     .about-illustration { height: 260px; border-radius: 8px 8px 0 0; }
     .work-slides { aspect-ratio: 3/2; }
   }
-
+ 
   /* ═══════════════════════════════════════
      CASE STUDY FULL-PAGE OVERLAY
   ═══════════════════════════════════════ */
@@ -720,7 +720,7 @@
     backdrop-filter: blur(6px);
     cursor: pointer;
   }
-
+ 
   .cs-panel {
     position: relative; z-index: 1;
     width: min(1230px, 100%);
@@ -731,7 +731,7 @@
     overflow: hidden;
   }
   .cs-overlay.active .cs-panel { transform: translateX(0); }
-
+ 
   /* Sticky header */
   .cs-header {
     background: var(--blue-dark);
@@ -761,10 +761,10 @@
     transition: all 0.15s; flex-shrink: 0;
   }
   .cs-close:hover { background: var(--blue-light); color: var(--ink); border-color: var(--blue-light); }
-
+ 
   /* Scrollable body */
   .cs-body { overflow-y: auto; flex: 1; }
-
+ 
   /* Hero area */
   .cs-hero {
     background: var(--blue-dark);
@@ -782,7 +782,7 @@
     color: var(--green); font-weight: 500; margin-bottom: 5px;
   }
   .cs-meta-value { font-size: 12px; color: rgba(255,255,255,0.75); line-height: 1.5; }
-
+ 
   .cs-impact-bar { background: rgba(255,255,255,0.05); border-radius: 6px; padding: 20px 24px; }
   .cs-impact-label {
     font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase;
@@ -803,7 +803,7 @@
     font-size: 10.5px; color: rgba(255,255,255,0.35); font-style: italic;
     border-top: 1px solid rgba(255,255,255,0.08); padding-top: 12px;
   }
-
+ 
   /* Sections */
   .cs-section {
     display: grid; grid-template-columns: 64px 1fr;
@@ -832,7 +832,7 @@
     margin-bottom: 14px;
   }
   .cs-body-text:last-child { margin-bottom: 0; }
-
+ 
   /* Platform grid */
   .cs-platform-grid { border: 1px solid rgba(42,74,127,0.15); border-radius: 6px; overflow: hidden; }
   .cs-platform-row {
@@ -844,7 +844,7 @@
   .cs-platform-highlight { background: rgba(42,74,127,0.05); }
   .cs-platform-name { font-size: 12px; font-weight: 500; color: var(--blue-dark); }
   .cs-platform-desc { font-size: 12px; color: rgba(14,26,46,0.6); line-height: 1.5; }
-
+ 
   /* Quote */
   .cs-quote {
     font-family: 'Kalnia', serif;
@@ -855,7 +855,7 @@
     margin: 16px 0;
     opacity: 0.85;
   }
-
+ 
   /* Research stats */
   .cs-research-grid {
     display: grid; grid-template-columns: 1fr 1fr;
@@ -872,7 +872,7 @@
     line-height: 1; margin-bottom: 6px;
   }
   .cs-research-finding { font-size: 12px; color: rgba(14,26,46,0.65); line-height: 1.55; }
-
+ 
   /* HMW */
   .cs-hmw {
     background: var(--blue-dark); border-radius: 6px;
@@ -887,7 +887,7 @@
     font-size: 15px; color: #f0ead8; font-weight: 400;
     font-style: italic; line-height: 1.6;
   }
-
+ 
   /* Lists */
   .cs-list {
     padding-left: 0; list-style: none;
@@ -902,7 +902,7 @@
     content: '—'; position: absolute; left: 0;
     color: var(--green-dark); font-weight: 500;
   }
-
+ 
   /* Context note */
   .cs-context-note {
     background: rgba(42,74,127,0.06);
@@ -912,7 +912,7 @@
   }
   .cs-context-icon { color: var(--green-dark); font-size: 14px; font-weight: 600; flex-shrink: 0; margin-top: 2px; }
   .cs-context-note p { font-size: 13px; line-height: 1.7; color: rgba(14,26,46,0.65); margin: 0; font-style: italic; }
-
+ 
   /* Pillars */
   .cs-pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 4px; }
   .cs-pillar {
@@ -928,7 +928,7 @@
     text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 10px;
   }
   .cs-pillar-desc { font-size: 12px; line-height: 1.65; color: rgba(255,255,255,0.55); }
-
+ 
   /* Options */
   .cs-options { display: flex; flex-direction: column; gap: 8px; }
   .cs-option {
@@ -958,7 +958,7 @@
     background: var(--green); color: var(--ink);
     padding: 2px 8px; border-radius: 50px; font-weight: 600;
   }
-
+ 
   /* Pivots */
   .cs-pivots { display: flex; flex-direction: column; gap: 10px; }
   .cs-pivot {
@@ -983,7 +983,7 @@
   .cs-pivot-final .cs-pivot-title { color: #f0ead8; }
   .cs-pivot-desc { font-size: 12px; line-height: 1.6; color: rgba(14,26,46,0.6); margin: 0; }
   .cs-pivot-final .cs-pivot-desc { color: rgba(255,255,255,0.5); }
-
+ 
   /* Features grid */
   .cs-features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 8px; }
   .cs-feature-item {
@@ -1000,7 +1000,7 @@
   .cs-feature-highlight .cs-feature-icon { color: var(--green); }
   .cs-feature-label { font-size: 12px; line-height: 1.4; color: rgba(14,26,46,0.7); }
   .cs-feature-highlight .cs-feature-label { color: rgba(255,255,255,0.65); }
-
+ 
   /* Results table */
   .cs-results-table {
     border: 1px solid rgba(42,74,127,0.15); border-radius: 6px; overflow: hidden;
@@ -1026,7 +1026,7 @@
   .cs-result-delta { font-family: 'Kalnia', serif; font-weight: 700; text-align: right; }
   .cs-delta-green { color: var(--green-dark); font-size: 15px; }
   .cs-delta-big { color: var(--blue-dark); font-size: 20px; }
-
+ 
   /* Lessons */
   .cs-lessons { display: flex; flex-direction: column; gap: 0; }
   .cs-lesson {
@@ -1039,7 +1039,7 @@
     margin-bottom: 8px; line-height: 1.4;
   }
   .cs-lesson-body { font-size: 13px; line-height: 1.75; color: rgba(14,26,46,0.65); margin: 0; }
-
+ 
   @media (max-width: 640px) {
     .cs-panel { width: 100%; }
     .cs-meta-row { grid-template-columns: 1fr 1fr; }
@@ -1053,11 +1053,11 @@
     .cs-results-header > *:nth-child(4), .cs-results-row > *:nth-child(4) { display: none; }
     .cs-hero { padding: 24px 20px 28px; }
   }
-
+ 
   /* ═══════════════════════════════════════
      ABOUT ME PANEL SPECIFIC STYLES
   ═══════════════════════════════════════ */
-
+ 
   /* Floating close button for about panel */
   .about-close-btn {
     position: absolute; top: 20px; right: 20px; z-index: 10;
@@ -1068,7 +1068,7 @@
     transition: all 0.15s;
   }
   .about-close-btn:hover { background: var(--blue-dark); color: #f0ead8; border-color: var(--blue-dark); }
-
+ 
   .about-leadin {
     font-family: 'Kalnia', serif;
     font-size: 26px; color: #9bb3d4; font-weight: 600;
@@ -1086,7 +1086,7 @@
     text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase;
     transition: opacity 0.2s;
   }  .about-linkedin-btn:hover { opacity: 0.8; }
-
+ 
   /* Latest Interests divider */
   .about-section-divider {
     display: flex; align-items: center; gap: 16px;
@@ -1099,30 +1099,39 @@
   }
   .about-divider-line { flex: 1; height: 1px; background: rgba(42,74,127,0.15); }
   .about-divider-date { opacity: 0.45 !important; }
-
+ 
   /* Interests card */
   .about-interests-section {
-    padding: 0 40px 28px 104px;
+    padding: 0 40px 32px 104px;
     background: #f0ead8;
+    border-top: 1px solid rgba(26,68,112,0.12);
+  }
+  .about-interests-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px; letter-spacing: 0.26em; text-transform: uppercase;
+    color: #9bb3d4; font-weight: 500;
+    padding: 20px 0 16px;
   }
   .about-interests-card {
-    background: var(--blue-ghost);
-    border-radius: 8px; padding: 24px 28px;
-    display: flex; flex-direction: column; gap: 16px;
+    background: transparent;
+    border-radius: 0; padding: 0;
+    display: flex; flex-direction: column; gap: 12px;
   }
   .about-interest-row {
-    display: flex; align-items: baseline; gap: 12px;
+    display: flex; align-items: baseline; gap: 16px;
   }
   .about-interest-cat {
-    font-family: 'Kalnia', serif;
-    font-size: 14px; color: var(--blue-dark); font-weight: 600;
-    min-width: 140px; flex-shrink: 0;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px; color: rgba(26,46,74,0.45); font-weight: 400;
+    min-width: 110px; flex-shrink: 0;
+    letter-spacing: 0.12em; text-transform: uppercase;
   }
   .about-interest-val {
-    font-size: 13px; color: var(--blue); line-height: 1.5;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px; color: #1a2e4a; line-height: 1.5; font-weight: 500;
   }
-  .about-interest-by { opacity: 0.6; }
-
+  .about-interest-by { opacity: 0.5; font-weight: 400; }
+ 
   /* Photo grid */
   .about-photo-grid{display:flex;flex-direction:column;gap:8px;padding:0 40px;background:#f0ead8}
   .about-photo-row{display:flex;gap:8px;align-items:stretch}
@@ -1133,7 +1142,7 @@
   .row3 .left{flex:1.86;aspect-ratio:5/3}.row3 .right{flex:1;height:100%}
   .row1 .right img,.row2 .right img,.row3 .right img,.row3 .left img{transform:scale(1.08);transform-origin:center}
   @media(max-width:640px){.about-hero-top{flex-direction:column}.about-quick-facts{gap:0}.about-section-divider,.about-interests-section{padding-left:20px;padding-right:20px}.about-interest-cat{min-width:110px}.about-photo-grid{padding:0 20px}.about-photo-row{flex-direction:column}.about-photo-cell,.row1 .left,.row1 .right,.row2 .left,.row2 .right,.row3 .left,.row3 .right{flex:unset!important;width:100%!important;aspect-ratio:4/3!important;height:auto!important}}
-
+ 
   .lm-diagram{margin-top:28px;border-radius:12px;background:#7b8fd4;padding:32px 24px 36px;display:flex;flex-direction:column;align-items:center}
   .lm-ellipse{background:#b8f0d8;border-radius:50%;width:88%;padding:28px 40px 22px;display:flex;flex-direction:column;align-items:center;gap:6px}
   .lm-logo{font-size:42px;font-weight:900;font-style:italic;color:#1a2e5a;letter-spacing:-1px;line-height:1;font-family:'DM Sans',sans-serif}
@@ -1237,15 +1246,143 @@
 .trow-tags .tag+.tag::before,.trow-tags .tag-green+.tag::before,.trow-tags .tag+.tag-green::before,.trow-tags .tag-green+.tag-green::before,.trow-tags .tag-case+.tag::before,.trow-tags .tag+.tag-case::before,.trow-tags .tag-green+.tag-case::before{content:' · ';color:rgba(255,255,255,.18)}
 .trow-tags .tag-case{color:rgba(255,255,255,.5)!important}
 .trow-tags .arrow-icon{display:none}
+ 
+  .trow-ql-badge {
+    display: inline-block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 8.5px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: #9bb3d4;
+    border: 1px solid rgba(155,179,212,0.35);
+    border-radius: 20px;
+    padding: 3px 8px;
+    margin-left: 8px;
+    vertical-align: middle;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+    white-space: nowrap;
+    position: relative;
+    top: -1px;
+  }
+  .trow-ql-badge:hover {
+    background: rgba(155,179,212,0.12);
+    border-color: rgba(155,179,212,0.65);
+    color: #c8daf0;
+  }
+  .trow-cs-badge {
+    color: #f0ead8;
+    border-color: rgba(240,234,216,0.35);
+  }
+  .trow-cs-badge:hover {
+    background: rgba(240,234,216,0.1);
+    border-color: rgba(240,234,216,0.65);
+    color: #fff;
+  }
+ 
+  .ql-overlay {
+    position: fixed; inset: 0;
+    background: rgba(10,8,20,0.65);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .ql-overlay.active { opacity: 1; pointer-events: all; }
+  .ql-panel {
+    background: #1a2e4a;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    width: min(760px, 92%);
+    max-height: 88vh;
+    overflow-y: auto;
+    position: relative;
+  }
+  .ql-hero-img {
+    width: 100%; height: 260px;
+    object-fit: cover; object-position: center top;
+    display: block; border-radius: 12px 12px 0 0;
+  }
+  .ql-hero-placeholder {
+    width: 100%; height: 260px;
+    background: rgba(26,68,112,0.5);
+    border-radius: 12px 12px 0 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(155,179,212,0.45);
+  }
+  .ql-body { padding: 32px 40px 40px; }
+  .ql-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase;
+    color: #9bb3d4; margin-bottom: 10px;
+  }
+  .ql-title {
+    font-family: 'Kalnia', serif;
+    font-size: 22px; color: #f0ead8; font-weight: 600;
+    line-height: 1.2; margin-bottom: 20px;
+  }
+  .ql-divider { height: 1px; background: rgba(255,255,255,0.1); margin-bottom: 20px; }
+  .ql-section-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: rgba(155,179,212,0.6); margin-bottom: 8px;
+  }
+  .ql-text {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px; color: rgba(255,255,255,0.75);
+    line-height: 1.65; margin-bottom: 24px;
+  }
+  .ql-stats { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+  .ql-stat {
+    flex: 1; min-width: 120px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px; padding: 16px 20px;
+  }
+  .ql-stat-num {
+    font-family: 'Kalnia', serif;
+    font-size: 24px; color: #f0ead8; font-weight: 600;
+    line-height: 1; margin-bottom: 6px;
+  }
+  .ql-stat-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px; color: rgba(255,255,255,0.45); line-height: 1.4;
+  }
+  .ql-close {
+    position: absolute; top: 16px; right: 16px;
+    width: 32px; height: 32px; border-radius: 50%;
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
+    cursor: pointer; color: #f0ead8;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 10; transition: background 0.15s;
+  }
+  .ql-close:hover { background: rgba(255,255,255,0.18); }
+  .ql-role-row { display: flex; gap: 32px; flex-wrap: wrap; margin-bottom: 24px; }
+  .ql-role-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(155,179,212,0.5); margin-bottom: 4px;
+  }
+  .ql-role-val {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px; color: rgba(255,255,255,0.8); font-weight: 500;
+  }
+ 
+  .ql-title { text-transform: uppercase; }
+ 
+  .modal h2 { text-transform: uppercase; }
+  .cs-header-title { text-transform: uppercase; }
 </style>
 </head>
 <body>
-
+ 
 <!-- NAV -->
 <div id="bg-img"><div id="bg-img-inner"></div></div>
 <div id="bg-overlay"></div>
 <div class="page">
-
+ 
   <!-- HERO NAME -->
   <div class="hero">
     <div class="hero-first-row">
@@ -1258,7 +1395,7 @@
     </div>
     <span id="last-name" class="hero-name last">Macherkevich</span>
   </div>
-
+ 
   <div class="tile-stack">
 <div class="act1">
   <div class="cell-illus"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/annaandmelvin.jpeg" alt="Anna and Melvin"/><div class="hotspot hotspot-face"   onclick="openModal('about')"   title="About me"></div>
@@ -1303,17 +1440,20 @@
         </div>
         <div class="timeline-years">2012 — Present</div>
       </div>
-
+ 
       <!-- SE1FMADE -->
       <div class="timeline-group">SE1FMADE · AI Sports Psychology · Current</div>
       <div class="timeline-row">
         <div class="trow-year"><span>2026</span></div>
         <div class="trow-content">
           <div class="trow-top">
-            <div class="trow-title"><a href="https://www.se1fmade.io" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.2);">SE1FMADE — AI Mental Performance Coach for Athletes</a></div>
+            <div class="trow-title" style="cursor:pointer;" onclick="openModal('ql-selfmade')"><a href="https://www.se1fmade.io" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.2);">SE1FMADE — AI Mental Performance Coach for Athletes</a> <span class="trow-ql-badge" onclick="event.stopPropagation();openModal('ql-selfmade')">Quick Look</span></div>
             <div class="trow-co">Lead Product Designer</div>
           </div>
           <div class="trow-tags">
+            <span class="tag tag-green">Mobile · Web</span>
+            <span class="tag">B2C</span>
+            <span class="tag">0→1 Build</span>
             <span class="tag tag-green">AI Product</span>
             <span class="tag tag-green">Mobile · iOS/Android</span>
             <span class="tag">Monetization</span>
@@ -1322,43 +1462,44 @@
           </div>
         </div>
       </div>
-
+ 
       <!-- Les Mills -->
       <div class="timeline-group">Les Mills International · Fitness Tech</div>
-
+ 
       <div class="timeline-row is-case-study" onclick="openModal('casestudy')">
         <div class="trow-year"><span>2025</span></div>
         <div class="trow-content">
           <div class="trow-top">
-            <div class="trow-title">Instructor Experience App</div>
+            <div class="trow-title">Instructor Experience App <span class="trow-ql-badge trow-cs-badge" onclick="event.stopPropagation();openModal('casestudy')">Case Study</span></div>
             <div class="trow-co">Lead Product Designer</div>
           </div>
           <div class="trow-tags">
-            <span class="tag tag-case">Case Study <span class="arrow-icon">↗</span></span>
-            <span class="tag tag-green">AI Features</span>
-            <span class="tag tag-green">Mobile</span>
+            <span class="tag tag-green">Mobile · iOS/Android</span>
+            <span class="tag">B2C</span>
+            <span class="tag">Redesign</span>
+            <span class="tag">−58% prep time</span>
             <span class="tag">User Research</span>
             <span class="tag">IA</span>
           </div>
         </div>
       </div>
-
+ 
       <div class="timeline-row">
         <div class="trow-year"><span>2024</span></div>
         <div class="trow-content">
           <div class="trow-top">
-            <div class="trow-title"><a href="https://www.lesmills.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.2);">Virtual Studio Controller &amp; Experience</a></div>
+            <div class="trow-title"><a href="https://www.lesmills.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.2);">Lesmills.com Full Redesign</a></div>
             <div class="trow-co">Lead Product Designer</div>
           </div>
           <div class="trow-tags">
-            <span class="tag tag-green">Web · D2C</span>
-            <span class="tag">Digital Upskilling</span>
-            <span class="tag">Instructor Journey</span>
-            <span class="tag">End-to-end</span>
+            <span class="tag tag-green">Web</span>
+            <span class="tag">B2B + B2C</span>
+            <span class="tag">Redesign</span>
+            <span class="tag">20,000+ clubs</span>
           </div>
         </div>
       </div>
-
+ 
       <div class="timeline-row">
         <div class="trow-year"><span>2024</span></div>
         <div class="trow-content">
@@ -1367,13 +1508,14 @@
             <div class="trow-co">Lead Product Designer</div>
           </div>
           <div class="trow-tags">
-            <span class="tag tag-green">B2B</span>
-            <span class="tag">Content Licensing</span>
+            <span class="tag tag-green">Web</span>
+            <span class="tag">B2B</span>
+            <span class="tag">0→1 Build</span>
             <span class="tag">+33% content sales</span>
           </div>
         </div>
       </div>
-
+ 
       <div class="timeline-row">
         <div class="trow-year"><span>2023</span></div>
         <div class="trow-content">
@@ -1382,13 +1524,14 @@
             <div class="trow-co">Lead Product Designer</div>
           </div>
           <div class="trow-tags">
-            <span class="tag tag-green">Design Systems</span>
-            <span class="tag">Design Leadership</span>
-            <span class="tag">Cross-platform</span>
+            <span class="tag tag-green">Web + Mobile</span>
+            <span class="tag">Internal</span>
+            <span class="tag">Design System</span>
+            <span class="tag">8 products</span>
           </div>
         </div>
       </div>
-
+ 
       <div class="timeline-row">
         <div class="trow-year"><span>2022</span></div>
         <div class="trow-content">
@@ -1397,13 +1540,14 @@
             <div class="trow-co">Senior Product Designer</div>
           </div>
           <div class="trow-tags">
+            <span class="tag tag-green">Web</span>
             <span class="tag">B2C</span>
-            <span class="tag">NPS Impact</span>
-            <span class="tag">800+ hrs saved / quarter</span>
+            <span class="tag">Redesign</span>
+            <span class="tag">800+ hrs ops saved / qtr</span>
           </div>
         </div>
       </div>
-
+ 
       <div class="timeline-row">
         <div class="trow-year"><span>2022</span></div>
         <div class="trow-content">
@@ -1412,32 +1556,33 @@
             <div class="trow-co">Senior Product Designer</div>
           </div>
           <div class="trow-tags">
-            <span class="tag tag-green">In-studio · Tablet</span>
-            <span class="tag">Controller + Scheduler</span>
-            <span class="tag">On-demand + Live</span>
+            <span class="tag tag-green">Tablet</span>
+            <span class="tag">B2B</span>
+            <span class="tag">Redesign</span>
+            <span class="tag">+20% virtual class usage</span>
           </div>
         </div>
       </div>
-
+ 
       <!-- Ford -->
       <div class="timeline-group">Ford Motor Company · Automotive</div>
-
+ 
       <div class="timeline-row">
         <div class="trow-year"><span>2022</span></div>
         <div class="trow-content">
           <div class="trow-top">
-            <div class="trow-title">Multi-Zone Audio System · In-vehicle + Mobile</div>
+            <div class="trow-title" style="cursor:pointer;" onclick="openModal('ql-soundzones')">Multi-Zone Audio System · In-vehicle + Mobile <span class="trow-ql-badge" onclick="event.stopPropagation();openModal('ql-soundzones')">Quick Look</span></div>
             <div class="trow-co">Senior Digital Product Designer</div>
           </div>
           <div class="trow-tags">
-            <span class="tag tag-green">HMI</span>
-            <span class="tag">Automotive</span>
+            <span class="tag tag-green">In-Vehicle Screen</span>
+            <span class="tag">B2C</span>
+            <span class="tag">0→1 Build</span>
             <span class="tag">Android OS</span>
-            <span class="tag">Design Systems</span>
           </div>
         </div>
       </div>
-
+ 
       <div class="timeline-row">
         <div class="trow-year"><span>2021</span></div>
         <div class="trow-content">
@@ -1446,31 +1591,33 @@
             <div class="trow-co">UX Interaction Designer</div>
           </div>
           <div class="trow-tags">
-            <span class="tag tag-green">HMI</span>
-            <span class="tag">NFC · Interaction</span>
-            <span class="tag">Logic Architecture</span>
+            <span class="tag tag-green">In-Vehicle Screen</span>
+            <span class="tag">B2C</span>
+            <span class="tag">Interaction Design</span>
+            <span class="tag">NFC Architecture</span>
           </div>
         </div>
       </div>
-
+ 
       <!-- FCA -->
       <div class="timeline-group">Fiat Chrysler Automobiles (Stellantis) · Automotive</div>
-
+ 
       <div class="timeline-row">
         <div class="trow-year"><span>2020</span></div>
         <div class="trow-content">
           <div class="trow-top">
-            <div class="trow-title">Connected Rear Seat Entertainment · Amazon Fire TV</div>
+            <div class="trow-title" style="cursor:pointer;" onclick="openModal('ql-rearseat')">Connected Rear Seat Entertainment · Amazon Fire TV <span class="trow-ql-badge" onclick="event.stopPropagation();openModal('ql-rearseat')">Quick Look</span></div>
             <div class="trow-co">UI/HMI Engineer</div>
           </div>
           <div class="trow-tags">
-            <span class="tag tag-green">Industry First</span>
-            <span class="tag">Touch · In-vehicle</span>
+            <span class="tag tag-green">In-Vehicle Screen</span>
+            <span class="tag">B2C</span>
+            <span class="tag">Industry First</span>
             <span class="tag">Amazon Fire TV</span>
           </div>
         </div>
       </div>
-
+ 
       <div class="timeline-row">
         <div class="trow-year"><span>2019</span></div>
         <div class="trow-content">
@@ -1479,13 +1626,14 @@
             <div class="trow-co">UI/HMI Engineer</div>
           </div>
           <div class="trow-tags">
-            <span class="tag tag-green">First-ever Passenger Screen</span>
-            <span class="tag">HMI</span>
+            <span class="tag tag-green">In-Vehicle Screen</span>
+            <span class="tag">B2C</span>
+            <span class="tag">First-ever Passenger Screen</span>
             <span class="tag">Usability Testing</span>
           </div>
         </div>
       </div>
-
+ 
       <div class="timeline-row">
         <div class="trow-year"><span>2015</span></div>
         <div class="trow-content">
@@ -1494,31 +1642,32 @@
             <div class="trow-co">CIE Graduate</div>
           </div>
           <div class="trow-tags">
+            <span class="tag tag-green">Multi-discipline</span>
+            <span class="tag">Internal</span>
             <span class="tag">7 Rotations</span>
-            <span class="tag">HMI · Ergonomics</span>
             <span class="tag">M.S. Mechanical Eng.</span>
           </div>
         </div>
       </div></div>
 </div>
-
+ 
 </div><!-- /page -->
 <footer style="text-align:center;padding:32px 0 28px;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.25);font-family:'DM Sans',sans-serif;font-weight:400;">www.annamacherkevich.com &nbsp;·&nbsp; 2026</footer>
-
-
+ 
+ 
 <!-- MODALS -->
 <!-- ABOUT ME FULL-PAGE OVERLAY -->
 <div class="cs-overlay" id="modal-about">
   <div class="cs-panel" onclick="event.stopPropagation()">
-
+ 
     <!-- Floating close button -->
     <button class="about-close-btn" onclick="closeModal('about')">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
     </button>
-
+ 
     <!-- Scrollable body -->
     <div class="cs-body">
-
+ 
       <!-- Bio section -->
       <div class="cs-section about-bio-section">
         <div class="cs-section-num" style="opacity:0; pointer-events:none;"></div>
@@ -1531,35 +1680,36 @@
           <a href="https://linkedin.com/in/annamacherkevich" target="_blank" rel="noopener" class="about-linkedin-btn">View LinkedIn ↗</a>
         </div>
       </div>
-
+ 
       <!-- Latest Interests card -->
       <div class="about-interests-section">
+        <div class="about-interests-label">Currently</div>
         <div class="about-interests-card">
           <div class="about-interest-row">
             <span class="about-interest-cat">Reading</span>
-            <span class="about-interest-val">Project Hail Mary <span class="about-interest-by">- Andy Weir</span></span>
+            <span class="about-interest-val">Piranesi <span class="about-interest-by">- Susanna Clarke</span></span>
           </div>
           <div class="about-interest-row">
-            <span class="about-interest-cat">Traveling to</span>
+            <span class="about-interest-cat">Next Trip</span>
             <span class="about-interest-val">Puerto Rico</span>
           </div>
           <div class="about-interest-row">
-            <span class="about-interest-cat">Listening</span>
+            <span class="about-interest-cat">Listening to</span>
             <span class="about-interest-val">Easy Lee <span class="about-interest-by">- Pale Jay</span></span>
           </div>
         </div>
       </div>
-
+ 
       <!-- Photo grid -->
       <div class="about-photo-grid">
 <div class="about-photo-row row1"><div class="about-photo-cell left"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/Photo%20Copy-1.png" alt="p1"/></div><div class="about-photo-cell right"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/Photo%20Copy-2.png" alt="p2"/></div></div><div class="about-photo-row row2"><div class="about-photo-cell left"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/Photo%20Copy-3.png" alt="p3"/></div><div class="about-photo-cell right"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/Photo%20Copy-4.png" alt="p4"/></div></div><div class="about-photo-row row3"><div class="about-photo-cell left"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/Photo%20Copy-5.png" alt="p5"/></div><div class="about-photo-cell right"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/Photo%20Copy-6.png" alt="p6"/></div></div></div>
-
+ 
       <div style="height:48px;"></div>
-
+ 
     </div><!-- /cs-body -->
   </div><!-- /cs-panel -->
 </div><!-- /modal-about -->
-
+ 
 <div class="modal-overlay" id="modal-contact" onclick="closeModal('contact')">
   <div class="modal modal-contact" onclick="event.stopPropagation()">
     <button class="modal-close" onclick="closeModal('contact')">×</button>
@@ -1569,11 +1719,11 @@
     <a href="/cdn-cgi/l/email-protection#afcec1c1cec2ceccc7caddc4cad9c6ccc7efc8c2cec6c381ccc0c2" class="modal-btn modal-btn-contact">Send me an email ↗</a>
   </div>
 </div>
-
+ 
 <!-- CASE STUDY FULL-PAGE OVERLAY -->
 <div class="cs-overlay" id="modal-casestudy">
   <div class="cs-panel" onclick="event.stopPropagation()">
-
+ 
     <!-- Sticky header -->
     <div class="cs-header">
       <div class="cs-header-inner">
@@ -1586,10 +1736,10 @@
         </button>
       </div>
     </div>
-
+ 
     <!-- Scrollable body -->
     <div class="cs-body">
-
+ 
       <!-- Hero -->
       <div class="cs-hero">
         <div class="cs-hero-meta">
@@ -1612,7 +1762,7 @@
             </div>
           </div>
         </div>
-
+ 
         <div class="cs-impact-bar">
           <div class="cs-impact-label">Impact at a glance</div>
           <div class="cs-impact-stats">
@@ -1639,7 +1789,7 @@
           <div class="cs-impact-method">Measured via assumption validation testing + Amplitude longitudinal cohort analysis (32 users, 3 markets)</div>
         </div>
       </div>
-
+ 
       <!-- 01 Overview -->
       <div class="cs-section">
         <div class="cs-section-num">01</div>
@@ -1649,13 +1799,13 @@
           <p class="cs-body-text">The Instructor Experience App was a ground-up redesign of the company's primary instructor-facing digital product, unifying four disconnected platforms into a single, cohesive tool and fundamentally changing how instructors learn, prepare, and teach.</p><div style="width:100%;height:280px;background:rgba(26,68,112,0.18);border:1.5px dashed rgba(26,68,112,0.35);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:20px 0;box-sizing:border-box;"><span style="font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,68,112,0.5);">App Hero — Full Product Shot / Key Screens</span></div><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/Companyintrographic.jpg" alt="LM infographic" style="width:100%;border-radius:6px;margin-top:20px;display:block"/>
         </div>
       </div>
-
+ 
       <!-- 02 Problem Space -->
       <div class="cs-section">
         <div class="cs-section-num">02</div>
         <div class="cs-section-content">
           <h3 class="cs-section-title">Context &amp; the Problem Space</h3>
-
+ 
           <h4 class="cs-subsection-title">The existing landscape</h4>
           <div class="cs-platform-grid">
             <div class="cs-platform-row">
@@ -1675,13 +1825,13 @@
               <div class="cs-platform-desc">Learn new releases, prep playlists, teach — built in 2014, massive tech &amp; design debt, on kill list</div>
             </div>
           </div>
-
+ 
           <div style="width:100%;height:200px;background:rgba(26,68,112,0.18);border:1.5px dashed rgba(26,68,112,0.35);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:20px 0;box-sizing:border-box;"><span style="font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,68,112,0.5);">Before State — Fragmented 4-Platform Journey Diagram</span></div><h4 class="cs-subsection-title" style="margin-top:28px;">The macro user problem</h4>
           <blockquote class="cs-quote">
             Instructors struggle with unsustainable prep-to-teaching ratios: mastering quarterly content demands excessive time unaligned with earnings.
           </blockquote>
           <p class="cs-body-text">Every quarter, Les Mills releases new content for each of its 16 programs. Instructors — most of whom teach part-time alongside day jobs — were expected to learn entirely new choreography, build class playlists, and master updated coaching cues. The time demands were eroding both instructor satisfaction and certification rates.</p>
-
+ 
           <h4 class="cs-subsection-title" style="margin-top:28px;">Research: what instructors told us</h4>
           <div class="cs-research-grid">
             <div class="cs-research-stat">
@@ -1705,14 +1855,14 @@
               <div class="cs-research-finding">brought up inconsistent camera angles unprompted — "Can't see what they're doing, have to piece it together"</div>
             </div>
           </div>
-
+ 
           <div style="width:100%;height:240px;background:rgba(26,68,112,0.18);border:1.5px dashed rgba(26,68,112,0.35);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:20px 0;box-sizing:border-box;"><span style="font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,68,112,0.5);">User Research Synthesis — Journey Map or Affinity Diagram</span></div><div class="cs-hmw">
             <div class="cs-hmw-label">How might we…</div>
             <div class="cs-hmw-text">Streamline the learning and preparation process for instructors to ultimately increase the overall value of being an instructor?</div>
           </div>
         </div>
       </div>
-
+ 
       <!-- 03 Role -->
       <div class="cs-section">
         <div class="cs-section-num">03</div>
@@ -1732,7 +1882,7 @@
           </div>
         </div>
       </div>
-
+ 
       <!-- 04 Solution -->
       <div class="cs-section">
         <div class="cs-section-num">04</div>
@@ -1765,16 +1915,16 @@
           <div style="width:100%;height:260px;background:rgba(26,68,112,0.18);border:1.5px dashed rgba(26,68,112,0.35);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:20px 0;box-sizing:border-box;"><span style="font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,68,112,0.5);">App Screen Flow — Learn → Prep → Teach Journey</span></div><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/SmartSuggestions.jpg" alt="Smart Suggestions" style="width:100%;border-radius:6px;margin-top:20px;display:block"/>
         </div>
       </div>
-
+ 
       <!-- 05 Case Study 1 -->
       <div class="cs-section">
         <div class="cs-section-num">05</div>
         <div class="cs-section-content">
           <h3 class="cs-section-title">Case Study 1: Aligning IA to Instructor Expectations</h3>
-
+ 
           <h4 class="cs-subsection-title">The usability problem</h4>
           <p class="cs-body-text">The Masterclass feature gave instructors access to three content types for each release: choreo notes, the Masterclass video, and playlist/audio-only mode. A seemingly simple three-tab structure hid a critical IA problem: instructors consistently landed in the wrong content type, or couldn't find what they needed intuitively.</p>
-
+ 
           <h4 class="cs-subsection-title" style="margin-top:24px;">Three approaches considered</h4>
           <div class="cs-options">
             <div class="cs-option">
@@ -1799,25 +1949,25 @@
               </div>
             </div>
           </div>
-
+ 
           <div style="width:100%;height:220px;background:rgba(26,68,112,0.18);border:1.5px dashed rgba(26,68,112,0.35);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:20px 0;box-sizing:border-box;"><span style="font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,68,112,0.5);">IA Options — Annotated Wireframe Comparison (A / B / C)</span></div><h4 class="cs-subsection-title" style="margin-top:24px;">Decision &amp; rationale</h4>
           <p class="cs-body-text">We chose option C — a combined solution: tab structure update plus show/hide video toggle. The reasoning: options A and B treated symptoms. The real issue was that the existing tab structure didn't match how instructors thought about learning modes. Resetting expectations through a clearer IA cost minimal additional dev effort but had substantially higher long-term usability payoff.</p>
           <p class="cs-body-text">This was validated through usability testing, where we confirmed that the revised tab labeling and entry state significantly reduced navigation errors and time-to-task on first use.</p>
         </div>
       </div>
-
+ 
       <!-- 06 Case Study 2 -->
       <div class="cs-section">
         <div class="cs-section-num">06</div>
         <div class="cs-section-content">
           <h3 class="cs-section-title">Case Study 2: Discovering Smart Suggestions</h3>
-
+ 
           <h4 class="cs-subsection-title">The user problem</h4>
           <blockquote class="cs-quote">
             Instructors struggle to efficiently create balanced, varied class playlists from past releases due to a lack of search and organizational tools. This manual, time-consuming process often leads to repetitive classes, reducing member engagement and satisfaction.
           </blockquote>
           <p class="cs-body-text">Creating a mixed playlist required instructors to manually flip through old PDFs, remember which tracks they'd used recently, and manually sequence a class. 100% of research participants reported losing time to this process — average monthly time spent was 7.5 hours.</p>
-
+ 
           <h4 class="cs-subsection-title" style="margin-top:24px;">How the feature evolved through assumption validation</h4>
           <div class="cs-pivots">
             <div class="cs-pivot">
@@ -1842,9 +1992,9 @@
               </div>
             </div>
           </div>
-
+ 
           <p class="cs-body-text" style="margin-top:20px;">The final Smart Suggestions feature used AI-driven recommendations to propose balanced, varied playlists based on instructor history and class-building best practices — surfacing the right tracks at the right time without requiring manual input.</p>
-
+ 
           <div style="width:100%;height:240px;background:rgba(26,68,112,0.18);border:1.5px dashed rgba(26,68,112,0.35);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:20px 0;box-sizing:border-box;"><span style="font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,68,112,0.5);">Smart Suggestions UI — AI Playlist Recommendation Screen</span></div><h4 class="cs-subsection-title" style="margin-top:28px;">Digital choreo notes: eliminating the PDF</h4>
           <p class="cs-body-text">A parallel high-impact feature: replacing printed PDF choreo notes with a fully digital, track-synced experience.</p>
           <div class="cs-features-grid">
@@ -1875,7 +2025,7 @@
           <div style="width:100%;height:240px;background:rgba(26,68,112,0.18);border:1.5px dashed rgba(26,68,112,0.35);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:20px 0;box-sizing:border-box;"><span style="font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,68,112,0.5);">Digital Choreo Notes — In-App Screen, Track-Synced View</span></div></div>
         </div>
       </div>
-
+ 
       <!-- 07 Outcomes -->
       <div class="cs-section">
         <div class="cs-section-num">07</div>
@@ -1914,7 +2064,7 @@
           </div>
         </div>
       </div>
-
+ 
       <!-- 08 Lessons -->
       <div class="cs-section cs-section-last">
         <div class="cs-section-num">08</div>
@@ -1940,11 +2090,11 @@
           </div>
         </div>
       </div>
-
+ 
     </div><!-- /cs-body -->
   </div><!-- /cs-panel -->
 </div><!-- /cs-overlay -->
-
+ 
 <div class="modal-overlay modal-dog" id="modal-melvin" onclick="closeModal('melvin')">
   <div class="modal" onclick="event.stopPropagation()">
     <button class="modal-close" onclick="closeModal('melvin')">×</button>
@@ -1954,47 +2104,158 @@
     <p>I'm the mascot for Mel's World, a new way to weave your best friend into your digital world. Come back soon to learn more 👀</p>
   </div>
 </div>
-
+ 
+<!-- QUICK LOOK: SE1FMADE -->
+<div class="ql-overlay" id="modal-ql-selfmade" onclick="closeModal('ql-selfmade')">
+  <div class="ql-panel" onclick="event.stopPropagation()">
+    <button class="ql-close" onclick="closeModal('ql-selfmade')">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <div class="ql-hero-placeholder">Hero Visual — App Screen / Product Shot</div>
+    <div class="ql-body">
+      <div class="ql-eyebrow">SE1FMADE · 2025 · Currently Building · Mobile &amp; Web</div>
+      <div class="ql-title">AI-Powered Mental Coaching for Competitive Athletes</div>
+      <div class="ql-divider"></div>
+      <div class="ql-role-row">
+        <div class="ql-role-item"><div class="ql-role-label">Role</div><div class="ql-role-val">Lead Product Designer</div></div>
+        <div class="ql-role-item"><div class="ql-role-label">Platform</div><div class="ql-role-val">Mobile · iOS/Android · Web</div></div>
+        <div class="ql-role-item"><div class="ql-role-label">Scope</div><div class="ql-role-val">0→1 · Full Product</div></div>
+        <div class="ql-role-item"><div class="ql-role-label">Timeline</div><div class="ql-role-val">2025 – Present</div></div>
+      </div>
+      <div class="ql-section-label">The Problem</div>
+      <p class="ql-text">Competitive athletes face intense performance pressure but lack truly private support. Therapy is stigmatized — seen as weakness by athletes, coaches, and teams alike. Team-assigned psychologists are paid by clubs, creating a real conflict of interest that erodes athlete trust. SE1FMADE fills that gap: an AI mental performance coach that's always available, completely confidential, and built around the athlete's perspective.</p>
+      <div class="ql-section-label">My Contribution</div>
+      <p class="ql-text">I designed the full product experience — website, web app, and mobile — from the ground up. Currently building out subscription and upgrade flows as the team secures investors and paid team partnerships.</p>
+      <div class="ql-stats">
+        <div class="ql-stat">
+          <div class="ql-stat-num">200</div>
+          <div class="ql-stat-label">Active beta users across sports</div>
+        </div>
+        <div class="ql-stat">
+          <div class="ql-stat-num">10</div>
+          <div class="ql-stat-label">Regular beta testers providing ongoing feedback</div>
+        </div>
+        <div class="ql-stat">
+          <div class="ql-stat-num">0→1</div>
+          <div class="ql-stat-label">Full product built from scratch — website to mobile</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<!-- QUICK LOOK: SOUND ZONES -->
+<div class="ql-overlay" id="modal-ql-soundzones" onclick="closeModal('ql-soundzones')">
+  <div class="ql-panel" onclick="event.stopPropagation()">
+    <button class="ql-close" onclick="closeModal('ql-soundzones')">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <img class="ql-hero-img" src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/szonez.jpg" alt="Sound Zones"/>
+    <div class="ql-body">
+      <div class="ql-eyebrow">Ford Motor Company · 2021 · In-Vehicle Screen</div>
+      <div class="ql-title">Sound Zones — Personalized Audio for Every Seat</div>
+      <div class="ql-divider"></div>
+      <div class="ql-role-row">
+        <div class="ql-role-item"><div class="ql-role-label">Role</div><div class="ql-role-val">Product Designer</div></div>
+        <div class="ql-role-item"><div class="ql-role-label">Platform</div><div class="ql-role-val">In-Vehicle HMI · Android OS</div></div>
+        <div class="ql-role-item"><div class="ql-role-label">Timeline</div><div class="ql-role-val">Sept – Nov 2021</div></div>
+      </div>
+      <div class="ql-section-label">The Problem</div>
+      <p class="ql-text">Sound Zones — a feature allowing individualized, headset-free audio throughout the cabin — was handed off from a decoupled team with critical integration gaps. The feature was disjointed from the core audio ecosystem, zone selection was friction-heavy and error-prone, and the visual controls were cluttered and distracting. I redesigned it from the ground up to feel like a natural extension of the existing audio system.</p>
+      <div class="ql-section-label">The Solution</div>
+      <p class="ql-text">Integrated Sound Zones directly into the source drawer as a native extension of source selection — eliminating the need to disable base audio. Replaced manual zone selection with source-driven configuration and latching behavior for a zero-setup experience. Simplified visual controls to maintain spatial context without visual noise.</p>
+      <div class="ql-stats">
+        <div class="ql-stat">
+          <div class="ql-stat-num">83%</div>
+          <div class="ql-stat-label">of clinic participants said it was a significant value add</div>
+        </div>
+        <div class="ql-stat">
+          <div class="ql-stat-num">76%</div>
+          <div class="ql-stat-label">said they would use Sound Zones regularly</div>
+        </div>
+        <div class="ql-stat">
+          <div class="ql-stat-num">76%</div>
+          <div class="ql-stat-label">would pay a $1,500 premium for this feature</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<!-- QUICK LOOK: REAR SEAT ENTERTAINMENT -->
+<div class="ql-overlay" id="modal-ql-rearseat" onclick="closeModal('ql-rearseat')">
+  <div class="ql-panel" onclick="event.stopPropagation()">
+    <button class="ql-close" onclick="closeModal('ql-rearseat')">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <div class="ql-hero-placeholder">Hero Visual — Hero Screen / Monitor + Focus View</div>
+    <div class="ql-body">
+      <div class="ql-eyebrow">Fiat Chrysler Automobiles · 2019 · In-Vehicle Screen · Industry First</div>
+      <div class="ql-title">Connected Rear Seat Entertainment · Amazon Fire TV <span class="trow-ql-badge" onclick="event.stopPropagation();openModal('ql-rearseat')">Quick Look</span></div>
+      <div class="ql-divider"></div>
+      <div class="ql-role-row">
+        <div class="ql-role-item"><div class="ql-role-label">Role</div><div class="ql-role-val">UX + UI Design · UXR · Logic &amp; Flow Spec</div></div>
+        <div class="ql-role-item"><div class="ql-role-label">Platform</div><div class="ql-role-val">In-Vehicle Screen · Amazon Fire TV</div></div>
+        <div class="ql-role-item"><div class="ql-role-label">Timeline</div><div class="ql-role-val">July – Dec 2019</div></div>
+      </div>
+      <div class="ql-section-label">The Problem</div>
+      <p class="ql-text">The goal was to redesign the Rear Seat Entertainment system to integrate Amazon Fire TV and Alexa voice controls — transforming a remote-centric living room experience into an intuitive touch-driven cabin environment. The key design challenge: a fundamental disagreement between 1-screen and 2-screen layouts that would cascade into every interaction in the product.</p>
+      <div class="ql-section-label">The Solution</div>
+      <p class="ql-text">Rather than choosing sides, I ran a moderated A/B test with 12 participants that surfaced the best of both worlds: a Monitor View (both screens at a glance) and a Focus View (deep control of one screen), with automatic view persistence based on the user's last active state. An internal team disagreement became a product strength.</p>
+      <div class="ql-stats">
+        <div class="ql-stat">
+          <div class="ql-stat-num">86.7</div>
+          <div class="ql-stat-label">Average desirability score for dual-screen solution (vs 72.9 single)</div>
+        </div>
+        <div class="ql-stat">
+          <div class="ql-stat-num">Industry</div>
+          <div class="ql-stat-label">First-ever Amazon Fire TV integration in a vehicle</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function fitLastName() {
     const el = document.getElementById('last-name');
     const tile = document.querySelector('.tile-stack');
     const firstRow = document.querySelector('.hero-first-row');
     if (!el || !tile) return;
-
+ 
     // Clear any previously set widths so tile measurement is clean
     el.style.fontSize = '';
     if (firstRow) firstRow.style.width = '';
     void el.offsetWidth; // force reflow
-
+ 
     const tileRect = tile.getBoundingClientRect();
     const heroRect = document.querySelector('.hero').getBoundingClientRect();
     const available = tileRect.right - heroRect.left;
-
+ 
     // Set first-row width so nav right-aligns to tile edge
     if (firstRow) firstRow.style.width = available + 'px';
-
+ 
     // Scale last name to fill exactly
     const baseFontSize = parseFloat(getComputedStyle(el).fontSize);
     void el.offsetWidth;
     const naturalWidth = el.getBoundingClientRect().width;
     el.style.fontSize = (available / naturalWidth) * baseFontSize + 'px';
   }
-
+ 
   function fitOnLoad() {
     requestAnimationFrame(() => requestAnimationFrame(fitLastName));
   }
-
+ 
   document.fonts.ready.then(() => {
     fitOnLoad();
     window.addEventListener('resize', fitLastName);
   });
-
+ 
   /* ── Carousel ─────────────────────────────── */
   let carouselIndex = 0;
   const carouselTotal = 3;
   let carouselTimer = null;
-
+ 
   function carouselGo(i) {
     carouselIndex = i;
     updateCarousel();
@@ -2019,36 +2280,36 @@
     startAutoPlay();
   }
   startAutoPlay();
-
+ 
   function openModal(id) {
-    document.getElementById('modal-' + id).classList.add('active');
-    document.body.style.overflow = 'hidden';
+    const el = document.getElementById('modal-' + id);
+    if (el) { el.classList.add('active'); document.body.style.overflow = 'hidden'; }
   }
   function closeModal(id) {
-    document.getElementById('modal-' + id).classList.remove('active');
-    document.body.style.overflow = '';
+    const el = document.getElementById('modal-' + id);
+    if (el) { el.classList.remove('active'); document.body.style.overflow = ''; }
   }
-
+ 
   // Also close case study overlay when clicking its backdrop
   document.getElementById('modal-casestudy').addEventListener('click', function(e) {
     if (e.target === this) closeModal('casestudy');
   });
-
+ 
   // Also close about overlay when clicking its backdrop
   document.getElementById('modal-about').addEventListener('click', function(e) {
     if (e.target === this) closeModal('about');
   });
-
+ 
   // Escape key closes all modals
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
-      ['about','contact','casestudy','melvin'].forEach(id => {
+      ['about','contact','casestudy','melvin','ql-selfmade','ql-soundzones','ql-rearseat'].forEach(id => {
         const el = document.getElementById('modal-' + id);
         if (el && el.classList.contains('active')) closeModal(id);
       });
     }
   });
-
+ 
   
   let wcfIndex=0,wcfTimer=null;
   function wcfGo(n){
@@ -2064,3 +2325,4 @@
 </script>
 </body>
 </html>
+ 
