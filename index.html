@@ -1102,7 +1102,7 @@
  
   /* Interests card */
   .about-interests-section {
-    padding: 0 40px 32px 104px;
+    padding: 0 40px 32px 40px;
     background: #f0ead8;
     border-top: 1px solid rgba(26,68,112,0.12);
   }
@@ -1176,12 +1176,12 @@
 .hero-nav a+a{position:relative}
 .hero-nav a+a::before{content:'';position:absolute;left:-14px;top:50%;transform:translateY(-50%);width:1px;height:12px;background:rgba(255,255,255,.2)}
 .tile-stack{display:flex;flex-direction:column;gap:14px;margin-top:16px}
-.act1{display:grid;grid-template-columns:52fr 48fr;gap:14px;min-height:460px;animation:fadeUp .5s ease both;animation-delay:.05s}
+.act1{display:grid;grid-template-columns:52fr 48fr;gap:14px;min-height:460px;position:relative;animation:fadeUp .5s ease both;animation-delay:.05s}
 .act2{animation:fadeUp .5s ease both;animation-delay:.15s}
 .act3{border-radius:8px;overflow:hidden;animation:fadeUp .5s ease both;animation-delay:.25s}
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-.cell-illus{background:#f0ead8;position:relative;overflow:hidden;border-radius:8px}
-.cell-illus img{width:100%;height:100%;object-fit:cover;object-position:42% 65%;display:block;position:absolute;inset:0}
+.cell-illus{background:#f0ead8;position:relative;border-radius:8px}
+.cell-illus img{width:100%;height:100%;object-fit:cover;object-position:42% 65%;display:block;position:absolute;inset:0;border-radius:8px}
 .cell-bio{background:#1a4470;border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:36px 40px 32px;display:flex;flex-direction:column;justify-content:center}
 .bio-title{font-size:16px;font-weight:500;color:#9bb3d4;margin-bottom:5px}
 .bio-loc{font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px}
@@ -1299,8 +1299,9 @@
     position: relative;
   }
   .ql-hero-img {
-    width: 100%; height: 260px;
-    object-fit: cover; object-position: center top;
+    width: 100%; height: 380px;
+    object-fit: contain; object-position: center center;
+    background: #0e1a2e;
     display: block; border-radius: 12px 12px 0 0;
   }
   .ql-hero-placeholder {
@@ -1374,6 +1375,81 @@
  
   .modal h2 { text-transform: uppercase; }
   .cs-header-title { text-transform: uppercase; }
+ 
+  /* ── Case Study Visual Identity Update ────────────────── */
+  .cs-header { background: #1a2e4a !important; border-bottom: 1px solid rgba(255,255,255,0.1) !important; }
+  .cs-header-eyebrow { color: #9bb3d4 !important; }
+  .cs-header-title { color: #f0ead8 !important; }
+  .cs-close { background: rgba(255,255,255,0.08) !important; border-color: rgba(255,255,255,0.15) !important; color: #f0ead8 !important; }
+ 
+  .cs-hero { background: #1a2e4a !important; border-bottom: 2px solid rgba(155,179,212,0.3) !important; }
+  .cs-meta-label { color: rgba(155,179,212,0.6) !important; }
+  .cs-meta-value { color: #f0ead8 !important; }
+ 
+  .cs-impact-bar { background: rgba(255,255,255,0.05) !important; border-top: 1px solid rgba(255,255,255,0.08) !important; }
+  .cs-impact-label { color: rgba(155,179,212,0.6) !important; }
+  .cs-impact-num { color: #f0ead8 !important; }
+  .cs-impact-desc { color: rgba(255,255,255,0.6) !important; }
+  .cs-impact-divider { background: rgba(255,255,255,0.1) !important; }
+  .cs-impact-method { color: rgba(255,255,255,0.35) !important; }
+  .cs-sub { color: rgba(255,255,255,0.4) !important; }
+ 
+  .cs-section { border-bottom-color: rgba(26,68,112,0.12) !important; }
+  .cs-section-num { color: rgba(155,179,212,0.3) !important; }
+  .cs-section-title { color: #1a2e4a !important; }
+  .cs-subsection-title { color: rgba(26,46,74,0.6) !important; }
+  .cs-body-text { color: rgba(14,26,46,0.72) !important; }
+ 
+  .cs-platform-row { border-bottom-color: rgba(26,68,112,0.1) !important; }
+  .cs-platform-name { color: #1a2e4a !important; }
+  .cs-platform-desc { color: rgba(14,26,46,0.55) !important; }
+  .cs-platform-highlight { background: rgba(26,68,112,0.06) !important; border-radius: 4px; }
+ 
+  .cs-quote { color: #1a2e4a !important; border-left-color: #9bb3d4 !important; }
+ 
+  .cs-research-num { color: #1a2e4a !important; }
+  .cs-research-finding { color: rgba(14,26,46,0.65) !important; }
+ 
+  .cs-hmw { background: #1a2e4a !important; border-radius: 8px !important; }
+  .cs-hmw-label { color: #9bb3d4 !important; }
+  .cs-hmw-text { color: #f0ead8 !important; }
+ 
+  .cs-context-note { background: rgba(26,68,112,0.08) !important; border-left-color: #9bb3d4 !important; }
+  .cs-context-icon { color: #9bb3d4 !important; }
+ 
+  .cs-pillar { background: #1a2e4a !important; border-radius: 8px !important; }
+  .cs-pillar-tag { color: #9bb3d4 !important; }
+  .cs-pillar-name { color: #f0ead8 !important; }
+  .cs-pillar-desc { color: rgba(255,255,255,0.6) !important; }
+ 
+  .cs-option { border-color: rgba(26,68,112,0.15) !important; }
+  .cs-option-num { background: #1a2e4a !important; color: #f0ead8 !important; }
+  .cs-option-title { color: #1a2e4a !important; }
+  .cs-option-sub { color: rgba(14,26,46,0.5) !important; }
+  .cs-option-chosen { border-color: #9bb3d4 !important; background: rgba(155,179,212,0.06) !important; }
+  .cs-chosen-badge { background: #9bb3d4 !important; color: #1a2e4a !important; }
+ 
+  .cs-pivot { border-left-color: rgba(26,68,112,0.15) !important; }
+  .cs-pivot-num { background: #1a2e4a !important; color: #f0ead8 !important; }
+  .cs-pivot-title { color: #1a2e4a !important; }
+  .cs-pivot-desc { color: rgba(14,26,46,0.65) !important; }
+  .cs-pivot-final { border-left-color: #9bb3d4 !important; }
+ 
+  .cs-feature-item { border-color: rgba(26,68,112,0.12) !important; }
+  .cs-feature-icon { color: #9bb3d4 !important; }
+  .cs-feature-label { color: rgba(14,26,46,0.7) !important; }
+  .cs-feature-highlight { background: rgba(26,68,112,0.06) !important; }
+ 
+  .cs-results-header { background: #1a2e4a !important; color: #9bb3d4 !important; border-radius: 6px 6px 0 0 !important; }
+  .cs-results-row { border-bottom-color: rgba(26,68,112,0.1) !important; color: rgba(14,26,46,0.7) !important; }
+  .cs-results-total { background: rgba(26,68,112,0.05) !important; }
+  .cs-result-delta { color: #1a2e4a !important; }
+  .cs-delta-green { color: #2a7a4f !important; }
+  .cs-delta-big { color: #1a2e4a !important; font-size: 18px !important; }
+ 
+  .cs-lesson { border-left-color: rgba(26,68,112,0.15) !important; }
+  .cs-lesson-title { color: #1a2e4a !important; }
+  .cs-lesson-body { color: rgba(14,26,46,0.65) !important; }
 </style>
 </head>
 <body>
@@ -1398,13 +1474,14 @@
  
   <div class="tile-stack">
 <div class="act1">
-  <div class="cell-illus"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/annaandmelvin.jpeg" alt="Anna and Melvin"/><div class="hotspot hotspot-face"   onclick="openModal('about')"   title="About me"></div>
+  <div class="cell-illus"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/annaandmelvin.jpeg" alt="Anna and Melvin"/><div style="position:absolute;bottom:10px;right:12px;font-family:'DM Sans',sans-serif;font-size:9px;font-style:italic;color:rgba(155,179,212,0.6);letter-spacing:0.08em;pointer-events:none;z-index:2;">Drawn in Procreate</div><div class="hotspot hotspot-face"   onclick="openModal('about')"   title="About me"></div>
         <div class="hotspot hotspot-laptop" onclick="openModal('contact')" title="Contact"></div>
-        <div class="hotspot hotspot-dog"    onclick="openModal('melvin')"  title="..."></div></div>
+        <div class="hotspot hotspot-dog"    onclick="openModal('melvin')"  title="..."></div>
+</div>
   <div class="cell-bio">
     <div class="bio-title">Product Designer / Doodler</div>
     <div class="bio-loc">San Francisco</div>
-    <div class="bio-blurb">I love scrappy yet strategic designing, quick pivots, and heaps of user feedback.<br><br>12+ years spanning automotive HMI, health &amp; wellness, B2B &amp; D2C products.<br><br>Comfortable leading teams and working independently.</div>
+    <div class="bio-blurb">I love scrappy yet strategic designing, quick pivots, and heaps of user feedback.<br><br>8+ years spanning automotive HMI, health &amp; wellness, B2B &amp; D2C products.<br><br>Comfortable leading teams and working independently.</div>
   </div>
 </div>
 <div class="tile tile-case" onclick="openModal('casestudy')">
@@ -1413,7 +1490,7 @@
       <div class="case-eyebrow">Featured Case Study</div>
       <div class="case-title">Instructor<br>Experience App</div>
       <div class="case-company">Les Mills International · 2024–2025</div>
-      <div class="case-blurb">Unified four instructor platforms into one — replacing a decade-old app, PDFs, and manual playlist-building with a smart, research-driven mobile tool with AI-powered suggestions and digital choreo notes.</div>
+      <div class="case-blurb">Unified four fitness instructor digital touchpoints into one streamlined app — replacing a decade-old platform, PDF-heavy choreography learning, and manual playlist building with a research-driven mobile experience featuring AI-powered smart suggestions and digital choreo notes.</div>
       <div class="case-tags">
         <span class="tag tag-case">Case Study <span class="arrow-icon">↗</span></span>
         <span class="tag tag-green">AI Features</span>
@@ -1431,14 +1508,14 @@
   <div class="case-arrow">↗</div>
 </div>
 <div class="act2">
-  <div class="work-carousel-full" id="wcf"><div class="wcf-slide active"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/cabin.png" alt="Cabin"/><div class="wcf-grad"></div><div class="wcf-label"><div class="wcf-label-text"><span class="wcf-eyebrow">Fiat Chrysler Automobiles · 2019–2020</span><span class="wcf-title">Industry-first Passenger Screen + Amazon Fire TV</span></div><div class="wcf-dots"><button class="wcf-dot active" onclick="wcfGo(0)"></button><button class="wcf-dot" onclick="wcfGo(1)"></button><button class="wcf-dot" onclick="wcfGo(2)"></button><button class="wcf-dot" onclick="wcfGo(3)"></button></div></div></div><div class="wcf-slide"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/szonez.jpg" alt="Sound Zones"/><div class="wcf-grad"></div><div class="wcf-label"><div class="wcf-label-text"><span class="wcf-eyebrow">Ford Motor Company · 2021</span><span class="wcf-title">Sound Zones — Personalized Audio for Every Seat</span></div><div class="wcf-dots"><button class="wcf-dot" onclick="wcfGo(0)"></button><button class="wcf-dot active" onclick="wcfGo(1)"></button><button class="wcf-dot" onclick="wcfGo(2)"></button><button class="wcf-dot" onclick="wcfGo(3)"></button></div></div></div><div class="wcf-slide"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/redesignsite.jpg" alt="Les Mills Site" style="object-position:center top;"/><div class="wcf-grad"></div><div class="wcf-label"><div class="wcf-label-text"><span class="wcf-eyebrow">Les Mills International · 2024</span><span class="wcf-title">A New Digital Front Door for 20,000+ Clubs Worldwide</span></div><div class="wcf-dots"><button class="wcf-dot" onclick="wcfGo(0)"></button><button class="wcf-dot" onclick="wcfGo(1)"></button><button class="wcf-dot active" onclick="wcfGo(2)"></button><button class="wcf-dot" onclick="wcfGo(3)"></button></div></div></div><div class="wcf-slide"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/SMthezone.jpg" alt="SMthezone"/><div class="wcf-grad"></div><div class="wcf-label"><div class="wcf-label-text"><span class="wcf-eyebrow">SE1FMADE · Currently Building</span><span class="wcf-title">AI-Powered Mental Coaching for Competitive Athletes</span></div><div class="wcf-dots"><button class="wcf-dot" onclick="wcfGo(0)"></button><button class="wcf-dot" onclick="wcfGo(1)"></button><button class="wcf-dot" onclick="wcfGo(2)"></button><button class="wcf-dot active" onclick="wcfGo(3)"></button></div></div></div></div>
+  <div class="work-carousel-full" id="wcf"><div class="wcf-slide active"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/cabin.png" alt="Cabin"/><div class="wcf-grad"></div><div class="wcf-label"><div class="wcf-label-text"><span class="wcf-eyebrow">Fiat Chrysler Automobiles · 2019–2020</span><span class="wcf-title">Industry-first Passenger Screen + Amazon Fire TV</span></div><div class="wcf-dots"><button class="wcf-dot active" onclick="wcfGo(0)"></button><button class="wcf-dot" onclick="wcfGo(1)"></button><button class="wcf-dot" onclick="wcfGo(2)"></button><button class="wcf-dot" onclick="wcfGo(3)"></button></div></div></div><div class="wcf-slide"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/szonez.jpg" alt="Sound Zones"/><div class="wcf-grad"></div><div class="wcf-label"><div class="wcf-label-text"><span class="wcf-eyebrow">Ford Motor Company · 2021</span><span class="wcf-title">Sound Zones — Personalized Audio for Every Seat</span></div><div class="wcf-dots"><button class="wcf-dot" onclick="wcfGo(0)"></button><button class="wcf-dot active" onclick="wcfGo(1)"></button><button class="wcf-dot" onclick="wcfGo(2)"></button><button class="wcf-dot" onclick="wcfGo(3)"></button></div></div></div><div class="wcf-slide"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/redesignsite.jpg" alt="Les Mills Site" style="object-position:center top;"/><div class="wcf-grad"></div><div class="wcf-label"><div class="wcf-label-text"><span class="wcf-eyebrow">Les Mills International · 2024</span><span class="wcf-title">A New Digital Front Door: Lesmills.com Redesign</span></div><div class="wcf-dots"><button class="wcf-dot" onclick="wcfGo(0)"></button><button class="wcf-dot" onclick="wcfGo(1)"></button><button class="wcf-dot active" onclick="wcfGo(2)"></button><button class="wcf-dot" onclick="wcfGo(3)"></button></div></div></div><div class="wcf-slide"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/SMthezone.jpg" alt="SMthezone"/><div class="wcf-grad"></div><div class="wcf-label"><div class="wcf-label-text"><span class="wcf-eyebrow">SE1FMADE · Currently Building</span><span class="wcf-title">AI-Powered Mental Coaching for Competitive Athletes</span></div><div class="wcf-dots"><button class="wcf-dot" onclick="wcfGo(0)"></button><button class="wcf-dot" onclick="wcfGo(1)"></button><button class="wcf-dot" onclick="wcfGo(2)"></button><button class="wcf-dot active" onclick="wcfGo(3)"></button></div></div></div></div>
 </div>
 <div class="act3"><div class="timeline-header">
         <div>
-          <h2>How I Got Here</h2>
-          <p>12+ years across automotive, fitness &amp; AI products</p>
+          <h2>Selected Work</h2>
+          <p>8+ years across automotive HMI, health &amp; wellness, B2B &amp; D2C products</p>
         </div>
-        <div class="timeline-years">2012 — Present</div>
+        <div class="timeline-years">2017 — Present</div>
       </div>
  
       <!-- SE1FMADE -->
@@ -1488,7 +1565,7 @@
         <div class="trow-year"><span>2024</span></div>
         <div class="trow-content">
           <div class="trow-top">
-            <div class="trow-title"><a href="https://www.lesmills.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.2);">Lesmills.com Full Redesign</a></div>
+            <div class="trow-title"><a href="https://www.lesmills.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.2);">Lesmills.com Replatform &amp; Redesign</a></div>
             <div class="trow-co">Lead Product Designer</div>
           </div>
           <div class="trow-tags">
@@ -1568,7 +1645,7 @@
       <div class="timeline-group">Ford Motor Company · Automotive</div>
  
       <div class="timeline-row">
-        <div class="trow-year"><span>2022</span></div>
+        <div class="trow-year"><span>2021</span></div>
         <div class="trow-content">
           <div class="trow-top">
             <div class="trow-title" style="cursor:pointer;" onclick="openModal('ql-soundzones')">Multi-Zone Audio System · In-vehicle + Mobile <span class="trow-ql-badge" onclick="event.stopPropagation();openModal('ql-soundzones')">Quick Look</span></div>
@@ -1635,7 +1712,7 @@
       </div>
  
       <div class="timeline-row">
-        <div class="trow-year"><span>2015</span></div>
+        <div class="trow-year"><span>2017</span></div>
         <div class="trow-content">
           <div class="trow-top">
             <div class="trow-title">Chrysler Institute of Engineering — Leadership Rotational Program</div>
@@ -1796,7 +1873,8 @@
         <div class="cs-section-content">
           <h3 class="cs-section-title">Overview</h3>
           <p class="cs-body-text">Les Mills International is a global fitness company behind 16 signature group fitness programs (BODYPUMP, BODYCOMBAT, LES MILLS SPRINT & more) delivered in 20,000+ clubs worldwide. Instructors are the lifeblood of this business: certified, passionate fitness professionals who teach quarterly-updated releases to club members.</p>
-          <p class="cs-body-text">The Instructor Experience App was a ground-up redesign of the company's primary instructor-facing digital product, unifying four disconnected platforms into a single, cohesive tool and fundamentally changing how instructors learn, prepare, and teach.</p><div style="width:100%;height:280px;background:rgba(26,68,112,0.18);border:1.5px dashed rgba(26,68,112,0.35);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:20px 0;box-sizing:border-box;"><span style="font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,68,112,0.5);">App Hero — Full Product Shot / Key Screens</span></div><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/Companyintrographic.jpg" alt="LM infographic" style="width:100%;border-radius:6px;margin-top:20px;display:block"/>
+          <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/Companyintrographic.jpg" alt="LM infographic" style="width:100%;border-radius:6px;margin:20px 0;display:block"/>
+          <p class="cs-body-text">The Instructor Experience App was a ground-up redesign of the company's primary instructor-facing digital product, unifying four disconnected platforms into a single, cohesive tool and fundamentally changing how instructors learn, prepare, and teach.</p><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/IXhero.jpg" alt="Instructor Experience App Hero" style="width:100%;border-radius:6px;margin:20px 0;display:block;"/>
         </div>
       </div>
  
@@ -1826,7 +1904,8 @@
             </div>
           </div>
  
-          <div style="width:100%;height:200px;background:rgba(26,68,112,0.18);border:1.5px dashed rgba(26,68,112,0.35);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:20px 0;box-sizing:border-box;"><span style="font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,68,112,0.5);">Before State — Fragmented 4-Platform Journey Diagram</span></div><h4 class="cs-subsection-title" style="margin-top:28px;">The macro user problem</h4>
+          <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/IXjourney1.jpg" alt="Instructor Journey Map 1" style="width:100%;border-radius:6px;margin:20px 0 8px;display:block;"/>
+          <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/IXjourney2.jpg" alt="Instructor Journey Map 2" style="width:100%;border-radius:6px;margin:0 0 20px;display:block;"/><h4 class="cs-subsection-title" style="margin-top:28px;">The macro user problem</h4>
           <blockquote class="cs-quote">
             Instructors struggle with unsustainable prep-to-teaching ratios: mastering quarterly content demands excessive time unaligned with earnings.
           </blockquote>
@@ -1856,7 +1935,7 @@
             </div>
           </div>
  
-          <div style="width:100%;height:240px;background:rgba(26,68,112,0.18);border:1.5px dashed rgba(26,68,112,0.35);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:20px 0;box-sizing:border-box;"><span style="font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,68,112,0.5);">User Research Synthesis — Journey Map or Affinity Diagram</span></div><div class="cs-hmw">
+          <div class="cs-hmw">
             <div class="cs-hmw-label">How might we…</div>
             <div class="cs-hmw-text">Streamline the learning and preparation process for instructors to ultimately increase the overall value of being an instructor?</div>
           </div>
@@ -1868,9 +1947,9 @@
         <div class="cs-section-num">03</div>
         <div class="cs-section-content">
           <h3 class="cs-section-title">My Role &amp; Design Approach</h3>
-          <p class="cs-body-text">As Lead Product Designer I was both the hands-on designer and the design lead for this initiative — owning the end-to-end experience across all digital touchpoints. This meant:</p>
+          <p class="cs-body-text">As Lead Product Designer I was both the hands-on designer on the Instructor Experience App and concurrently design lead across the whole product org, guiding the team to deliver the end-to-end experience across all digital touchpoints. This meant:</p>
           <ul class="cs-list">
-            <li>Leading user research, journey mapping, and opportunity framing with the product trio (PM + tech lead)</li>
+            <li>Leading user research, journey mapping, and opportunity framing with the Instructor product trio (PM + tech lead) (the company is organized by user base)</li>
             <li>Designing and prototyping the full app experience: information architecture, interaction design, and visual design</li>
             <li>Running usability testing and assumption validation studies</li>
             <li>Partnering with engineering on feasibility, particularly around the AI/ML components of Smart Suggestions</li>
@@ -1878,7 +1957,7 @@
           </ul>
           <div class="cs-context-note">
             <div class="cs-context-icon">→</div>
-            <p>The org context matters for this case study: I was operating in a player-coach role without direct reports, in an org with limited product and design maturity. A significant part of the design work was also the upstream work of establishing the right conditions for good design — aligning on process, building in research, and creating shared understanding through artifacts like E2E journey maps.</p>
+            <p>The org context matters for this case study: in addition to hands-on design work on the Instructor App, I was leading the product design chapter across all domains, coaching designers, driving alignment across Movers, Clubs, and Instructor product teams, and doing the upstream work of ensuring cohesive, optimized user journeys end-to-end. Building shared process, embedding research, and creating artifacts like E2E journey maps were as much a part of the role as the design itself.</p>
           </div>
         </div>
       </div>
@@ -2099,7 +2178,7 @@
   <div class="modal" onclick="event.stopPropagation()">
     <button class="modal-close" onclick="closeModal('melvin')">×</button>
     <span class="dog-emoji">🐾</span>
-    <div class="modal-eyebrow">You found him.</div>
+    <div class="modal-eyebrow">You found me!</div>
     <h2>Hi, I'm Melvin.</h2>
     <p>I'm the mascot for Mel's World, a new way to weave your best friend into your digital world. Come back soon to learn more 👀</p>
   </div>
@@ -2111,7 +2190,26 @@
     <button class="ql-close" onclick="closeModal('ql-selfmade')">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
     </button>
-    <div class="ql-hero-placeholder">Hero Visual — App Screen / Product Shot</div>
+    <div class="sm-carousel" style="position:relative;width:100%;height:380px;border-radius:12px 12px 0 0;overflow:hidden;">
+    <div class="sm-slide sm-active" style="position:absolute;inset:0;transition:opacity 0.5s ease;opacity:1;">
+      <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/SF1.jpg" alt="SE1FMADE 1" style="width:100%;height:100%;object-fit:contain;object-position:center 5%;background:#0e1a2e;display:block;"/>
+    </div>
+    <div class="sm-slide" style="position:absolute;inset:0;transition:opacity 0.5s ease;opacity:0;">
+      <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/SM2.jpg" alt="SE1FMADE 2" style="width:100%;height:100%;object-fit:contain;object-position:center top;background:#0e1a2e;display:block;"/>
+    </div>
+    <div class="sm-slide" style="position:absolute;inset:0;transition:opacity 0.5s ease;opacity:0;">
+      <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/SM3.jpg" alt="SE1FMADE 3" style="width:100%;height:100%;object-fit:contain;object-position:center 15%;background:#0e1a2e;display:block;"/>
+    </div>
+    <div class="sm-slide" style="position:absolute;inset:0;transition:opacity 0.5s ease;opacity:0;">
+      <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/smsub.jpg" alt="SE1FMADE Subscription" style="width:100%;height:100%;object-fit:contain;object-position:center;background:#0e1a2e;display:block;"/>
+    </div>
+    <div style="position:absolute;bottom:10px;right:16px;display:flex;gap:6px;z-index:10;">
+      <button class="sm-dot sm-dot-active" onclick="smgo(0)" style="width:6px;height:6px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(255,255,255,0.9);transition:background 0.2s;"></button>
+      <button class="sm-dot" onclick="smgo(1)" style="width:6px;height:6px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(255,255,255,0.35);transition:background 0.2s;"></button>
+      <button class="sm-dot" onclick="smgo(2)" style="width:6px;height:6px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(255,255,255,0.35);transition:background 0.2s;"></button>
+      <button class="sm-dot" onclick="smgo(3)" style="width:6px;height:6px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(255,255,255,0.35);transition:background 0.2s;"></button>
+    </div>
+  </div>
     <div class="ql-body">
       <div class="ql-eyebrow">SE1FMADE · 2025 · Currently Building · Mobile &amp; Web</div>
       <div class="ql-title">AI-Powered Mental Coaching for Competitive Athletes</div>
@@ -2122,10 +2220,10 @@
         <div class="ql-role-item"><div class="ql-role-label">Scope</div><div class="ql-role-val">0→1 · Full Product</div></div>
         <div class="ql-role-item"><div class="ql-role-label">Timeline</div><div class="ql-role-val">2025 – Present</div></div>
       </div>
-      <div class="ql-section-label">The Problem</div>
-      <p class="ql-text">Competitive athletes face intense performance pressure but lack truly private support. Therapy is stigmatized — seen as weakness by athletes, coaches, and teams alike. Team-assigned psychologists are paid by clubs, creating a real conflict of interest that erodes athlete trust. SE1FMADE fills that gap: an AI mental performance coach that's always available, completely confidential, and built around the athlete's perspective.</p>
+      <div class="ql-section-label">The Opportunity</div>
+      <p class="ql-text">Competitive athletes face intense performance pressure but lack truly private support. Therapy is stigmatized, seen as weakness by athletes, coaches, and teams alike. Team-assigned psychologists are paid by clubs, creating a real conflict of interest that erodes athlete trust. SE1FMADE fills that gap as an AI mental performance coach that is always available, completely confidential, and built around the athlete's perspective.</p>
       <div class="ql-section-label">My Contribution</div>
-      <p class="ql-text">I designed the full product experience — website, web app, and mobile — from the ground up. Currently building out subscription and upgrade flows as the team secures investors and paid team partnerships.</p>
+      <p class="ql-text">I designed the full product experience, website, web app, and mobile, from the ground up. Currently building out subscription and upgrade flows to support monetization and the next funding milestone, while validating feature and functionality priorities with our beta group to continuously refine the build plan and roadmap — as part of an 11-person cross-functional team spanning marketing, psychology, engineering, and go-to-market.</p>
       <div class="ql-stats">
         <div class="ql-stat">
           <div class="ql-stat-num">200</div>
@@ -2150,33 +2248,56 @@
     <button class="ql-close" onclick="closeModal('ql-soundzones')">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
     </button>
-    <img class="ql-hero-img" src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/szonez.jpg" alt="Sound Zones"/>
+    <div class="sz-carousel" style="position:relative;width:100%;height:380px;border-radius:12px 12px 0 0;overflow:hidden;">
+    <div class="sz-slide sz-active" style="position:absolute;inset:0;transition:opacity 0.5s ease;opacity:1;">
+      <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/SZ1.jpg" alt="Sound Zones 1" style="width:100%;height:100%;object-fit:contain;object-position:center;background:#0e1a2e;display:block;"/>
+    </div>
+    <div class="sz-slide" style="position:absolute;inset:0;transition:opacity 0.5s ease;opacity:0;">
+      <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/SZ2.jpg" alt="Sound Zones 2" style="width:100%;height:100%;object-fit:contain;object-position:center;background:#0e1a2e;display:block;"/>
+    </div>
+    <div class="sz-slide" style="position:absolute;inset:0;transition:opacity 0.5s ease;opacity:0;">
+      <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/SZ3.jpg" alt="Sound Zones 3" style="width:100%;height:100%;object-fit:contain;object-position:center;background:#0e1a2e;display:block;"/>
+    </div>
+    <div class="sz-slide" style="position:absolute;inset:0;transition:opacity 0.5s ease;opacity:0;">
+      <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/SZ4.jpg" alt="Sound Zones 4" style="width:100%;height:100%;object-fit:contain;object-position:center;background:#0e1a2e;display:block;"/>
+    </div>
+    <div style="position:absolute;bottom:10px;right:16px;display:flex;gap:6px;z-index:10;">
+      <button class="sz-dot sz-dot-active" onclick="szgo(0)" style="width:6px;height:6px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(255,255,255,0.9);transition:background 0.2s;"></button>
+      <button class="sz-dot" onclick="szgo(1)" style="width:6px;height:6px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(255,255,255,0.35);transition:background 0.2s;"></button>
+      <button class="sz-dot" onclick="szgo(2)" style="width:6px;height:6px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(255,255,255,0.35);transition:background 0.2s;"></button>
+      <button class="sz-dot" onclick="szgo(3)" style="width:6px;height:6px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(255,255,255,0.35);transition:background 0.2s;"></button>
+    </div>
+  </div>
     <div class="ql-body">
-      <div class="ql-eyebrow">Ford Motor Company · 2021 · In-Vehicle Screen</div>
+      <div class="ql-eyebrow">Ford Motor Company · Mar–Aug 2021 · In-Vehicle Screen</div>
       <div class="ql-title">Sound Zones — Personalized Audio for Every Seat</div>
       <div class="ql-divider"></div>
       <div class="ql-role-row">
         <div class="ql-role-item"><div class="ql-role-label">Role</div><div class="ql-role-val">Product Designer</div></div>
         <div class="ql-role-item"><div class="ql-role-label">Platform</div><div class="ql-role-val">In-Vehicle HMI · Android OS</div></div>
-        <div class="ql-role-item"><div class="ql-role-label">Timeline</div><div class="ql-role-val">Sept – Nov 2021</div></div>
+        <div class="ql-role-item"><div class="ql-role-label">Timeline</div><div class="ql-role-val">Mar – Aug 2021</div></div>
       </div>
       <div class="ql-section-label">The Problem</div>
-      <p class="ql-text">Sound Zones — a feature allowing individualized, headset-free audio throughout the cabin — was handed off from a decoupled team with critical integration gaps. The feature was disjointed from the core audio ecosystem, zone selection was friction-heavy and error-prone, and the visual controls were cluttered and distracting. I redesigned it from the ground up to feel like a natural extension of the existing audio system.</p>
+      <p class="ql-text">Sound Zones is a feature allowing individualized, headset-free audio throughout the cabin. Initial specs and wireframes were handed off from a decoupled team with critical integration gaps. The biggest was a proposed design that would create two separate, conflicting ways for users to select audio sources depending on whether Sound Zones was active. As the owner of the core audio domain, resolving this was mine to solve.</p>
       <div class="ql-section-label">The Solution</div>
-      <p class="ql-text">Integrated Sound Zones directly into the source drawer as a native extension of source selection — eliminating the need to disable base audio. Replaced manual zone selection with source-driven configuration and latching behavior for a zero-setup experience. Simplified visual controls to maintain spatial context without visual noise.</p>
-      <div class="ql-stats">
-        <div class="ql-stat">
-          <div class="ql-stat-num">83%</div>
-          <div class="ql-stat-label">of clinic participants said it was a significant value add</div>
+      <p class="ql-text">Integrated Sound Zones directly into the source drawer as a native extension of source selection, eliminating the duplicate entry point entirely. Replaced manual zone selection with source-driven configuration and latching behavior for a zero-setup experience. Simplified visual controls to maintain spatial context without adding noise. Partnered with UXR to validate the integration approach and overall feature acceptance through in-person clinic testing.</p>
+      <div class="ql-stats" style="gap:12px;">
+        <div class="ql-stat" style="flex:1;min-width:0;">
+          <div class="ql-stat-num">100%</div>
+          <div class="ql-stat-label">were able to successfully switch the audio source for the passenger upon first try</div>
         </div>
-        <div class="ql-stat">
+        <div class="ql-stat" style="flex:1;min-width:0;">
           <div class="ql-stat-num">76%</div>
-          <div class="ql-stat-label">said they would use Sound Zones regularly</div>
+          <div class="ql-stat-label">self-reported willingness to pay a $1,500 premium during in-person clinic testing</div>
         </div>
-        <div class="ql-stat">
-          <div class="ql-stat-num">76%</div>
-          <div class="ql-stat-label">would pay a $1,500 premium for this feature</div>
+ 
+      <div style="margin-top:20px;padding:16px 20px;border-radius:8px;background:rgba(255,255,255,0.04);border-left:3px solid rgba(155,179,212,0.4);display:flex;gap:14px;align-items:flex-start;">
+        <span style="font-size:16px;line-height:1;margin-top:1px;">↳</span>
+        <div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(155,179,212,0.6);margin-bottom:6px;">A note on outcomes</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(255,255,255,0.55);line-height:1.65;margin:0;">Despite strong clinic results, Sound Zones was ultimately deprioritised due to shifting business priorities before reaching production. As a result, there are no longitudinal usage metrics to report. I include this project because the design process and problem-solving are worth sharing — and because not every good project ships.</p>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -2188,30 +2309,56 @@
     <button class="ql-close" onclick="closeModal('ql-rearseat')">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
     </button>
-    <div class="ql-hero-placeholder">Hero Visual — Hero Screen / Monitor + Focus View</div>
+    <div class="rse-carousel" style="position:relative;width:100%;height:380px;border-radius:12px 12px 0 0;overflow:hidden;">
+    <div class="rse-slide rse-active" style="position:absolute;inset:0;transition:opacity 0.5s ease;opacity:1;">
+      <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/cabin.png" alt="Industry First" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"/>
+    </div>
+    <div class="rse-slide" style="position:absolute;inset:0;transition:opacity 0.5s ease;opacity:0;">
+      <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/cobrandedRSE.jpg" alt="Co-branded RSE" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"/>
+    </div>
+    <div class="rse-slide" style="position:absolute;inset:0;transition:opacity 0.5s ease;opacity:0;">
+      <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/RSEscreenapps.jpg" alt="RSE Screen Apps" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"/>
+    </div>
+    <div class="rse-slide" style="position:absolute;inset:0;transition:opacity 0.5s ease;opacity:0;">
+      <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/PassScreen.jpg" alt="Passenger Screen" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"/>
+    </div>
+    <div class="rse-slide" style="position:absolute;inset:0;transition:opacity 0.5s ease;opacity:0;">
+      <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/RSEPC.jpg" alt="RSE Parental Controls" style="width:100%;height:100%;object-fit:contain;object-position:center center;background:#0e1a2e;display:block;"/>
+    </div>
+    <div style="position:absolute;bottom:10px;right:16px;display:flex;gap:6px;z-index:10;">
+      <button class="rse-dot rse-dot-active" onclick="rsego(0)" style="width:6px;height:6px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(255,255,255,0.9);transition:background 0.2s;"></button>
+      <button class="rse-dot" onclick="rsego(1)" style="width:6px;height:6px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(255,255,255,0.35);transition:background 0.2s;"></button>
+      <button class="rse-dot" onclick="rsego(2)" style="width:6px;height:6px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(255,255,255,0.35);transition:background 0.2s;"></button>
+      <button class="rse-dot" onclick="rsego(3)" style="width:6px;height:6px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(255,255,255,0.35);transition:background 0.2s;"></button>
+      <button class="rse-dot" onclick="rsego(4)" style="width:6px;height:6px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(255,255,255,0.35);transition:background 0.2s;"></button>
+    </div>
+  </div>
     <div class="ql-body">
-      <div class="ql-eyebrow">Fiat Chrysler Automobiles · 2019 · In-Vehicle Screen · Industry First</div>
+      <div class="ql-eyebrow">Fiat Chrysler Automobiles · 2020 · In-Vehicle Screen · Industry First</div>
       <div class="ql-title">Connected Rear Seat Entertainment · Amazon Fire TV <span class="trow-ql-badge" onclick="event.stopPropagation();openModal('ql-rearseat')">Quick Look</span></div>
       <div class="ql-divider"></div>
       <div class="ql-role-row">
-        <div class="ql-role-item"><div class="ql-role-label">Role</div><div class="ql-role-val">UX + UI Design · UXR · Logic &amp; Flow Spec</div></div>
-        <div class="ql-role-item"><div class="ql-role-label">Platform</div><div class="ql-role-val">In-Vehicle Screen · Amazon Fire TV</div></div>
-        <div class="ql-role-item"><div class="ql-role-label">Timeline</div><div class="ql-role-val">July – Dec 2019</div></div>
+        <div class="ql-role-item"><div class="ql-role-label">Role</div><div class="ql-role-val">HMI Designer · UXR</div></div>
+        <div class="ql-role-item"><div class="ql-role-label">Platform</div><div class="ql-role-val">In-Vehicle Screen · Amazon Fire OS</div></div>
+        <div class="ql-role-item"><div class="ql-role-label">Timeline</div><div class="ql-role-val">January – October 2020</div></div>
       </div>
-      <div class="ql-section-label">The Problem</div>
-      <p class="ql-text">The goal was to redesign the Rear Seat Entertainment system to integrate Amazon Fire TV and Alexa voice controls — transforming a remote-centric living room experience into an intuitive touch-driven cabin environment. The key design challenge: a fundamental disagreement between 1-screen and 2-screen layouts that would cascade into every interaction in the product.</p>
-      <div class="ql-section-label">The Solution</div>
-      <p class="ql-text">Rather than choosing sides, I ran a moderated A/B test with 12 participants that surfaced the best of both worlds: a Monitor View (both screens at a glance) and a Focus View (deep control of one screen), with automatic view persistence based on the user's last active state. An internal team disagreement became a product strength.</p>
-      <div class="ql-stats">
-        <div class="ql-stat">
-          <div class="ql-stat-num">86.7</div>
-          <div class="ql-stat-label">Average desirability score for dual-screen solution (vs 72.9 single)</div>
+      <div class="ql-section-label">Context</div>
+      <p class="ql-text">Partnered with Amazon's design team to integrate Fire TV and Alexa voice controls into the Jeep cabin — transforming a remote-centric living room experience into an intuitive, touch-driven in-vehicle environment. The core challenge was cross-company alignment: designing a co-branded experience that felt harmonious within Jeep's cabin ecosystem while staying true to Amazon's existing design principles.</p>
+      <div class="ql-section-label">Outcome</div>
+      <p class="ql-text">The collaboration successfully launched and established the Amazon Fire Automotive template — the new infotainment standard subsequently adopted by Ford, Lincoln, and BMW.</p>
+      <div class="ql-section-label">Product Launch</div>
+      <a href="https://www.youtube.com/watch?v=ViJosZ0k5h4" target="_blank" rel="noopener"
+        style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:18px 22px;text-decoration:none;transition:background 0.2s;margin-bottom:8px;"
+        onmouseover="this.style.background='rgba(255,255,255,0.09)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="36" height="36" rx="8" fill="#FF0000"/>
+          <path d="M14 12.5L25 18L14 23.5V12.5Z" fill="white"/>
+        </svg>
+        <div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;color:#f0ead8;letter-spacing:0.05em;">Watch Product Launch Video</div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:10px;color:rgba(255,255,255,0.4);margin-top:3px;letter-spacing:0.08em;">YouTube · Opens in new tab ↗</div>
         </div>
-        <div class="ql-stat">
-          <div class="ql-stat-num">Industry</div>
-          <div class="ql-stat-label">First-ever Amazon Fire TV integration in a vehicle</div>
-        </div>
-      </div>
+      </a>
     </div>
   </div>
 </div>
@@ -2251,6 +2398,56 @@
     window.addEventListener('resize', fitLastName);
   });
  
+ 
+ 
+ 
+  /* ── SM Mini Carousel ─────────────────────────────── */
+  let smIndex = 0, smTimer = null;
+  function smgo(n) {
+    document.querySelectorAll('.sm-slide').forEach((s, i) => s.style.opacity = i === n ? '1' : '0');
+    document.querySelectorAll('.sm-dot').forEach((d, i) => {
+      d.style.background = i === n ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.35)';
+    });
+    smIndex = n;
+    clearInterval(smTimer);
+    smTimer = setInterval(smnext, 3500);
+  }
+  function smnext() { smgo((smIndex + 1) % 4); }
+  function smStart() { smTimer = setInterval(smnext, 3500); }
+  function smStop() { clearInterval(smTimer); smIndex = 0; smgo(0); }
+ 
+  /* ── SZ Mini Carousel ─────────────────────────────── */
+  let szIndex = 0, szTimer = null;
+  function szgo(n) {
+    document.querySelectorAll('.sz-slide').forEach((s, i) => s.style.opacity = i === n ? '1' : '0');
+    document.querySelectorAll('.sz-dot').forEach((d, i) => {
+      d.style.background = i === n ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.35)';
+    });
+    szIndex = n;
+    clearInterval(szTimer);
+    szTimer = setInterval(sznext, 3500);
+  }
+  function sznext() { szgo((szIndex + 1) % 4); }
+  function szStart() { szTimer = setInterval(sznext, 3500); }
+  function szStop() { clearInterval(szTimer); szIndex = 0; szgo(0); }
+ 
+  /* ── RSE Mini Carousel ─────────────────────────────── */
+  let rseIndex = 0, rseTimer = null;
+  function rsego(n) {
+    document.querySelectorAll('.rse-slide').forEach((s, i) => s.style.opacity = i === n ? '1' : '0');
+    document.querySelectorAll('.rse-dot').forEach((d, i) => {
+      d.style.background = i === n ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.35)';
+    });
+    rseIndex = n;
+    clearInterval(rseTimer);
+    rseTimer = setInterval(rsenext, 3500);
+  }
+  function rsenext() { rsego((rseIndex + 1) % 5); }
+  // Start only when modal opens
+  document.getElementById('modal-ql-rearseat').addEventListener('click', function(){});
+  function rseStart() { rseTimer = setInterval(rsenext, 3500); }
+  function rseStop() { clearInterval(rseTimer); rseIndex = 0; rsego(0); }
+ 
   /* ── Carousel ─────────────────────────────── */
   let carouselIndex = 0;
   const carouselTotal = 3;
@@ -2284,10 +2481,16 @@
   function openModal(id) {
     const el = document.getElementById('modal-' + id);
     if (el) { el.classList.add('active'); document.body.style.overflow = 'hidden'; }
+    if (id === 'ql-rearseat') rseStart();
+    if (id === 'ql-soundzones') szStart();
+    if (id === 'ql-selfmade') smStart();
   }
   function closeModal(id) {
     const el = document.getElementById('modal-' + id);
     if (el) { el.classList.remove('active'); document.body.style.overflow = ''; }
+    if (id === 'ql-rearseat') rseStop();
+    if (id === 'ql-soundzones') szStop();
+    if (id === 'ql-selfmade') smStop();
   }
  
   // Also close case study overlay when clicking its backdrop
