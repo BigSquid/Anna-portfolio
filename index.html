@@ -2,6 +2,18 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+  <meta property="og:title" content="Anna Macherkevich — Product Designer"/>
+  <meta property="og:description" content="Product Designer & Doodler. 8+ years across automotive HMI, health & wellness, B2B & D2C products."/>
+  <meta property="og:image" content="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/Thumbnail.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://www.annamacherkevich.com"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/Thumbnail.jpg"/>
+  <meta name="twitter:title" content="Anna Macherkevich — Product Designer"/>
+  <meta name="twitter:description" content="Product Designer & Doodler. 8+ years across automotive HMI, health & wellness, B2B & D2C products."/>
+ 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Anna Macherkevich — Product Designer</title>
 <link href="https://fonts.googleapis.com/css2?family=Kalnia:wght@300;400;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
@@ -673,7 +685,7 @@
     .hero { padding: 24px 0 8px; }
  
     /* Name — scale way down so full last name is visible */
-    .hero-name { font-size: 11vw; letter-spacing: -0.01em; }
+    .hero-name { font-size: 10.7vw; letter-spacing: -0.01em; }
     .hero-first { font-size: clamp(28px, 9vw, 52px) !important; }
  
     /* Nav — keep horizontal, smaller */
@@ -1279,52 +1291,103 @@
     color: #fff;
   }
  
+  /* ── Quick Look: Full-Screen Overlay ─────────────────── */
   .ql-overlay {
     position: fixed; inset: 0;
-    background: rgba(10,8,20,0.65);
-    backdrop-filter: blur(10px);
+    background: rgba(8,14,26,0.82);
+    backdrop-filter: blur(18px) saturate(1.4);
     z-index: 100;
-    display: flex; align-items: center; justify-content: center;
+    display: flex; align-items: stretch;
     opacity: 0; pointer-events: none;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.35s ease;
   }
   .ql-overlay.active { opacity: 1; pointer-events: all; }
+ 
+  /* Full-screen split panel — no border-radius, no card */
   .ql-panel {
-    background: #1a2e4a;
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 12px;
-    width: min(760px, 92%);
-    max-height: 88vh;
-    overflow-y: auto;
+    display: flex; flex-direction: row;
+    width: 100%; height: 100%;
     position: relative;
+    overflow: hidden;
   }
-  .ql-hero-img {
-    width: 100%; height: 380px;
-    object-fit: contain; object-position: center center;
-    background: #0e1a2e;
-    display: block; border-radius: 12px 12px 0 0;
-  }
-  .ql-hero-placeholder {
-    width: 100%; height: 260px;
-    background: rgba(26,68,112,0.5);
-    border-radius: 12px 12px 0 0;
+ 
+  /* LEFT: image/carousel column */
+  .ql-img-col {
+    flex: 0 0 56%;
+    position: relative;
+    background: #080e1a;
+    overflow: hidden;
     display: flex; align-items: center; justify-content: center;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
-    color: rgba(155,179,212,0.45);
   }
-  .ql-body { padding: 32px 40px 40px; }
+  /* Landscape images (RSE, Sound Zones) — fill height */
+  .ql-img-col.landscape .ql-slide img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center center;
+    display: block;
+  }
+  /* Portrait images (SE1FMADE mobile screens) — show full, letterboxed */
+  .ql-img-col.portrait .ql-slide img {
+    width: auto; height: 88%;
+    max-width: 92%;
+    object-fit: contain;
+    display: block;
+  }
+  .ql-slide {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: opacity 0.5s ease; opacity: 0;
+  }
+  .ql-slide.ql-active { opacity: 1; }
+ 
+  /* Dot nav — bottom center of image col */
+  .ql-dots {
+    position: absolute; bottom: 24px; left: 50%;
+    transform: translateX(-50%);
+    display: flex; gap: 7px; z-index: 10;
+  }
+  .ql-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    border: none; padding: 0; cursor: pointer;
+    background: rgba(255,255,255,0.3);
+    transition: background 0.2s, transform 0.2s;
+  }
+  .ql-dot.ql-dot-active { background: #f0ead8; transform: scale(1.2); }
+ 
+ 
+ 
+  /* RIGHT: content column */
+  .ql-content-col {
+    flex: 1;
+    overflow-y: auto;
+    padding: 56px 52px 56px 52px;
+    display: flex; flex-direction: column; justify-content: center;
+    border-left: 1px solid rgba(255,255,255,0.07);
+    background: rgba(16,26,44,0.6);
+  }
+ 
+  /* Close button — fixed top-right */
+  .ql-close {
+    position: fixed; top: 22px; right: 24px;
+    width: 38px; height: 38px; border-radius: 50%;
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18);
+    cursor: pointer; color: #f0ead8;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 200; transition: background 0.15s;
+  }
+  .ql-close:hover { background: rgba(255,255,255,0.2); }
+ 
   .ql-eyebrow {
     font-family: 'DM Sans', sans-serif;
     font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase;
-    color: #9bb3d4; margin-bottom: 10px;
+    color: #9bb3d4; margin-bottom: 12px;
   }
   .ql-title {
     font-family: 'Kalnia', serif;
-    font-size: 22px; color: #f0ead8; font-weight: 600;
-    line-height: 1.2; margin-bottom: 20px;
+    font-size: 26px; color: #f0ead8; font-weight: 600;
+    line-height: 1.15; margin-bottom: 28px;
+    text-transform: uppercase;
   }
-  .ql-divider { height: 1px; background: rgba(255,255,255,0.1); margin-bottom: 20px; }
+  .ql-divider { height: 1px; background: rgba(255,255,255,0.1); margin-bottom: 24px; }
   .ql-section-label {
     font-family: 'DM Sans', sans-serif;
     font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase;
@@ -1332,46 +1395,65 @@
   }
   .ql-text {
     font-family: 'DM Sans', sans-serif;
-    font-size: 13px; color: rgba(255,255,255,0.75);
-    line-height: 1.65; margin-bottom: 24px;
+    font-size: 13.5px; color: rgba(255,255,255,0.75);
+    line-height: 1.7; margin-bottom: 28px;
   }
-  .ql-stats { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+  .ql-stats { display: flex; gap: 12px; margin-bottom: 0; flex-wrap: wrap; }
   .ql-stat {
-    flex: 1; min-width: 120px;
+    flex: 1; min-width: 110px;
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 8px; padding: 16px 20px;
+    border-radius: 8px; padding: 18px 20px;
   }
   .ql-stat-num {
     font-family: 'Kalnia', serif;
-    font-size: 24px; color: #f0ead8; font-weight: 600;
-    line-height: 1; margin-bottom: 6px;
+    font-size: 26px; color: #f0ead8; font-weight: 600;
+    line-height: 1; margin-bottom: 7px;
   }
   .ql-stat-label {
     font-family: 'DM Sans', sans-serif;
-    font-size: 11px; color: rgba(255,255,255,0.45); line-height: 1.4;
+    font-size: 11px; color: rgba(255,255,255,0.45); line-height: 1.45;
   }
-  .ql-close {
-    position: absolute; top: 16px; right: 16px;
-    width: 32px; height: 32px; border-radius: 50%;
-    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15);
-    cursor: pointer; color: #f0ead8;
-    display: flex; align-items: center; justify-content: center;
-    z-index: 10; transition: background 0.15s;
-  }
-  .ql-close:hover { background: rgba(255,255,255,0.18); }
-  .ql-role-row { display: flex; gap: 32px; flex-wrap: wrap; margin-bottom: 24px; }
+  .ql-role-row { display: flex; gap: 28px; flex-wrap: wrap; margin-bottom: 28px; }
   .ql-role-label {
     font-family: 'DM Sans', sans-serif;
     font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase;
-    color: rgba(155,179,212,0.5); margin-bottom: 4px;
+    color: rgba(155,179,212,0.5); margin-bottom: 5px;
   }
   .ql-role-val {
     font-family: 'DM Sans', sans-serif;
-    font-size: 12px; color: rgba(255,255,255,0.8); font-weight: 500;
+    font-size: 13px; color: rgba(255,255,255,0.85); font-weight: 500;
   }
  
-  .ql-title { text-transform: uppercase; }
+  /* Stacked layout variant (image top, content bottom) */
+  .ql-panel.ql-stacked {
+    flex-direction: column;
+  }
+  .ql-panel.ql-stacked .ql-img-col {
+    flex: 0 0 52%;
+    width: 100%;
+  }
+  .ql-panel.ql-stacked .ql-content-col {
+    flex: 1;
+    border-left: none;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding: 32px 60px 36px;
+    justify-content: flex-start;
+    overflow-y: auto;
+  }
+  .ql-panel.ql-stacked .ql-role-row { margin-bottom: 20px; }
+  .ql-panel.ql-stacked .ql-text { margin-bottom: 18px; font-size: 13px; }
+  .ql-panel.ql-stacked .ql-stats { flex-wrap: nowrap; }
+ 
+  /* Mobile: stack vertically */
+  @media (max-width: 700px) {
+    .ql-panel { flex-direction: column; }
+    .ql-img-col { flex: 0 0 48vh; }
+    .ql-content-col { padding: 32px 24px 48px; justify-content: flex-start; }
+    .ql-panel.ql-stacked .ql-content-col { padding: 24px 24px 40px; }
+    .ql-title { font-size: 20px; }
+    .ql-close { position: absolute; }
+  }
  
   .modal h2 { text-transform: uppercase; }
   .cs-header-title { text-transform: uppercase; }
@@ -1450,7 +1532,28 @@
   .cs-lesson { border-left-color: rgba(26,68,112,0.15) !important; }
   .cs-lesson-title { color: #1a2e4a !important; }
   .cs-lesson-body { color: rgba(14,26,46,0.65) !important; }
+ 
+@media(max-width:640px){
+  .trow-title { font-size:12px; line-height:1.5; }
+  .trow-top { flex-wrap:wrap; gap:4px; }
+  .trow-ql-badge { margin-left:0; margin-top:5px; display:inline-block; }
+  .trow-cs-badge { margin-left:0; margin-top:5px; display:inline-block; }
+  .timeline-row { padding:14px 16px; }
+}
+ 
+  .cs-pivot-final .cs-pivot-title,
+  .cs-pivot-final .cs-pivot-desc,
+  .cs-pivot-final .cs-chosen-badge { color: #f0ead8 !important; }
+  .cs-pivot-final .cs-pivot-num { background: rgba(240,234,216,0.15) !important; color: #f0ead8 !important; }
 </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FG1TVTZ3ML"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FG1TVTZ3ML');
+</script>
 </head>
 <body>
  
@@ -1466,7 +1569,7 @@
       <div class="hero-nav">
         <a href="#" class="nav-personal" onclick="openModal('about'); return false;">About</a>
         <a href="#" onclick="openModal('contact'); return false;">Contact</a>
-        <a href="https://linkedin.com/in/annamacherkevich" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/anna-mach/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
     <span id="last-name" class="hero-name last">Macherkevich</span>
@@ -1479,9 +1582,9 @@
         <div class="hotspot hotspot-dog"    onclick="openModal('melvin')"  title="..."></div>
 </div>
   <div class="cell-bio">
-    <div class="bio-title">Product Designer / Doodler</div>
+    <div class="bio-title">Product Designer &amp; Doodler</div>
     <div class="bio-loc">San Francisco</div>
-    <div class="bio-blurb">I love scrappy yet strategic designing, quick pivots, and heaps of user feedback.<br><br>8+ years spanning automotive HMI, health &amp; wellness, B2B &amp; D2C products.<br><br>Comfortable leading teams and working independently.</div>
+    <div class="bio-blurb">I love scrappy yet strategic designing, quick pivots, and heaps of user feedback.<br><br>8+ years spanning automotive HMI, health &amp; wellness, B2B &amp; D2C products.<br><br>Experienced leading design teams and ways of working, equally comfortable as a hands-on IC.</div>
   </div>
 </div>
 <div class="tile tile-case" onclick="openModal('casestudy')">
@@ -1751,10 +1854,12 @@
         <div class="cs-section-content">
           <p class="about-leadin">Hi, I'm Anna.</p>
           <p class="cs-body-text">I grew up surrounded by creativity — a fine arts professor mom, a graphic designer dad, and endless art projects that made experimentation feel natural. An engineering degree later, I realized what I really wanted was to blend logic with imagination, and product design became that perfect intersection.</p>
-          <p class="cs-body-text">I started out in Fiat Chrysler's rotational program, exploring roles from engineering to advertising before finding my niche in digital interface design. Since then, I've worked across industries to craft thoughtful, human-centered experiences — most recently at Les Mills, where I led design while still contributing hands-on to complex product work. There, I built their first design system, guided design critiques across B2B and D2C teams, and reimagined the global instructor experience that connects thousands of fitness professionals worldwide.</p>
+          <p class="cs-body-text">I started out in Fiat Chrysler's rotational program, exploring roles from engineering to advertising before finding my niche in digital interface design. Since then, I've worked across industries to craft thoughtful, human-centered experiences — most recently at Les Mills, where I led design while still contributing hands-on to complex product work. There, I built their first design system, guided design critiques across B2B and D2C teams, and reimagined the global instructor experience that equips thousands of fitness professionals to learn, prepare, and teach more effectively.</p>
           <p class="cs-body-text">Currently, I'm leading design part-time at SE1FMADE, a startup at the intersection of AI and sports psychology, and am open to new full-time roles in the Bay Area where I can continue designing meaningful, connection-driven products.</p>
+          <p class="cs-body-text">At Les Mills I also led the product design chapter, establishing design critique culture, shared process, and cross-team alignment practices across B2B and D2C product teams.</p>
+          <p class="cs-body-text">I'm drawn to early-stage and complex problem spaces where the design work and the upstream framing work are equally important.</p>
           <p class="cs-body-text">Outside of work, you'll find me running along the Bay Trail, hiking with my dog, or waiting in line for an almond croissant at Arsicault.</p>
-          <a href="https://linkedin.com/in/annamacherkevich" target="_blank" rel="noopener" class="about-linkedin-btn">View LinkedIn ↗</a>
+          <a href="https://www.linkedin.com/in/anna-mach/" target="_blank" rel="noopener" class="about-linkedin-btn">View LinkedIn ↗</a>
         </div>
       </div>
  
@@ -1905,8 +2010,8 @@
           </div>
  
           <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/IXjourney1.jpg" alt="Instructor Journey Map 1" style="width:100%;border-radius:6px;margin:20px 0 8px;display:block;"/>
-          <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/IXjourney2.jpg" alt="Instructor Journey Map 2" style="width:100%;border-radius:6px;margin:0 0 20px;display:block;"/><h4 class="cs-subsection-title" style="margin-top:28px;">The macro user problem</h4>
-          <blockquote class="cs-quote">
+          <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/IXjourney2.jpg" alt="Instructor Journey Map 2" style="width:100%;border-radius:6px;margin:0 0 8px;display:block;"/><h4 class="cs-subsection-title" style="margin-top:28px;">The macro user problem</h4>
+          <blockquote class="cs-quote" style="font-family:'Kalnia',serif;font-size:20px;font-weight:700;color:#1a2e4a;line-height:1.4;font-style:normal;text-transform:uppercase;border-left-color:#9bb3d4;">
             Instructors struggle with unsustainable prep-to-teaching ratios: mastering quarterly content demands excessive time unaligned with earnings.
           </blockquote>
           <p class="cs-body-text">Every quarter, Les Mills releases new content for each of its 16 programs. Instructors — most of whom teach part-time alongside day jobs — were expected to learn entirely new choreography, build class playlists, and master updated coaching cues. The time demands were eroding both instructor satisfaction and certification rates.</p>
@@ -1951,7 +2056,7 @@
           <ul class="cs-list">
             <li>Leading user research, journey mapping, and opportunity framing with the Instructor product trio (PM + tech lead) (the company is organized by user base)</li>
             <li>Designing and prototyping the full app experience: information architecture, interaction design, and visual design</li>
-            <li>Running usability testing and assumption validation studies</li>
+            <li>Running usability testing and assumption validation in quick iterative cycles, staying in close contact with instructors across different learning styles and life contexts to ensure the final experience served the full spectrum of how people actually learn and teach.</li>
             <li>Partnering with engineering on feasibility, particularly around the AI/ML components of Smart Suggestions</li>
             <li>Navigating significant org complexity: designers reported to product directors rather than me, requiring stakeholder alignment work beyond typical IC scope</li>
           </ul>
@@ -1969,6 +2074,7 @@
           <h3 class="cs-section-title">End-to-End Solution</h3>
           <p class="cs-body-text">Rather than redesigning the existing Releases App in isolation, we used the E2E instructor journey as our north star — mapping all touchpoints by frequency (weekly, quarterly, bi-annually) and identifying where friction was highest. This surfaced that the highest-frequency activities (learn, prep, teach) lived in the worst product (the aging Releases App).</p>
           <p class="cs-body-text">The new Instructor App was built around four core areas:</p>
+          <p class="cs-body-text" style="font-size:12px;font-style:italic;color:rgba(14,26,46,0.5);margin-top:-8px;">Note: Training is a planned roadmap feature and has not yet launched — the case studies below focus on the Masterclass and Playlists areas where the most critical design challenges were surfaced and validated.</p>
           <div class="cs-pillars">
             <div class="cs-pillar">
               <div class="cs-pillar-tag">Learn</div>
@@ -1991,90 +2097,18 @@
               <p class="cs-pillar-desc">Destination for skill-building and professional development. Refine teaching, master new techniques.</p>
             </div>
           </div>
-          <div style="width:100%;height:260px;background:rgba(26,68,112,0.18);border:1.5px dashed rgba(26,68,112,0.35);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:20px 0;box-sizing:border-box;"><span style="font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,68,112,0.5);">App Screen Flow — Learn → Prep → Teach Journey</span></div><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/SmartSuggestions.jpg" alt="Smart Suggestions" style="width:100%;border-radius:6px;margin-top:20px;display:block"/>
-        </div>
-      </div>
- 
-      <!-- 05 Case Study 1 -->
-      <div class="cs-section">
-        <div class="cs-section-num">05</div>
-        <div class="cs-section-content">
-          <h3 class="cs-section-title">Case Study 1: Aligning IA to Instructor Expectations</h3>
- 
-          <h4 class="cs-subsection-title">The usability problem</h4>
-          <p class="cs-body-text">The Masterclass feature gave instructors access to three content types for each release: choreo notes, the Masterclass video, and playlist/audio-only mode. A seemingly simple three-tab structure hid a critical IA problem: instructors consistently landed in the wrong content type, or couldn't find what they needed intuitively.</p>
- 
-          <h4 class="cs-subsection-title" style="margin-top:24px;">Three approaches considered</h4>
-          <div class="cs-options">
-            <div class="cs-option">
-              <div class="cs-option-num">A</div>
-              <div class="cs-option-body">
-                <div class="cs-option-title">Show/hide video only</div>
-                <div class="cs-option-sub">Simplest change, lowest risk</div>
-              </div>
-            </div>
-            <div class="cs-option">
-              <div class="cs-option-num">B</div>
-              <div class="cs-option-body">
-                <div class="cs-option-title">Direct to playlist</div>
-                <div class="cs-option-sub">Route users immediately to audio-first prep</div>
-              </div>
-            </div>
-            <div class="cs-option cs-option-chosen">
-              <div class="cs-option-num">C</div>
-              <div class="cs-option-body">
-                <div class="cs-option-title">Reset tab expectations <span class="cs-chosen-badge">Chosen</span></div>
-                <div class="cs-option-sub">Redesign the tab structure and its mental model entirely</div>
-              </div>
-            </div>
-          </div>
- 
-          <div style="width:100%;height:220px;background:rgba(26,68,112,0.18);border:1.5px dashed rgba(26,68,112,0.35);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:20px 0;box-sizing:border-box;"><span style="font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,68,112,0.5);">IA Options — Annotated Wireframe Comparison (A / B / C)</span></div><h4 class="cs-subsection-title" style="margin-top:24px;">Decision &amp; rationale</h4>
-          <p class="cs-body-text">We chose option C — a combined solution: tab structure update plus show/hide video toggle. The reasoning: options A and B treated symptoms. The real issue was that the existing tab structure didn't match how instructors thought about learning modes. Resetting expectations through a clearer IA cost minimal additional dev effort but had substantially higher long-term usability payoff.</p>
-          <p class="cs-body-text">This was validated through usability testing, where we confirmed that the revised tab labeling and entry state significantly reduced navigation errors and time-to-task on first use.</p>
-        </div>
-      </div>
- 
-      <!-- 06 Case Study 2 -->
-      <div class="cs-section">
-        <div class="cs-section-num">06</div>
-        <div class="cs-section-content">
-          <h3 class="cs-section-title">Case Study 2: Discovering Smart Suggestions</h3>
- 
-          <h4 class="cs-subsection-title">The user problem</h4>
-          <blockquote class="cs-quote">
-            Instructors struggle to efficiently create balanced, varied class playlists from past releases due to a lack of search and organizational tools. This manual, time-consuming process often leads to repetitive classes, reducing member engagement and satisfaction.
-          </blockquote>
-          <p class="cs-body-text">Creating a mixed playlist required instructors to manually flip through old PDFs, remember which tracks they'd used recently, and manually sequence a class. 100% of research participants reported losing time to this process — average monthly time spent was 7.5 hours.</p>
- 
-          <h4 class="cs-subsection-title" style="margin-top:24px;">How the feature evolved through assumption validation</h4>
-          <div class="cs-pivots">
-            <div class="cs-pivot">
-              <div class="cs-pivot-num">1</div>
-              <div class="cs-pivot-body">
-                <div class="cs-pivot-title">Manual usage tracking</div>
-                <p class="cs-pivot-desc">Initial assumption: instructors want to track which tracks they've used. Validation showed this was too much manual overhead — instructors wanted the system to do this work for them.</p>
-              </div>
-            </div>
-            <div class="cs-pivot">
-              <div class="cs-pivot-num">2</div>
-              <div class="cs-pivot-body">
-                <div class="cs-pivot-title">Triangulate schedule + tracks</div>
-                <p class="cs-pivot-desc">We explored using teaching schedules cross-referenced with track history to surface gaps. Technically complex and required data we didn't yet have at scale.</p>
-              </div>
-            </div>
-            <div class="cs-pivot cs-pivot-final">
-              <div class="cs-pivot-num">3</div>
-              <div class="cs-pivot-body">
-                <div class="cs-pivot-title">Ask for higher content frequency <span class="cs-chosen-badge">Final direction</span></div>
-                <p class="cs-pivot-desc">Surface: instructors wanted content refreshed more frequently than quarterly. This was a product/business constraint — but naming it opened up the smart suggestion framing: surface variety within what exists.</p>
-              </div>
-            </div>
-          </div>
- 
-          <p class="cs-body-text" style="margin-top:20px;">The final Smart Suggestions feature used AI-driven recommendations to propose balanced, varied playlists based on instructor history and class-building best practices — surfacing the right tracks at the right time without requiring manual input.</p>
- 
-          <div style="width:100%;height:240px;background:rgba(26,68,112,0.18);border:1.5px dashed rgba(26,68,112,0.35);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:20px 0;box-sizing:border-box;"><span style="font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,68,112,0.5);">Smart Suggestions UI — AI Playlist Recommendation Screen</span></div><h4 class="cs-subsection-title" style="margin-top:28px;">Digital choreo notes: eliminating the PDF</h4>
+          <div class="lpt-carousel" id="lpt-carousel" style="position:relative;width:100%;border-radius:6px;margin:20px 0;overflow:hidden;">
+    <div class="lpt-slide lpt-active" style="position:relative;opacity:1;transition:opacity 0.6s ease;">
+      <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/finalLPT1.jpg" alt="Learn Prep Teach 1" style="width:100%;display:block;border-radius:6px;"/>
+    </div>
+    <div class="lpt-slide" style="position:absolute;inset:0;opacity:0;transition:opacity 0.6s ease;">
+      <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/finalLPT2.jpg" alt="Learn Prep Teach 2" style="width:100%;height:100%;object-fit:contain;object-position:center;display:block;border-radius:6px;"/>
+    </div>
+    <div class="lpt-slide" style="position:absolute;inset:0;opacity:0;transition:opacity 0.6s ease;">
+      <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/finalLPT3.jpg" alt="Learn Prep Teach 3" style="width:100%;height:100%;object-fit:contain;object-position:center;display:block;border-radius:6px;"/>
+    </div>
+  </div>
+          <h4 class="cs-subsection-title" style="margin-top:28px;">Digital choreo notes: eliminating the PDF</h4>
           <p class="cs-body-text">A parallel high-impact feature: replacing printed PDF choreo notes with a fully digital, track-synced experience.</p>
           <div class="cs-features-grid">
             <div class="cs-feature-item">
@@ -2101,7 +2135,115 @@
               <div class="cs-feature-icon">✕</div>
               <div class="cs-feature-label">PDF-free — eliminated printing for 96% of instructors</div>
             </div>
-          <div style="width:100%;height:240px;background:rgba(26,68,112,0.18);border:1.5px dashed rgba(26,68,112,0.35);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:20px 0;box-sizing:border-box;"><span style="font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,68,112,0.5);">Digital Choreo Notes — In-App Screen, Track-Synced View</span></div></div>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- 05 Case Study 1 -->
+      <div class="cs-section">
+        <div class="cs-section-num">05</div>
+        <div class="cs-section-content">
+          <h3 class="cs-section-title">Case Study 1: Aligning IA to Instructor Expectations</h3>
+ 
+          <h4 class="cs-subsection-title">The usability problem <span style="font-weight:400;font-size:11px;opacity:0.55;font-style:italic;">(Discovered in first round of usability interviews with beta group)</span></h4>
+          <p class="cs-body-text">The app launched with two primary tabs: <strong>Learn</strong> and <strong>Teach</strong>. Learn housed the Masterclass video and synced digital choreo notes. Teach housed playlists — the music-only files instructors use to run their own classes.</p>
+          <p class="cs-body-text">The problem: the labels created a false binary. Instructors don't learn and teach in neat, separate phases — they move fluidly between modes depending on how they learn. Some are visual learners who watch the Masterclass video. Some are auditory learners who absorb material while driving or training dogs. Some need to read and re-read notes to cement choreography. The tab structure didn't account for any of this.</p>
+          <p class="cs-body-text">The result: instructors who wanted audio-only learning couldn't intuitively find it. They expected it to live in Learn — but it lived in Teach, because the music files were technically a playlist. They kept landing in the wrong place.</p>
+          <div style="margin:16px 0;">
+  <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/LearningTeaching.jpeg" alt="Before state — Learn + Teach tab structure" style="width:100%;border-radius:6px 6px 0 0;display:block;"/>
+  <div style="display:grid;grid-template-columns:1fr 1fr;border:1px solid rgba(26,68,112,0.12);border-top:none;border-radius:0 0 6px 6px;overflow:hidden;">
+    <div style="padding:12px 16px;border-right:1px solid rgba(26,68,112,0.12);">
+      <div style="font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(26,46,74,0.4);margin-bottom:4px;">Learning Hub</div>
+      <div style="font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(26,46,74,0.75);line-height:1.5;">Hypothesized instructors would have what they needed to learn new choreo here, then move to the next tab when preparing for teaching.</div>
+    </div>
+    <div style="padding:12px 16px;">
+      <div style="font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(26,46,74,0.4);margin-bottom:4px;">Teaching Hub</div>
+      <div style="font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(26,46,74,0.75);line-height:1.5;">Hypothesized music and schedule to serve instructors while in the teaching phase.</div>
+    </div>
+  </div>
+</div>
+ 
+          <h4 class="cs-subsection-title" style="margin-top:28px;">Three approaches considered</h4>
+          <div class="cs-options">
+            <div class="cs-option">
+              <div class="cs-option-num">1</div>
+              <div class="cs-option-body">
+                <div class="cs-option-title">Show / hide video only</div>
+                <div class="cs-option-sub">Add a toggle to hide the Masterclass video, leaving just choreo notes and audio. Simple, low dev effort — but didn't solve the mental model problem. Instructors still had to know that "Teach" was where to go for music-only learning.</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="cs-options" style="margin-top:0;">
+            <div class="cs-option">
+              <div class="cs-option-num">2</div>
+              <div class="cs-option-body">
+                <div class="cs-option-title">Deep link Learn → Teach</div>
+                <div class="cs-option-sub">Add a button from the Masterclass screen routing users directly to the playlist. Addressed discoverability but introduced complexity — the video+notes and music+notes were two separate media files that couldn't be perfectly synced, creating a jarring handoff.</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="cs-options" style="margin-top:0;">
+            <div class="cs-option cs-option-chosen">
+              <div class="cs-option-num">3</div>
+              <div class="cs-option-body">
+                <div class="cs-option-title">Reset the IA entirely <span class="cs-chosen-badge">Chosen + 1</span></div>
+                <div class="cs-option-sub">Remove the Learn/Teach designation altogether. Rename the tabs <strong>Masterclass</strong>, <strong>Playlists</strong>, and <strong>Studio</strong> — reflecting what the content <em>is</em>, not how the system expected it to be used. Add show/hide video and voiceover/no-voiceover toggles within Masterclass so learners of every style could configure their experience without leaving the screen.</div>
+              </div>
+            </div>
+          </div>
+          <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/123.png" alt="Learning and Teaching hub" style="width:100%;display:block;border-radius:6px;margin:16px 0;"/>
+ 
+          <h4 class="cs-subsection-title" style="margin-top:24px;">Decision &amp; rationale</h4>
+          <p class="cs-body-text">I chose option C combined with A. Options A and B treated symptoms. The real issue was that the existing tab structure imposed a learning sequence that didn't match how instructors actually moved through content. Removing the Learn/Teach designation replaced the cognitive burden of "which tab should I be in?" with a single destination that adapted to each instructor's style.</p>
+          <p class="cs-body-text">This was validated through usability testing, where the revised tab labeling and flexible configuration settings significantly reduced navigation errors and time-to-task on first use.</p>
+          
+          
+          
+        </div>
+      </div>
+ 
+      <!-- 06 Case Study 2 -->
+      <div class="cs-section">
+        <div class="cs-section-num">06</div>
+        <div class="cs-section-content">
+          <h3 class="cs-section-title">Case Study 2: Discovering Smart Suggestions</h3>
+ 
+          <h4 class="cs-subsection-title">The user problem</h4>
+          <blockquote class="cs-quote">
+            Instructors struggle to efficiently create balanced, varied class playlists from past releases due to a lack of search and organizational tools. This manual, time-consuming process often leads to repetitive classes, reducing member engagement and satisfaction.
+          </blockquote>
+          <p class="cs-body-text">Creating a mixed playlist required instructors to manually flip through old PDFs, remember which tracks they'd used recently, and manually sequence a class. 100% of research participants reported losing time to this process — average monthly time spent was 7.5 hours.</p>
+ 
+          <h4 class="cs-subsection-title" style="margin-top:24px;">How the feature evolved through assumption validation</h4>
+          <div class="cs-pivots">
+            <div class="cs-pivot">
+              <div class="cs-pivot-num">A</div>
+              <div class="cs-pivot-body">
+                <div class="cs-pivot-title">Manual usage tracking</div>
+                <p class="cs-pivot-desc">Initial assumption: instructors want to track which tracks they've used. Validation showed this was too much manual overhead — instructors wanted the system to do this work for them.</p>
+              </div>
+            </div>
+            <div class="cs-pivot">
+              <div class="cs-pivot-num">B</div>
+              <div class="cs-pivot-body">
+                <div class="cs-pivot-title">Triangulate schedule + tracks</div>
+                <p class="cs-pivot-desc">We explored using teaching schedules cross-referenced with track history to surface gaps. Technically complex and required data we didn't yet have at scale.</p>
+              </div>
+            </div>
+            <div class="cs-pivot cs-pivot-final">
+              <div class="cs-pivot-num">C</div>
+              <div class="cs-pivot-body">
+                <div class="cs-pivot-title">Ask for higher content frequency <span class="cs-chosen-badge">Final direction</span></div>
+                <p class="cs-pivot-desc">Surface: instructors wanted content refreshed more frequently than quarterly. This was a product/business constraint — but naming it opened up the smart suggestion framing: surface variety within what exists.</p>
+              </div>
+            </div>
+          </div>
+ 
+          <p class="cs-body-text" style="margin-top:20px;">The final Smart Suggestions feature used AI-driven recommendations to propose balanced, varied playlists based on instructor history and class-building best practices — surfacing the right tracks at the right time without requiring manual input.</p>
+ 
+          <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/smartplaylists.png" alt="Smart Suggestions" style="width:100%;border-radius:6px;margin:20px 0;display:block;"/>
         </div>
       </div>
  
@@ -2164,7 +2306,7 @@
             </div>
             <div class="cs-lesson">
               <div class="cs-lesson-title">Business objective alignment is a design skill</div>
-              <p class="cs-lesson-body">In an org with limited product maturity, I learned that making the business case explicit — connecting design decisions to instructor retention, certification rates, and content engagement — was as important as the design work itself. The journey map became as much a stakeholder alignment tool as a design artifact.</p>
+              <p class="cs-lesson-body">In an org evolving its product practice, I learned that making the business case explicit — connecting design decisions to instructor retention, certification rates, and content engagement — was as important as the design work itself. The journey map became as much a stakeholder alignment tool as a design artifact.</p>
             </div>
           </div>
         </div>
@@ -2190,27 +2332,18 @@
     <button class="ql-close" onclick="closeModal('ql-selfmade')">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
     </button>
-    <div class="sm-carousel" style="position:relative;width:100%;height:380px;border-radius:12px 12px 0 0;overflow:hidden;">
-    <div class="sm-slide sm-active" style="position:absolute;inset:0;transition:opacity 0.5s ease;opacity:1;">
-      <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/SF1.jpg" alt="SE1FMADE 1" style="width:100%;height:100%;object-fit:contain;object-position:center 5%;background:#0e1a2e;display:block;"/>
+    <!-- LEFT: portrait mobile screens -->
+    <div class="ql-img-col portrait" id="sm-imgcol">
+      <div class="ql-slide ql-active sm-slide"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/SMsummary.jpg" alt="SE1FMADE Summary"/></div>
+      <div class="ql-slide sm-slide"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/smsub.jpg" alt="SE1FMADE Subscription"/></div>
+      <div class="ql-dots">
+        <button class="ql-dot ql-dot-active sm-dot" onclick="smgo(0)"></button>
+        <button class="ql-dot sm-dot" onclick="smgo(1)"></button>
+      </div>
+ 
     </div>
-    <div class="sm-slide" style="position:absolute;inset:0;transition:opacity 0.5s ease;opacity:0;">
-      <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/SM2.jpg" alt="SE1FMADE 2" style="width:100%;height:100%;object-fit:contain;object-position:center top;background:#0e1a2e;display:block;"/>
-    </div>
-    <div class="sm-slide" style="position:absolute;inset:0;transition:opacity 0.5s ease;opacity:0;">
-      <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/SM3.jpg" alt="SE1FMADE 3" style="width:100%;height:100%;object-fit:contain;object-position:center 15%;background:#0e1a2e;display:block;"/>
-    </div>
-    <div class="sm-slide" style="position:absolute;inset:0;transition:opacity 0.5s ease;opacity:0;">
-      <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/smsub.jpg" alt="SE1FMADE Subscription" style="width:100%;height:100%;object-fit:contain;object-position:center;background:#0e1a2e;display:block;"/>
-    </div>
-    <div style="position:absolute;bottom:10px;right:16px;display:flex;gap:6px;z-index:10;">
-      <button class="sm-dot sm-dot-active" onclick="smgo(0)" style="width:6px;height:6px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(255,255,255,0.9);transition:background 0.2s;"></button>
-      <button class="sm-dot" onclick="smgo(1)" style="width:6px;height:6px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(255,255,255,0.35);transition:background 0.2s;"></button>
-      <button class="sm-dot" onclick="smgo(2)" style="width:6px;height:6px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(255,255,255,0.35);transition:background 0.2s;"></button>
-      <button class="sm-dot" onclick="smgo(3)" style="width:6px;height:6px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(255,255,255,0.35);transition:background 0.2s;"></button>
-    </div>
-  </div>
-    <div class="ql-body">
+    <!-- RIGHT: content -->
+    <div class="ql-content-col" style="padding-top:72px;">
       <div class="ql-eyebrow">SE1FMADE · 2025 · Currently Building · Mobile &amp; Web</div>
       <div class="ql-title">AI-Powered Mental Coaching for Competitive Athletes</div>
       <div class="ql-divider"></div>
@@ -2225,18 +2358,9 @@
       <div class="ql-section-label">My Contribution</div>
       <p class="ql-text">I designed the full product experience, website, web app, and mobile, from the ground up. Currently building out subscription and upgrade flows to support monetization and the next funding milestone, while validating feature and functionality priorities with our beta group to continuously refine the build plan and roadmap — as part of an 11-person cross-functional team spanning marketing, psychology, engineering, and go-to-market.</p>
       <div class="ql-stats">
-        <div class="ql-stat">
-          <div class="ql-stat-num">200</div>
-          <div class="ql-stat-label">Active beta users across sports</div>
-        </div>
-        <div class="ql-stat">
-          <div class="ql-stat-num">10</div>
-          <div class="ql-stat-label">Regular beta testers providing ongoing feedback</div>
-        </div>
-        <div class="ql-stat">
-          <div class="ql-stat-num">0→1</div>
-          <div class="ql-stat-label">Full product built from scratch — website to mobile</div>
-        </div>
+        <div class="ql-stat"><div class="ql-stat-num">183</div><div class="ql-stat-label">Active beta users across sports</div></div>
+        <div class="ql-stat"><div class="ql-stat-num">10</div><div class="ql-stat-label">Regular beta testers providing ongoing feedback</div></div>
+        <div class="ql-stat"><div class="ql-stat-num">0→1</div><div class="ql-stat-label">Full product built from scratch — website to mobile</div></div>
       </div>
     </div>
   </div>
@@ -2244,31 +2368,26 @@
  
 <!-- QUICK LOOK: SOUND ZONES -->
 <div class="ql-overlay" id="modal-ql-soundzones" onclick="closeModal('ql-soundzones')">
-  <div class="ql-panel" onclick="event.stopPropagation()">
+  <div class="ql-panel ql-stacked" onclick="event.stopPropagation()">
     <button class="ql-close" onclick="closeModal('ql-soundzones')">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
     </button>
-    <div class="sz-carousel" style="position:relative;width:100%;height:380px;border-radius:12px 12px 0 0;overflow:hidden;">
-    <div class="sz-slide sz-active" style="position:absolute;inset:0;transition:opacity 0.5s ease;opacity:1;">
-      <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/SZ1.jpg" alt="Sound Zones 1" style="width:100%;height:100%;object-fit:contain;object-position:center;background:#0e1a2e;display:block;"/>
+    <!-- LEFT: landscape HMI screens -->
+    <div class="ql-img-col landscape" id="sz-imgcol">
+      <div class="ql-slide ql-active sz-slide"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/SZ1.jpg" alt="Sound Zones 1"/></div>
+      <div class="ql-slide sz-slide"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/SZ2.jpg" alt="Sound Zones 2"/></div>
+      <div class="ql-slide sz-slide"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/SZ3.jpg" alt="Sound Zones 3"/></div>
+      <div class="ql-slide sz-slide"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/SZ4.jpg" alt="Sound Zones 4"/></div>
+      <div class="ql-dots">
+        <button class="ql-dot ql-dot-active sz-dot" onclick="szgo(0)"></button>
+        <button class="ql-dot sz-dot" onclick="szgo(1)"></button>
+        <button class="ql-dot sz-dot" onclick="szgo(2)"></button>
+        <button class="ql-dot sz-dot" onclick="szgo(3)"></button>
+      </div>
+ 
     </div>
-    <div class="sz-slide" style="position:absolute;inset:0;transition:opacity 0.5s ease;opacity:0;">
-      <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/SZ2.jpg" alt="Sound Zones 2" style="width:100%;height:100%;object-fit:contain;object-position:center;background:#0e1a2e;display:block;"/>
-    </div>
-    <div class="sz-slide" style="position:absolute;inset:0;transition:opacity 0.5s ease;opacity:0;">
-      <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/SZ3.jpg" alt="Sound Zones 3" style="width:100%;height:100%;object-fit:contain;object-position:center;background:#0e1a2e;display:block;"/>
-    </div>
-    <div class="sz-slide" style="position:absolute;inset:0;transition:opacity 0.5s ease;opacity:0;">
-      <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/SZ4.jpg" alt="Sound Zones 4" style="width:100%;height:100%;object-fit:contain;object-position:center;background:#0e1a2e;display:block;"/>
-    </div>
-    <div style="position:absolute;bottom:10px;right:16px;display:flex;gap:6px;z-index:10;">
-      <button class="sz-dot sz-dot-active" onclick="szgo(0)" style="width:6px;height:6px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(255,255,255,0.9);transition:background 0.2s;"></button>
-      <button class="sz-dot" onclick="szgo(1)" style="width:6px;height:6px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(255,255,255,0.35);transition:background 0.2s;"></button>
-      <button class="sz-dot" onclick="szgo(2)" style="width:6px;height:6px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(255,255,255,0.35);transition:background 0.2s;"></button>
-      <button class="sz-dot" onclick="szgo(3)" style="width:6px;height:6px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(255,255,255,0.35);transition:background 0.2s;"></button>
-    </div>
-  </div>
-    <div class="ql-body">
+    <!-- RIGHT: content -->
+    <div class="ql-content-col">
       <div class="ql-eyebrow">Ford Motor Company · Mar–Aug 2021 · In-Vehicle Screen</div>
       <div class="ql-title">Sound Zones — Personalized Audio for Every Seat</div>
       <div class="ql-divider"></div>
@@ -2281,23 +2400,16 @@
       <p class="ql-text">Sound Zones is a feature allowing individualized, headset-free audio throughout the cabin. Initial specs and wireframes were handed off from a decoupled team with critical integration gaps. The biggest was a proposed design that would create two separate, conflicting ways for users to select audio sources depending on whether Sound Zones was active. As the owner of the core audio domain, resolving this was mine to solve.</p>
       <div class="ql-section-label">The Solution</div>
       <p class="ql-text">Integrated Sound Zones directly into the source drawer as a native extension of source selection, eliminating the duplicate entry point entirely. Replaced manual zone selection with source-driven configuration and latching behavior for a zero-setup experience. Simplified visual controls to maintain spatial context without adding noise. Partnered with UXR to validate the integration approach and overall feature acceptance through in-person clinic testing.</p>
-      <div class="ql-stats" style="gap:12px;">
-        <div class="ql-stat" style="flex:1;min-width:0;">
-          <div class="ql-stat-num">100%</div>
-          <div class="ql-stat-label">were able to successfully switch the audio source for the passenger upon first try</div>
-        </div>
-        <div class="ql-stat" style="flex:1;min-width:0;">
-          <div class="ql-stat-num">76%</div>
-          <div class="ql-stat-label">self-reported willingness to pay a $1,500 premium during in-person clinic testing</div>
-        </div>
- 
+      <div class="ql-stats">
+        <div class="ql-stat"><div class="ql-stat-num">100%</div><div class="ql-stat-label">were able to successfully switch the audio source for the passenger upon first try</div></div>
+        <div class="ql-stat"><div class="ql-stat-num">76%</div><div class="ql-stat-label">self-reported willingness to pay a $1,500 premium during in-person clinic testing</div></div>
+      </div>
       <div style="margin-top:20px;padding:16px 20px;border-radius:8px;background:rgba(255,255,255,0.04);border-left:3px solid rgba(155,179,212,0.4);display:flex;gap:14px;align-items:flex-start;">
         <span style="font-size:16px;line-height:1;margin-top:1px;">↳</span>
         <div>
           <div style="font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(155,179,212,0.6);margin-bottom:6px;">A note on outcomes</div>
           <p style="font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(255,255,255,0.55);line-height:1.65;margin:0;">Despite strong clinic results, Sound Zones was ultimately deprioritised due to shifting business priorities before reaching production. As a result, there are no longitudinal usage metrics to report. I include this project because the design process and problem-solving are worth sharing — and because not every good project ships.</p>
         </div>
-      </div>
       </div>
     </div>
   </div>
@@ -2309,33 +2421,26 @@
     <button class="ql-close" onclick="closeModal('ql-rearseat')">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
     </button>
-    <div class="rse-carousel" style="position:relative;width:100%;height:380px;border-radius:12px 12px 0 0;overflow:hidden;">
-    <div class="rse-slide rse-active" style="position:absolute;inset:0;transition:opacity 0.5s ease;opacity:1;">
-      <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/cabin.png" alt="Industry First" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"/>
+    <!-- LEFT: landscape automotive screens -->
+    <div class="ql-img-col landscape" id="rse-imgcol">
+      <div class="ql-slide ql-active rse-slide"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/cabin.png" alt="Industry First" style="object-fit:contain!important;"/></div>
+      <div class="ql-slide rse-slide"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/cobrandedRSE.jpg" alt="Co-branded RSE" style="object-position:center top;"/></div>
+      <div class="ql-slide rse-slide"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/RSEscreenapps.jpg" alt="RSE Screen Apps" style="object-fit:contain!important;"/></div>
+      <div class="ql-slide rse-slide"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/PassScreen.jpg" alt="Passenger Screen" style="object-position:center top;"/></div>
+      <div class="ql-slide rse-slide"><img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/updatedRSE.jpg" alt="RSE Parental Controls" style="object-fit:contain!important;"/></div>
+      <div class="ql-dots">
+        <button class="ql-dot ql-dot-active rse-dot" onclick="rsego(0)"></button>
+        <button class="ql-dot rse-dot" onclick="rsego(1)"></button>
+        <button class="ql-dot rse-dot" onclick="rsego(2)"></button>
+        <button class="ql-dot rse-dot" onclick="rsego(3)"></button>
+        <button class="ql-dot rse-dot" onclick="rsego(4)"></button>
+      </div>
+ 
     </div>
-    <div class="rse-slide" style="position:absolute;inset:0;transition:opacity 0.5s ease;opacity:0;">
-      <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/cobrandedRSE.jpg" alt="Co-branded RSE" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"/>
-    </div>
-    <div class="rse-slide" style="position:absolute;inset:0;transition:opacity 0.5s ease;opacity:0;">
-      <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/RSEscreenapps.jpg" alt="RSE Screen Apps" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"/>
-    </div>
-    <div class="rse-slide" style="position:absolute;inset:0;transition:opacity 0.5s ease;opacity:0;">
-      <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/PassScreen.jpg" alt="Passenger Screen" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;"/>
-    </div>
-    <div class="rse-slide" style="position:absolute;inset:0;transition:opacity 0.5s ease;opacity:0;">
-      <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/RSEPC.jpg" alt="RSE Parental Controls" style="width:100%;height:100%;object-fit:contain;object-position:center center;background:#0e1a2e;display:block;"/>
-    </div>
-    <div style="position:absolute;bottom:10px;right:16px;display:flex;gap:6px;z-index:10;">
-      <button class="rse-dot rse-dot-active" onclick="rsego(0)" style="width:6px;height:6px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(255,255,255,0.9);transition:background 0.2s;"></button>
-      <button class="rse-dot" onclick="rsego(1)" style="width:6px;height:6px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(255,255,255,0.35);transition:background 0.2s;"></button>
-      <button class="rse-dot" onclick="rsego(2)" style="width:6px;height:6px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(255,255,255,0.35);transition:background 0.2s;"></button>
-      <button class="rse-dot" onclick="rsego(3)" style="width:6px;height:6px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(255,255,255,0.35);transition:background 0.2s;"></button>
-      <button class="rse-dot" onclick="rsego(4)" style="width:6px;height:6px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(255,255,255,0.35);transition:background 0.2s;"></button>
-    </div>
-  </div>
-    <div class="ql-body">
+    <!-- RIGHT: content -->
+    <div class="ql-content-col">
       <div class="ql-eyebrow">Fiat Chrysler Automobiles · 2020 · In-Vehicle Screen · Industry First</div>
-      <div class="ql-title">Connected Rear Seat Entertainment · Amazon Fire TV <span class="trow-ql-badge" onclick="event.stopPropagation();openModal('ql-rearseat')">Quick Look</span></div>
+      <div class="ql-title">Connected Rear Seat Entertainment · Amazon Fire TV</div>
       <div class="ql-divider"></div>
       <div class="ql-role-row">
         <div class="ql-role-item"><div class="ql-role-label">Role</div><div class="ql-role-val">HMI Designer · UXR</div></div>
@@ -2343,7 +2448,7 @@
         <div class="ql-role-item"><div class="ql-role-label">Timeline</div><div class="ql-role-val">January – October 2020</div></div>
       </div>
       <div class="ql-section-label">Context</div>
-      <p class="ql-text">Partnered with Amazon's design team to integrate Fire TV and Alexa voice controls into the Jeep cabin — transforming a remote-centric living room experience into an intuitive, touch-driven in-vehicle environment. The core challenge was cross-company alignment: designing a co-branded experience that felt harmonious within Jeep's cabin ecosystem while staying true to Amazon's existing design principles.</p>
+      <p class="ql-text">Partnered with Amazon's design team to integrate Fire TV and Alexa voice controls into the Jeep cabin — transforming a remote-centric living room experience into an intuitive, touch-driven in-vehicle environment. The core challenge was cross-company alignment: designing a co-branded experience that felt harmonious within Jeep's cabin ecosystem while staying true to Amazon's existing design principles. Also redesigned the front seat parental controls to resolve legacy usability issues and support Fire TV OS navigation and selection needs.</p>
       <div class="ql-section-label">Outcome</div>
       <p class="ql-text">The collaboration successfully launched and established the Amazon Fire Automotive template — the new infotainment standard subsequently adopted by Ford, Lincoln, and BMW.</p>
       <div class="ql-section-label">Product Launch</div>
@@ -2366,27 +2471,49 @@
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function fitLastName() {
     const el = document.getElementById('last-name');
-    const tile = document.querySelector('.tile-stack');
     const firstRow = document.querySelector('.hero-first-row');
-    if (!el || !tile) return;
+    if (!el) return;
  
-    // Clear any previously set widths so tile measurement is clean
+    // Reset
     el.style.fontSize = '';
     if (firstRow) firstRow.style.width = '';
-    void el.offsetWidth; // force reflow
+    void el.offsetWidth;
  
-    const tileRect = tile.getBoundingClientRect();
-    const heroRect = document.querySelector('.hero').getBoundingClientRect();
-    const available = tileRect.right - heroRect.left;
+    const hero = document.querySelector('.hero');
+    const tileStack = document.querySelector('.tile-stack');
+    const act1 = document.querySelector('.act1');
+    const cellIllus = document.querySelector('.cell-illus');
+    if (!hero || !tileStack) return;
  
-    // Set first-row width so nav right-aligns to tile edge
-    if (firstRow) firstRow.style.width = available + 'px';
+    const isMobile = window.innerWidth <= 640;
  
-    // Scale last name to fill exactly
+    // Simplest reliable approach: 
+    // available = tileStack.offsetLeft + tileStack.offsetWidth - el.offsetLeft
+    // All offsetLeft/offsetWidth values are in document layout space, unaffected by sidebars
+    let targetEl = isMobile && cellIllus ? cellIllus : (act1 || tileStack);
+ 
+    // Walk up to get true offsetLeft from page root
+    function getOffsetLeft(elem) {
+      let left = 0;
+      while (elem) { left += elem.offsetLeft; elem = elem.offsetParent; }
+      return left;
+    }
+    function getOffsetRight(elem) {
+      return getOffsetLeft(elem) + elem.offsetWidth;
+    }
+ 
+    const nameLeft = getOffsetLeft(el);
+    const targetRight = getOffsetRight(targetEl);
+    const available = targetRight - nameLeft;
+ 
+    if (firstRow) firstRow.style.width = (getOffsetRight(targetEl) - getOffsetLeft(firstRow)) + 'px';
+ 
     const baseFontSize = parseFloat(getComputedStyle(el).fontSize);
     void el.offsetWidth;
     const naturalWidth = el.getBoundingClientRect().width;
-    el.style.fontSize = (available / naturalWidth) * baseFontSize + 'px';
+    if (naturalWidth > 0) {
+      el.style.fontSize = (available / naturalWidth) * baseFontSize + 'px';
+    }
   }
  
   function fitOnLoad() {
@@ -2401,27 +2528,43 @@
  
  
  
+ 
+  /* ── LPT State Carousel ─────────────────────────────── */
+  let lptIndex = 0, lptTimer = null;
+  function lptgo(n) {
+    const container = document.getElementById('lpt-carousel');
+    if (!container) return;
+    const slides = container.querySelectorAll('.lpt-slide');
+    slides.forEach((s, i) => s.style.opacity = i === n ? '1' : '0');
+    lptIndex = n;
+  }
+  function lptnext() { lptgo((lptIndex + 1) % 3); }
+  function lptStart() { if (lptTimer) clearInterval(lptTimer); lptTimer = setInterval(lptnext, 2500); }
+  lptStart();
+ 
   /* ── SM Mini Carousel ─────────────────────────────── */
   let smIndex = 0, smTimer = null;
   function smgo(n) {
-    document.querySelectorAll('.sm-slide').forEach((s, i) => s.style.opacity = i === n ? '1' : '0');
+    document.querySelectorAll('.sm-slide').forEach((s, i) => { s.style.opacity = i === n ? '1' : '0'; s.classList.toggle('ql-active', i === n); });
     document.querySelectorAll('.sm-dot').forEach((d, i) => {
       d.style.background = i === n ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.35)';
+      d.classList.toggle('ql-dot-active', i === n);
     });
     smIndex = n;
     clearInterval(smTimer);
     smTimer = setInterval(smnext, 3500);
   }
-  function smnext() { smgo((smIndex + 1) % 4); }
+  function smnext() { smgo((smIndex + 1) % 2); }
   function smStart() { smTimer = setInterval(smnext, 3500); }
   function smStop() { clearInterval(smTimer); smIndex = 0; smgo(0); }
  
   /* ── SZ Mini Carousel ─────────────────────────────── */
   let szIndex = 0, szTimer = null;
   function szgo(n) {
-    document.querySelectorAll('.sz-slide').forEach((s, i) => s.style.opacity = i === n ? '1' : '0');
+    document.querySelectorAll('.sz-slide').forEach((s, i) => { s.style.opacity = i === n ? '1' : '0'; s.classList.toggle('ql-active', i === n); });
     document.querySelectorAll('.sz-dot').forEach((d, i) => {
       d.style.background = i === n ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.35)';
+      d.classList.toggle('ql-dot-active', i === n);
     });
     szIndex = n;
     clearInterval(szTimer);
@@ -2434,9 +2577,10 @@
   /* ── RSE Mini Carousel ─────────────────────────────── */
   let rseIndex = 0, rseTimer = null;
   function rsego(n) {
-    document.querySelectorAll('.rse-slide').forEach((s, i) => s.style.opacity = i === n ? '1' : '0');
+    document.querySelectorAll('.rse-slide').forEach((s, i) => { s.style.opacity = i === n ? '1' : '0'; s.classList.toggle('ql-active', i === n); });
     document.querySelectorAll('.rse-dot').forEach((d, i) => {
       d.style.background = i === n ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.35)';
+      d.classList.toggle('ql-dot-active', i === n);
     });
     rseIndex = n;
     clearInterval(rseTimer);
