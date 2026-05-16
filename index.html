@@ -725,17 +725,11 @@
     display: flex; align-items: stretch; justify-content: flex-end;
   }
   .cs-overlay.active { opacity: 1; pointer-events: all; }
-  .cs-overlay::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: rgba(8,16,36,0.65);
-    backdrop-filter: blur(6px);
-    cursor: pointer;
-  }
+  .cs-overlay::before { display: none; }
 
   .cs-panel {
     position: relative; z-index: 1;
-    width: min(1230px, 100%);
+    width: 100%;
     background: #f0ead8;
     display: flex; flex-direction: column;
     transform: translateX(40px);
@@ -761,9 +755,9 @@
     color: var(--green); font-weight: 500;
   }
   .cs-header-title {
-    font-family: 'Kalnia', serif;
-    font-size: 15px; color: #f0ead8; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.04em;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px; color: #f0ead8; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.06em;
   }
   .cs-close {
     width: 36px; height: 36px; border-radius: 50%;
@@ -805,7 +799,7 @@
   .cs-impact-stat:first-child { padding-left: 0; }
   .cs-impact-divider { width: 1px; background: rgba(255,255,255,0.1); flex-shrink: 0; }
   .cs-impact-num {
-    font-family: 'Kalnia', serif;
+    font-family: 'DM Sans', sans-serif;
     font-size: 26px; color: #f0ead8; font-weight: 700;
     line-height: 1; margin-bottom: 5px;
   }
@@ -816,6 +810,54 @@
     border-top: 1px solid rgba(255,255,255,0.08); padding-top: 12px;
   }
 
+  /* Full-bleed hero variant (FCA) */
+  .cs-hero-fullbleed {
+    position: relative;
+    min-height: 420px;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 0;
+    overflow: hidden;
+    border-bottom: 3px solid rgba(155,179,212,0.3);
+  }
+  .cs-hero-fullbleed-img {
+    position: absolute; inset: 0;
+    background-size: cover; background-position: center 58%;
+    background-image: url('https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/connected%20cabin%20hero');
+  }
+  .cs-hero-fullbleed-grad {
+    position: absolute; inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(10,18,36,0.15) 0%,
+      rgba(10,18,36,0.45) 40%,
+      rgba(10,18,36,0.88) 70%,
+      rgba(10,18,36,0.97) 100%
+    );
+  }
+  .cs-hero-fullbleed-content {
+    position: relative; z-index: 2;
+    padding: 32px 40px 36px;
+  }
+  .cs-hero-fullbleed .cs-meta-row {
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 28px;
+  }
+  .cs-hero-fullbleed .cs-impact-bar {
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .cs-hero-fullbleed .cs-meta-label {
+    color: rgba(155,179,212,0.9) !important;
+    font-weight: 700;
+    font-size: 10px;
+  }
+  .cs-hero-fullbleed .cs-impact-label {
+    color: rgba(155,179,212,0.9) !important;
+    font-weight: 700;
+    font-size: 10px;
+  }
+
   /* Sections */
   .cs-section {
     display: grid; grid-template-columns: 64px 1fr;
@@ -824,14 +866,14 @@
   }
   .cs-section-last { border-bottom: none; }
   .cs-section-num {
-    font-family: 'Kalnia', serif;
-    font-size: 11px; color: rgba(42,74,127,0.35); font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px; color: rgba(42,74,127,0.35); font-weight: 700;
     letter-spacing: 0.08em; padding-top: 4px;
   }
   .cs-section-title {
-    font-family: 'Kalnia', serif;
-    font-size: 20px; color: var(--blue-dark); font-weight: 700;
-    text-transform: uppercase; letter-spacing: -0.01em;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px; color: var(--blue-dark); font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.04em;
     margin-bottom: 18px;
   }
   .cs-subsection-title {
@@ -859,7 +901,7 @@
 
   /* Quote */
   .cs-quote {
-    font-family: 'Kalnia', serif;
+    font-family: 'DM Sans', sans-serif;
     font-size: 16px; line-height: 1.6; color: var(--blue-dark);
     font-weight: 400; font-style: italic;
     border-left: 3px solid var(--green-dark);
@@ -879,7 +921,7 @@
     border-radius: 6px; padding: 14px 16px;
   }
   .cs-research-num {
-    font-family: 'Kalnia', serif;
+    font-family: 'DM Sans', sans-serif;
     font-size: 28px; color: var(--blue-dark); font-weight: 700;
     line-height: 1; margin-bottom: 6px;
   }
@@ -895,7 +937,7 @@
     color: var(--green); font-weight: 500; margin-bottom: 8px;
   }
   .cs-hmw-text {
-    font-family: 'Kalnia', serif;
+    font-family: 'DM Sans', sans-serif;
     font-size: 15px; color: #f0ead8; font-weight: 400;
     font-style: italic; line-height: 1.6;
   }
@@ -935,9 +977,9 @@
     color: var(--green); font-weight: 500; margin-bottom: 6px;
   }
   .cs-pillar-name {
-    font-family: 'Kalnia', serif;
-    font-size: 17px; color: #f0ead8; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px; color: #f0ead8; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px;
   }
   .cs-pillar-desc { font-size: 12px; line-height: 1.65; color: rgba(255,255,255,0.55); }
 
@@ -1035,7 +1077,7 @@
   }
   .cs-result-before { color: rgba(14,26,46,0.45); font-size: 13px; }
   .cs-result-after { font-weight: 500; color: var(--blue-dark); }
-  .cs-result-delta { font-family: 'Kalnia', serif; font-weight: 700; text-align: right; }
+  .cs-result-delta { font-family: 'DM Sans', sans-serif; font-weight: 700; text-align: right; }
   .cs-delta-green { color: var(--green-dark); font-size: 15px; }
   .cs-delta-big { color: var(--blue-dark); font-size: 20px; }
 
@@ -1650,8 +1692,8 @@
     <div class="bio-loc">San Francisco</div>
     <div class="bio-blurb">
       <p class="bio-lede">I believe that good interface design disappears. What stays is clarity, confidence, and a person who accomplished something they couldn't before.</p>
-      <p class="bio-para">Over the past 8 years I have designed for automotive HMI, the consumer-facing and B2B digital fitness space, and an LLM-based consumer product. Looking forward, I'm most drawn to solving problems at the intersection of hardware and software — particularly in medical, transportation, and wearable applications.</p>
-      <p class="bio-para">I do my best work in challenging constraint spaces, collaborating closely with product and engineering to find what's possible, and using research and iteration to design the right-sized solution.</p>
+      <p class="bio-para">Eight years across automotive HMI, fitness tech, and an LLM-based tool for pro athletes has sharpened that view. The thread across everything I've worked on is making complex, high-stakes systems feel clear to the people who depend on them. My best work happens in those constraint-heavy spaces, close to engineering and product, where the design problem is usually figuring out what to simplify and where to clarify.</p>
+      <p class="bio-para">Looking forward, I'm especially drawn to working on medical devices and health-adjacent products.</p>
     </div>
   </div>
 </div>
@@ -1661,26 +1703,25 @@
   <div class="cs-grid">
 
     <!-- Tile 1: FCA -->
-    <div class="cs-tile" onclick="openModal('ql-rearseat')">
+    <div class="cs-tile" onclick="openModal('fca')">
       <div class="cs-tile-bg" style="background-image:url('https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/cabin.png');"></div>
       <div class="cs-tile-grad"></div>
       <div class="cs-tile-content">
         <div class="cs-tile-eyebrow">Fiat Chrysler Automobiles · 2019–2020</div>
         <div class="cs-tile-title">Connected Infotainment System (FCA)</div>
         <div class="cs-tile-sub">Industry first Passenger Screen &amp; Connected Rear Seat Fire TV</div>
-        <span class="cs-tile-badge">Quick Look ↗</span>
+        <span class="cs-tile-badge">Embedded Interaction Design ↗</span>
       </div>
     </div>
 
-    <!-- Tile 2: Ford -->
-    <div class="cs-tile" onclick="openModal('ql-soundzones')">
-      <div class="cs-tile-bg" style="background-image:url('https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/szonez.jpg');"></div>
-      <div class="cs-tile-grad"></div>
+    <!-- Tile 2: Les Mills Leadership -->
+    <div class="cs-tile" style="cursor:default;">
+      <div class="cs-tile-grad" style="background:linear-gradient(to top, rgba(8,16,40,0.96) 0%, rgba(8,16,40,0.6) 100%);"></div>
       <div class="cs-tile-content">
-        <div class="cs-tile-eyebrow">Ford Motor Company · 2021</div>
-        <div class="cs-tile-title">Audio System &amp; Sound Zones (Ford)</div>
-        <div class="cs-tile-sub">Designing an Android-powered next gen audio ecosystem</div>
-        <span class="cs-tile-badge">Quick Look ↗</span>
+        <div class="cs-tile-eyebrow">Les Mills International · 2023–2025</div>
+        <div class="cs-tile-title">Digital Product Design Leadership (Les Mills)</div>
+        <div class="cs-tile-sub">Translating user problems into roadmap strategy while building the company's first shared design system across 8 platforms.</div>
+        <span class="cs-tile-badge" style="opacity:0.45;">Coming Soon</span>
       </div>
     </div>
 
@@ -1689,10 +1730,10 @@
       <div class="cs-tile-bg" style="background-image:url('https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/IXhero.jpg');"></div>
       <div class="cs-tile-grad"></div>
       <div class="cs-tile-content">
-        <div class="cs-tile-eyebrow">Les Mills International · 2023–2025</div>
+        <div class="cs-tile-eyebrow">Les Mills International · 2025</div>
         <div class="cs-tile-title">Instructor Experience App (Les Mills)</div>
         <div class="cs-tile-sub">AI-Driven Workflow Re-design</div>
-        <span class="cs-tile-badge">Case Study ↗</span>
+        <span class="cs-tile-badge">Mobile Product Design ↗</span>
       </div>
     </div>
 
@@ -1700,7 +1741,7 @@
     <div class="cs-tile" style="cursor:default;">
       <div class="cs-tile-grad" style="background:linear-gradient(to top, rgba(8,16,40,0.96) 0%, rgba(8,16,40,0.6) 100%);"></div>
       <div class="cs-tile-content">
-        <div class="cs-tile-eyebrow">Askable · 2022</div>
+        <div class="cs-tile-eyebrow">Askable · 2026</div>
         <div class="cs-tile-title">McDonald's Concept Testing (Askable)</div>
         <div class="cs-tile-sub">Research Methodology for AI drive-thru ordering</div>
         <span class="cs-tile-badge" style="opacity:0.45;">Coming Soon</span>
@@ -1728,13 +1769,11 @@
             <div class="trow-co">Lead Product Designer</div>
           </div>
           <div class="trow-tags">
-            <span class="tag tag-green">Mobile · Web</span>
-            <span class="tag">B2C</span>
-            <span class="tag">0→1 Build</span>
+            <span class="tag tag-green">Sole Designer · 0→1</span>
             <span class="tag tag-green">AI Product</span>
-            <span class="tag tag-green">Mobile · iOS/Android</span>
-            <span class="tag">Monetization</span>
-            <span class="tag">Subscription UX</span>
+            <span class="tag tag-green">Mobile · iOS/Android · Web</span>
+            <span class="tag">Product Strategy</span>
+            <span class="tag">React/TypeScript Prototyping</span>
             <span class="tag">Sports Psychology</span>
           </div>
         </div>
@@ -2092,7 +2131,7 @@
 
           <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/IXjourney1.jpg" alt="Instructor Journey Map 1" style="width:100%;border-radius:6px;margin:20px 0 8px;display:block;"/>
           <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/IXjourney2.jpg" alt="Instructor Journey Map 2" style="width:100%;border-radius:6px;margin:0 0 8px;display:block;"/><h4 class="cs-subsection-title" style="margin-top:28px;">The macro user problem</h4>
-          <blockquote class="cs-quote" style="font-family:'Kalnia',serif;font-size:20px;font-weight:700;color:#1a2e4a;line-height:1.4;font-style:normal;text-transform:uppercase;border-left-color:#9bb3d4;">
+          <blockquote class="cs-quote" style="font-family:'DM Sans',sans-serif;font-size:18px;font-weight:700;color:#1a2e4a;line-height:1.4;font-style:normal;text-transform:uppercase;border-left-color:#9bb3d4;">
             Instructors struggle with unsustainable prep-to-teaching ratios: mastering quarterly content demands excessive time unaligned with earnings.
           </blockquote>
           <p class="cs-body-text">Every quarter, Les Mills releases new content for each of its 16 programs. Instructors — most of whom teach part-time alongside day jobs — were expected to learn entirely new choreography, build class playlists, and master updated coaching cues. The time demands were eroding both instructor satisfaction and certification rates.</p>
@@ -2447,7 +2486,239 @@
   </div>
 </div>
 
-<!-- QUICK LOOK: SOUND ZONES -->
+<!-- CASE STUDY: CONNECTED CABIN ECOSYSTEM (FCA) -->
+<div class="cs-overlay" id="modal-fca">
+  <div class="cs-panel" onclick="event.stopPropagation()">
+
+    <!-- Sticky header -->
+    <div class="cs-header">
+      <div class="cs-header-inner">
+        <div class="cs-header-left">
+          <span class="cs-header-eyebrow">Featured Case Study · Fiat Chrysler Automobiles</span>
+          <span class="cs-header-title">Connected Cabin Ecosystem</span>
+        </div>
+        <button class="cs-close" onclick="closeModal('fca')">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Scrollable body -->
+    <div class="cs-body">
+
+      <!-- Hero: full-bleed -->
+      <div class="cs-hero-fullbleed">
+        <div class="cs-hero-fullbleed-img"></div>
+        <div class="cs-hero-fullbleed-grad"></div>
+        <div class="cs-hero-fullbleed-content">
+          <div class="cs-meta-row" style="margin-bottom:28px;">
+            <div class="cs-meta-item">
+              <div class="cs-meta-label">Role</div>
+              <div class="cs-meta-value">HMI / Interaction Designer · UXR Lead</div>
+            </div>
+            <div class="cs-meta-item">
+              <div style="display:inline-block;background:rgba(8,16,36,0.45);border-radius:4px;padding:4px 8px 3px;margin:-4px -8px -3px;">
+                <div class="cs-meta-label">Team</div>
+                <div class="cs-meta-value">Studio · Lextant · Engineering</div>
+              </div>
+            </div>
+            <div class="cs-meta-item">
+              <div class="cs-meta-label">Platform</div>
+              <div class="cs-meta-value">R1 · Fire OS</div>
+            </div>
+            <div class="cs-meta-item">
+              <div class="cs-meta-label">Timeline</div>
+              <div class="cs-meta-value">2018 – 2020</div>
+            </div>
+          </div>
+          <div class="cs-impact-bar">
+            <div class="cs-impact-label">Shipped On</div>
+            <div class="cs-impact-stats">
+              <div class="cs-impact-stat">
+                <div class="cs-impact-num">2022</div>
+                <div class="cs-impact-desc">Jeep Grand Wagoneer — Passenger Screen</div>
+              </div>
+              <div class="cs-impact-divider"></div>
+              <div class="cs-impact-stat">
+                <div class="cs-impact-num">2022</div>
+                <div class="cs-impact-desc">Chrysler Pacifica — Connected RSE Fire TV</div>
+              </div>
+              <div class="cs-impact-divider"></div>
+              <div class="cs-impact-stat">
+                <div class="cs-impact-num">Industry First</div>
+                <div class="cs-impact-desc">Amazon Fire TV in-auto template — adopted by Ford, Lincoln &amp; BMW</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 01 Context -->
+      <div class="cs-section">
+        <div class="cs-section-num">01</div>
+        <div class="cs-section-body">
+          <!-- Context: 2-row x 2-col grid so text blocks align with their paired images -->
+          <div style="display:grid;grid-template-columns:1fr 55%;grid-template-rows:auto auto;gap:20px 28px;align-items:start;">
+            <!-- Row 1 left: title + passenger screen text -->
+            <div>
+              <h3 class="cs-section-title">Context</h3>
+              <p style="font-family:'DM Sans',sans-serif;font-size:15.5px;font-weight:500;color:rgba(26,46,74,0.9);line-height:1.65;margin-bottom:20px;">When this work began, no consumer vehicle had a passenger screen built for entertainment and copilot use. The Connected Cabin Ecosystem shipped on the 2022 Jeep Grand Wagoneer and the 2022 Chrysler Pacifica. What came out of it became the industry standard for in-vehicle Fire TV, since adopted by Ford, Lincoln, and BMW.</p>
+              <p class="cs-body-text">The passenger screen work came first. What we were building was a 10.25-inch interactive display that would let the front passenger run navigation, entertainment, and camera feeds independently of the driver, behind a privacy coating that made the screen invisible from the driver's seat. The closest precedent was the Ferrari GTC4Lusso, which used its passenger display for performance metrics only, a fundamentally different proposition. The connected rear seat system would follow, bringing Amazon Fire TV into the cabin for the first time.</p>
+              <p class="cs-body-text">I came in at the functional requirements stage, after executives had signed off on the feature set. I owned and released the logic and flow spec, including wireframe designs, and led the user research effort. For formal usability and validation, I partnered with Lextant, a human factors firm. Visual design was owned by studio.</p>
+            </div>
+            <!-- Row 1 right: passenger screen image -->
+            <div>
+              <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/passheroimage.png" alt="Passenger Screen Hero" style="width:100%;border-radius:8px;display:block;"/>
+              <p style="font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(26,46,74,0.45);font-style:italic;margin-top:10px;text-align:center;">Passenger Screen functional objectives kicked off in March 2018. The first production vehicle with a Passenger Screen was Model Year 2022 Grand Wagoneer.</p>
+            </div>
+            <!-- Row 2 left: RSE placeholder text -->
+            <div>
+              <p class="cs-body-text">About eight months in, the Connected Rear Seat Entertainment program was approved. I took on logic and flow ownership for the rear seat system and redesigned the front-seat parental controls that would coordinate with it.</p>
+              <p class="cs-body-text">Fire TV had never been in a car before. It had only existed as a living-room platform, controlled by remote, designed for a single household audience. Bringing it into a vehicle meant redesigning the interaction model for touch input in a moving environment, supporting two rear passengers who might want independent streams or share one, and integrating with vehicle-specific systems including cross-cabin parental controls, headphone audio routing, and Alexa across multiple screens.</p>
+              <p class="cs-body-text">Amazon owned the Fire TV platform-level design. I owned the in-vehicle adaptation and led the partnership work to make it vehicle-ready. That included co-designing the Jeep partner tab, the pull-out control patterns, and a cobranding model that protected both brands. It also meant raising problems the vehicle context introduced, including the multi-occupant Alexa challenge: rear passengers needed to invoke voice for their own content while front occupants could direct rear content through parental controls. Amazon owned the voice disambiguation solution; my role was to specify the use cases and design the in-vehicle response.</p>
+            </div>
+            <!-- Row 2 right: RSE image -->
+            <div>
+              <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/RSEHeroimage.png" alt="Connected Rear Seat Entertainment" style="width:100%;border-radius:8px;display:block;"/>
+              <p style="font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(26,46,74,0.45);font-style:italic;margin-top:10px;text-align:center;">Connected Rear Seat Entertainment scope definition workshops with Amazon kicked off January 2019. First production deployment: 2022 Chrysler Pacifica.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02 The System View -->
+      <div class="cs-section">
+        <div class="cs-section-num">02</div>
+        <div class="cs-section-body">
+          <h3 class="cs-section-title">The System View</h3>
+          <p class="cs-body-text">The work I owned wasn't designing a passenger screen and a rear seat experience as separate features. It was designing a multi-occupant cabin where three points of interaction — driver display, passenger screen, two rear screens — had to coexist, hand off, and stay coordinated under conditions that changed minute to minute.</p>
+          <p class="cs-body-text">Every interesting design problem on this project lived in the seams between those screens.</p>
+
+          <div style="margin:36px 0;display:flex;flex-direction:column;align-items:center;">
+            <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/ConnectedCabinLabels.png" alt="Cabin System Map — 4-Screen Architecture" style="width:55%;border-radius:8px;display:block;"/>
+            <p style="font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(26,46,74,0.45);font-style:italic;margin-top:10px;text-align:center;">Three occupant zones, four screens, one system. Each display had a defined role and a defined relationship to the others.</p>
+          </div>
+
+          <!--DRAFT-FULL-SECTION-02-REST
+          <h4 class="cs-subsection-title">The technical reality</h4>
+          <p class="cs-body-text">The passenger screen and driver display ran off the same single processor — the R1 — sharing one instance of every domain: nav, audio, phone. If the driver was using nav, the passenger couldn't open it independently. The system had one instance to give.</p>
+
+          <h4 class="cs-subsection-title">The hardware-software-policy stack</h4>
+          <p class="cs-body-text">The passenger screen sits behind a polarized privacy coating — the driver can't see it from their seat. That single fact made it possible for the passenger to search, type, and browse freely while the vehicle was in motion, even though the driver's own screen was locked out for safety. The privacy coating wasn't a comfort feature — it was the regulatory and design enabler that made the copilot use case viable in the first place.</p>
+
+          <div style="width:100%;height:200px;background:rgba(26,68,112,0.18);border:1.5px dashed rgba(26,68,112,0.35);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:20px 0;box-sizing:border-box;">
+            <span style="font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,68,112,0.5);">📍 Technical Architecture — R1 Processor + Privacy Coating Diagram</span>
+          </div>
+
+          <h4 class="cs-subsection-title">The social reality</h4>
+          <p class="cs-body-text">The passenger screen existed to make the front passenger an active participant — copilot, content controller, a second set of hands. Rear screens existed to keep two more people genuinely entertained without intervention from the front. Parental controls existed as a coordination layer between the driver and what was happening behind them.</p>
+          <p class="cs-body-text">In a cabin with this many points of interaction, every design decision had to answer a social question, not just a screen question: what does the system owe to the social structure of the cabin? That question came up in different forms across every cross-screen problem on this project.</p>
+          END-DRAFT-FULL-SECTION-02-REST-->
+
+        </div>
+      </div>
+
+      <!-- 03 The Work -->
+      <div class="cs-section">
+        <div class="cs-section-num">03</div>
+        <div class="cs-section-body">
+          <h3 class="cs-section-title">The Work — Three of the Problems I Had To Solve For</h3>
+
+          <div class="cs-option cs-option-chosen" style="margin-top:24px;">
+            <div class="cs-option-num">01</div>
+            <div>
+              <div class="cs-option-title">Architectural Reframe · The Passenger Input Layer</div>
+              <div class="cs-option-sub">The R1 ran one instance of every domain. Engineering's first solution was to grey out passenger features whenever the driver was active. Working closely with engineering to understand the constraint space, I reframed the problem: the passenger didn't need their own instance — they needed structured input access to what was already running. The nav handoff use case made this concrete: a passenger building a route to help the driver shouldn't lose access the moment the driver opens nav. That single scenario unlocked the architectural reframe.</div>
+            </div>
+          </div>
+          <div class="cs-option cs-option-chosen" style="margin-top:8px;">
+            <div class="cs-option-num">02</div>
+            <div>
+              <div class="cs-option-title">Resource Scarcity · Fire TV Stream Allocation</div>
+              <div class="cs-option-sub">Engineering proposed routing passenger Fire TV access through parental controls to avoid scoping a third SoC. A 15-minute walk-around test confirmed no one would find it there, users would go straight to video sources. The harder problem was the high-demand state: both rear streams already taken, passenger wants in. The design problem I needed to solve for was how to give the passenger a clear path forward, either joining an existing stream or gracefully taking over one, without disrupting the social structure of the cabin.</div>
+            </div>
+          </div>
+          <div class="cs-option cs-option-chosen" style="margin-top:8px;">
+            <div class="cs-option-num">03</div>
+            <div>
+              <div class="cs-option-title">Legacy Feature Reframe · Parental Controls for Fire TV</div>
+              <div class="cs-option-sub">The parental controls feature had been designed for a simpler rear seat system. Fire TV's content depth — full library browsing, deep navigation, multi-level menus — introduced a cognitive load the legacy two-thumbnail architecture wasn't built to handle. A senior design manager and I disagreed on how far to reframe it. I commissioned a formal A/B study with Lextant to resolve it — and what came back wasn't a preference result. It was a performance gap: users said they preferred the familiar two-thumbnail view, but performed measurably better with the single-screen architecture under realistic driver-load conditions. The solution was a contextual architecture — the system defaulted to the user's preferred view, but automatically surfaced the single-screen layout when an interaction was required.</div>
+            </div>
+          </div>
+
+          <p class="cs-body-text" style="margin-top:24px;">Please reach out directly if you'd like to see the corresponding case studies.</p>
+        </div>
+      </div>
+
+      <!--DRAFT-FULL-SECTION-04
+      <div style="margin:0 40px 0;padding:16px 20px;border-radius:8px;background:rgba(26,68,112,0.06);border-left:3px solid rgba(26,68,112,0.25);">
+        <p style="font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(26,46,74,0.6);line-height:1.65;margin:0;"><strong style="color:rgba(26,46,74,0.75);">Note:</strong> The walkthrough below focuses on the problem space surrounding the passenger input layer. The other two problem spaces live as full case studies of their own — happy to share them on request.</p>
+      </div>
+
+      <div class="cs-section">
+        <div class="cs-section-num">04</div>
+        <div class="cs-section-body">
+          <h3 class="cs-section-title">Deep Dive · The Passenger Input Layer &amp; Navigation Handoff</h3>
+          <p class="cs-body-text">A passenger building a route to help the driver shouldn't get cut off the moment the driver opens nav themselves. What unlocked the reframe was a different question: the passenger doesn't need their own copy of nav — they need structured input access to what R1 is already running. The constraint didn't change. Our understanding of what we were designing did.</p>
+          <div style="width:100%;height:240px;background:rgba(26,68,112,0.18);border:1.5px dashed rgba(26,68,112,0.35);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:20px 0;box-sizing:border-box;">
+            <span style="font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,68,112,0.5);">📍 Passenger Input Layer — Wireframe Flow &amp; Architectural Decision</span>
+          </div>
+          <h4 class="cs-subsection-title">The navigation handoff</h4>
+          <p class="cs-body-text">The route handoff use case — passenger builds a route, driver accepts it — required resolving timeout vs. active acceptance. Testing with TomTom surfaced a surprise finding that shaped the final interaction model.</p>
+          <div style="width:100%;height:240px;background:rgba(26,68,112,0.18);border:1.5px dashed rgba(26,68,112,0.35);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:20px 0;box-sizing:border-box;">
+            <span style="font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,68,112,0.5);">📍 Navigation Handoff — Route Accept Interaction &amp; TomTom Test Findings</span>
+          </div>
+          <div style="width:100%;height:260px;background:rgba(26,68,112,0.18);border:1.5px dashed rgba(26,68,112,0.35);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:20px 0;box-sizing:border-box;">
+            <span style="font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,68,112,0.5);">📍 Final UI — Shipped Passenger Screen · Jeep Grand Wagoneer</span>
+          </div>
+          <p class="cs-body-text">The input-layer thinking also extended into the platform partnership. Conversations with Amazon surfaced API and communication patterns that fed back into the passenger screen architecture itself — evolving the source drawer from a flat source list into a structured app drawer with inputs at the top and apps below. That's the kind of payoff that came from treating the partnership as a design surface, not just a vendor relationship.</p>
+        </div>
+      </div>
+      END-DRAFT-FULL-SECTION-04-->
+
+      <!-- 05 Validation & Outcome -->
+      <div class="cs-section">
+        <div class="cs-section-num">05</div>
+        <div class="cs-section-body">
+          <h3 class="cs-section-title">Validation &amp; Outcome</h3>
+          <p class="cs-body-text">Formal usability validation was conducted with Lextant across N=30 participants. System acceptance scores informed the final architecture decisions across all three problem areas.</p>
+          <p class="cs-body-text">The Passenger Screen shipped first on the 2022 Jeep Grand Wagoneer — the first consumer vehicle to offer a passenger-facing entertainment and copilot display. The Connected Rear Seat Entertainment system followed on the 2022 Chrysler Pacifica, marking the first deployment of Amazon Fire TV in an automotive environment.</p>
+          <p class="cs-body-text">The Amazon Fire Automotive template established through that work became the new in-vehicle infotainment standard — subsequently adopted by Ford, Lincoln, and BMW.</p>
+
+          <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/connected%20cabin%20hero" alt="Connected Cabin — Shipped Product" style="width:100%;border-radius:8px;margin:20px 0;display:block;"/>
+
+          <a href="https://www.youtube.com/watch?v=ViJosZ0k5h4" target="_blank" rel="noopener"
+            style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:18px 22px;text-decoration:none;transition:background 0.2s;margin-top:8px;"
+            onmouseover="this.style.background='rgba(255,255,255,0.09)'" onmouseout="this.style.background='rgba(255,255,255,0.05)'">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="36" height="36" rx="8" fill="#FF0000"/>
+              <path d="M14 12.5L25 18L14 23.5V12.5Z" fill="white"/>
+            </svg>
+            <div>
+              <div style="font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;color:#f0ead8;letter-spacing:0.05em;">Watch Product Launch Video</div>
+              <div style="font-family:'DM Sans',sans-serif;font-size:10px;color:rgba(255,255,255,0.4);margin-top:3px;letter-spacing:0.08em;">YouTube · Opens in new tab ↗</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!--DRAFT-FULL-SECTION-06
+      <div class="cs-section cs-section-last">
+        <div class="cs-section-num">06</div>
+        <div class="cs-section-body">
+          <h3 class="cs-section-title">Reflection</h3>
+          <p class="cs-body-text">The parental controls A/B study was one of the clearest examples I've had of research as a derisking tool rather than a concept evaluation tool. The question wasn't "which design is better" — it was "which design performs better under real driver-load conditions, and how do we resolve a legitimate disagreement between two positions that both have evidence behind them." That framing — using research to answer a specific question rather than validate a direction — is something I've carried into every research engagement since, most recently in the McDonald's AI drive-thru concept testing work.</p>
+        </div>
+      </div>
+      END-DRAFT-FULL-SECTION-06-->
+
+      <div style="height:48px;"></div>
+
+    </div><!-- /cs-body -->
+  </div><!-- /cs-panel -->
+</div><!-- /modal-fca -->
+
+<!-- QUICK LOOK: SOUND ZONES — HIDDEN DRAFT
 <div class="ql-overlay" id="modal-ql-soundzones" onclick="closeModal('ql-soundzones')">
   <div class="ql-panel ql-stacked" onclick="event.stopPropagation()">
     <button class="ql-close" onclick="closeModal('ql-soundzones')">
@@ -2495,6 +2766,7 @@
     </div>
   </div>
 </div>
+END SOUND ZONES DRAFT -->
 
 <!-- QUICK LOOK: REAR SEAT ENTERTAINMENT -->
 <div class="ql-overlay" id="modal-ql-rearseat" onclick="closeModal('ql-rearseat')">
@@ -2731,7 +3003,7 @@
   // Escape key closes all modals
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
-      ['about','contact','casestudy','melvin','ql-selfmade','ql-soundzones','ql-rearseat'].forEach(id => {
+      ['about','contact','casestudy','fca','melvin','ql-selfmade','ql-soundzones','ql-rearseat'].forEach(id => {
         const el = document.getElementById('modal-' + id);
         if (el && el.classList.contains('active')) closeModal(id);
       });
