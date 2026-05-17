@@ -1339,11 +1339,10 @@
     /* ── Featured Case Study Grid ───────────────────────── */
   .cs-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 12px;
     width: 100%;
-    aspect-ratio: 16/9;
+    aspect-ratio: 21/9;
   }
   .cs-tile {
     position: relative;
@@ -1351,7 +1350,7 @@
     overflow: hidden;
     cursor: pointer;
     background: #0e1a2e;
-    display: flex; flex-direction: column; justify-content: flex-end;
+    display: flex; flex-direction: column;
     padding: 22px 24px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     border: 1px solid rgba(255,255,255,0.07);
@@ -1368,7 +1367,18 @@
     position: absolute; inset: 0;
     background: linear-gradient(to top, rgba(8,16,40,0.92) 0%, rgba(8,16,40,0.3) 60%, transparent 100%);
   }
-  .cs-tile-content { position: relative; z-index: 2; }
+  .cs-tile-content {
+    position: relative; z-index: 2;
+    display: flex; flex-direction: column;
+    justify-content: flex-end;
+    flex: 1;
+  }
+  .cs-tile-top {
+    display: flex; flex-direction: column; gap: 6px;
+    min-height: 110px;
+    justify-content: flex-start;
+  }
+  .cs-tile-bottom { padding-top: 10px; }
   .cs-tile-eyebrow {
     font-family: 'DM Sans', sans-serif;
     font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase;
@@ -1707,53 +1717,56 @@
       <div class="cs-tile-bg" style="background-image:url('https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/cabin.png');"></div>
       <div class="cs-tile-grad"></div>
       <div class="cs-tile-content">
-        <div class="cs-tile-eyebrow">Fiat Chrysler Automobiles · 2019–2020</div>
-        <div class="cs-tile-title">Connected Infotainment System (FCA)</div>
-        <div class="cs-tile-sub">Industry first Passenger Screen &amp; Connected Rear Seat Fire TV</div>
-        <span class="cs-tile-badge">Embedded Interaction Design ↗</span>
+        <div class="cs-tile-top">
+          <div class="cs-tile-eyebrow">Chrysler / Jeep · 2018–2020</div>
+          <div class="cs-tile-title">Connected Infotainment System</div>
+          <div class="cs-tile-sub">Designing cross-cabin interactions for two industry-first screens — passenger copilot display and connected rear entertainment.</div>
+        </div>
+        <div class="cs-tile-bottom">
+          <span class="cs-tile-badge">Case Study ↗</span>
+        </div>
       </div>
     </div>
 
-    <!-- Tile 2: Les Mills Leadership -->
-    <div class="cs-tile" style="cursor:default;">
-      <div class="cs-tile-grad" style="background:linear-gradient(to top, rgba(8,16,40,0.96) 0%, rgba(8,16,40,0.6) 100%);"></div>
-      <div class="cs-tile-content">
-        <div class="cs-tile-eyebrow">Les Mills International · 2023–2025</div>
-        <div class="cs-tile-title">Digital Product Design Leadership (Les Mills)</div>
-        <div class="cs-tile-sub">Translating user problems into roadmap strategy while building the company's first shared design system across 8 platforms.</div>
-        <span class="cs-tile-badge" style="opacity:0.45;">Coming Soon</span>
-      </div>
-    </div>
-
-    <!-- Tile 3: Les Mills -->
+    <!-- Tile 2: Les Mills -->
     <div class="cs-tile" onclick="openModal('casestudy')">
       <div class="cs-tile-bg" style="background-image:url('https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/IXhero.jpg');"></div>
       <div class="cs-tile-grad"></div>
       <div class="cs-tile-content">
-        <div class="cs-tile-eyebrow">Les Mills International · 2025</div>
-        <div class="cs-tile-title">Instructor Experience App (Les Mills)</div>
-        <div class="cs-tile-sub">AI-Driven Workflow Re-design</div>
-        <span class="cs-tile-badge">Mobile Product Design ↗</span>
+        <div class="cs-tile-top">
+          <div class="cs-tile-eyebrow">Les Mills International · 2025</div>
+          <div class="cs-tile-title">Instructor Experience App</div>
+          <div class="cs-tile-sub">Solving high priority instructor problems within learning choreography and preparing for weekly classes.</div>
+        </div>
+        <div class="cs-tile-bottom">
+          <span class="cs-tile-badge">Case Study ↗</span>
+        </div>
       </div>
     </div>
 
-    <!-- Tile 4: McDonald's -->
+    <!-- Tile 3: SE1FMADE MLP Prototype -->
     <div class="cs-tile" style="cursor:default;">
-      <div class="cs-tile-grad" style="background:linear-gradient(to top, rgba(8,16,40,0.96) 0%, rgba(8,16,40,0.6) 100%);"></div>
+      <div class="cs-tile-bg" style="background-image:url('https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/SMsummary.jpg');"></div>
+      <div class="cs-tile-grad"></div>
       <div class="cs-tile-content">
-        <div class="cs-tile-eyebrow">Askable · 2026</div>
-        <div class="cs-tile-title">McDonald's Concept Testing (Askable)</div>
-        <div class="cs-tile-sub">Research Methodology for AI drive-thru ordering</div>
-        <span class="cs-tile-badge" style="opacity:0.45;">Coming Soon</span>
+        <div class="cs-tile-top">
+          <div class="cs-tile-eyebrow">SE1FMADE · 2025 · Prototype</div>
+          <div class="cs-tile-title">AI-Assisted Prototyping</div>
+          <div class="cs-tile-sub">Beta feedback addressed. Built with Claude Code, Cursor, and React/TypeScript.</div>
+        </div>
+        <div class="cs-tile-bottom">
+          <span class="cs-tile-badge" style="opacity:0.45;">Coming Soon</span>
+        </div>
       </div>
     </div>
+
 
   </div>
   </div>
 </div>
 <div class="act3"><div class="timeline-header">
         <div>
-          <h2>Experience Breadth</h2>
+          <h2>Project Variety &amp; Experience</h2>
           <p>8+ years across automotive HMI, health &amp; wellness, B2B &amp; D2C products</p>
         </div>
         
@@ -1775,6 +1788,22 @@
             <span class="tag">Product Strategy</span>
             <span class="tag">React/TypeScript Prototyping</span>
             <span class="tag">Sports Psychology</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="trow-year"><span>2026</span></div>
+        <div class="trow-content">
+          <div class="trow-top">
+            <div class="trow-title">McDonald's Drive-Thru AI Concept Testing</div>
+            <div class="trow-co">UX Researcher</div>
+          </div>
+          <div class="trow-tags">
+            <span class="tag tag-green">Formative Evaluation</span>
+            <span class="tag">AI Integration</span>
+            <span class="tag">Concept Testing</span>
+            <span class="tag">3 Levels of AI</span>
           </div>
         </div>
       </div>
@@ -1804,8 +1833,41 @@
         <div class="trow-year"><span>2024</span></div>
         <div class="trow-content">
           <div class="trow-top">
-            <div class="trow-title"><a href="https://www.lesmills.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.2);">Lesmills.com Replatform &amp; Redesign</a></div>
+            <div class="trow-title">Design System · 8 Products &amp; Platforms</div>
             <div class="trow-co">Lead Product Designer</div>
+          </div>
+          <div class="trow-tags">
+            <span class="tag tag-green">Web + Mobile</span>
+            <span class="tag">Internal</span>
+            <span class="tag">Design System</span>
+            <span class="tag">8 products</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="trow-year"><span>2024</span></div>
+        <div class="trow-content">
+          <div class="trow-top">
+            <div class="trow-title">Digital Product Design Leadership</div>
+            <div class="trow-co">Lead Product Designer</div>
+          </div>
+          <div class="trow-tags">
+            <span class="tag tag-green">Design Leadership</span>
+            <span class="tag">Product Strategy</span>
+            <span class="tag">Ways of Working</span>
+            <span class="tag">Mentorship</span>
+          </div>
+          <div style="font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(255,255,255,0.45);line-height:1.6;margin-top:6px;font-style:italic;">Design lead on the leadership team, responsible for grounding product strategy in user problems during a major restructure. Introduced a Ways of Working model for a newly user-group-organized team structure and mentored the design team through the transition.</div>
+        </div>
+      </div>
+
+      <div class="timeline-row">
+        <div class="trow-year"><span>2023</span></div>
+        <div class="trow-content">
+          <div class="trow-top">
+            <div class="trow-title"><a href="https://www.lesmills.com" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.2);">Lesmills.com Replatform &amp; Redesign</a></div>
+            <div class="trow-co">Senior Product Designer</div>
           </div>
           <div class="trow-tags">
             <span class="tag tag-green">Web</span>
@@ -1817,33 +1879,17 @@
       </div>
 
       <div class="timeline-row">
-        <div class="trow-year"><span>2024</span></div>
+        <div class="trow-year"><span>2023</span></div>
         <div class="trow-content">
           <div class="trow-top">
             <div class="trow-title">Content Distribution Portal</div>
-            <div class="trow-co">Lead Product Designer</div>
+            <div class="trow-co">Senior Product Designer</div>
           </div>
           <div class="trow-tags">
             <span class="tag tag-green">Web</span>
             <span class="tag">B2B</span>
             <span class="tag">0→1 Build</span>
             <span class="tag">+33% content sales</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="timeline-row">
-        <div class="trow-year"><span>2023</span></div>
-        <div class="trow-content">
-          <div class="trow-top">
-            <div class="trow-title">Design System · 8 Products &amp; Platforms</div>
-            <div class="trow-co">Lead Product Designer</div>
-          </div>
-          <div class="trow-tags">
-            <span class="tag tag-green">Web + Mobile</span>
-            <span class="tag">Internal</span>
-            <span class="tag">Design System</span>
-            <span class="tag">8 products</span>
           </div>
         </div>
       </div>
@@ -2718,8 +2764,9 @@
   </div><!-- /cs-panel -->
 </div><!-- /modal-fca -->
 
-<!-- QUICK LOOK: SOUND ZONES — HIDDEN DRAFT
-<div class="ql-overlay" id="modal-ql-soundzones" onclick="closeModal('ql-soundzones')">
+<!-- QUICK LOOK: SOUND ZONES — HIDDEN -->
+<div style="display:none;" id="modal-ql-soundzones-draft">
+<div class="ql-overlay" id="modal-ql-soundzones-hidden">
   <div class="ql-panel ql-stacked" onclick="event.stopPropagation()">
     <button class="ql-close" onclick="closeModal('ql-soundzones')">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
@@ -2766,7 +2813,7 @@
     </div>
   </div>
 </div>
-END SOUND ZONES DRAFT -->
+</div><!-- /display:none wrapper -->
 
 <!-- QUICK LOOK: REAR SEAT ENTERTAINMENT -->
 <div class="ql-overlay" id="modal-ql-rearseat" onclick="closeModal('ql-rearseat')">
