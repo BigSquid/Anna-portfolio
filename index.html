@@ -1284,7 +1284,7 @@
 .act3 .timeline-row:last-child{border-radius:0 0 8px 8px;border-bottom:none}
 .act3 .timeline-row:hover{background:rgba(26,68,112,.72)}
 .timeline-header{padding:28px 32px 22px;display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(255,255,255,.12)}
-.timeline-header h2{font-family:'Kalnia',serif;font-size:20px;color:#f0ead8;font-weight:600;letter-spacing:-.01em;text-transform:uppercase}
+.timeline-header h2{font-family:'DM Sans',sans-serif;font-size:20px;color:#f0ead8;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
 .timeline-header p{font-size:11px;color:rgba(255,255,255,.4);margin-top:4px;letter-spacing:.03em}
 .timeline-years{font-family:'Kalnia',serif;font-size:13px;letter-spacing:.06em;color:rgba(255,255,255,.55);font-weight:400}
 .timeline-group{padding:12px 32px 6px 72px;font-size:8.5px;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:500;border-top:1px solid rgba(255,255,255,.1);background:transparent;margin-top:0}
@@ -1709,7 +1709,7 @@
 </div>
 <div class="act2">
   <div style="background:rgba(26,68,112,0.55);backdrop-filter:blur(6px);border-radius:8px;padding:18px 12px 12px;border:1px solid rgba(255,255,255,0.08);">
-    <h2 style="font-family:'Kalnia',serif;font-size:20px;color:#f0ead8;font-weight:600;letter-spacing:-0.01em;text-transform:uppercase;margin:0 0 12px 20px;">Featured Work</h2>
+    <h2 style="font-family:'DM Sans',sans-serif;font-size:20px;color:#f0ead8;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;margin:0 0 12px 20px;">Featured Work</h2>
   <div class="cs-grid">
 
     <!-- Tile 1: FCA -->
@@ -2668,27 +2668,34 @@
       <div class="cs-section">
         <div class="cs-section-num">03</div>
         <div class="cs-section-body">
-          <h3 class="cs-section-title">The Work — Three of the Problems I Had To Solve For</h3>
+          <h3 class="cs-section-title">The Work — Four of the Problems I Had To Solve For</h3>
 
           <div class="cs-option cs-option-chosen" style="margin-top:24px;">
             <div class="cs-option-num">01</div>
             <div>
               <div class="cs-option-title">Architectural Reframe · The Passenger Input Layer</div>
-              <div class="cs-option-sub">The R1 ran one instance of every domain. Engineering's first solution was to grey out passenger features whenever the driver was active. Working closely with engineering to understand the constraint space, I reframed the problem: the passenger didn't need their own instance — they needed structured input access to what was already running. The nav handoff use case made this concrete: a passenger building a route to help the driver shouldn't lose access the moment the driver opens nav. That single scenario unlocked the architectural reframe.</div>
+              <div class="cs-option-sub">The constraint: the R1 ran one shared instance of every domain across both screens. Engineering surfaced early that only one instance could be active at a time. The design problem: the passenger display didn't need to duplicate the driver's screen — but what did it need to offer instead? How do you design a complementary input layer, not a competing one?</div>
             </div>
           </div>
           <div class="cs-option cs-option-chosen" style="margin-top:8px;">
             <div class="cs-option-num">02</div>
             <div>
-              <div class="cs-option-title">Resource Scarcity · Fire TV Stream Allocation</div>
-              <div class="cs-option-sub">Engineering proposed routing passenger Fire TV access through parental controls to avoid scoping a third SoC. A 15-minute walk-around test confirmed no one would find it there, users would go straight to video sources. The harder problem was the high-demand state: both rear streams already taken, passenger wants in. The design problem I needed to solve for was how to give the passenger a clear path forward, either joining an existing stream or gracefully taking over one, without disrupting the social structure of the cabin.</div>
+              <div class="cs-option-title">The Co-Pilot Handoff · Route Suggestions &amp; Driver Control</div>
+              <div class="cs-option-sub">With the input layer established, the flagship use case was the route co-pilot: a passenger who wants to help navigate without pulling the driver's attention or overriding their control. The design problem: how do you let a passenger suggest a route change in a way that keeps the driver informed, in control, and never pressured into a split-second decision?</div>
             </div>
           </div>
           <div class="cs-option cs-option-chosen" style="margin-top:8px;">
-            <div class="cs-option-num">03</div>
+            <div class="cs-option-num">04</div>
+            <div>
+              <div class="cs-option-title">Resource Scarcity · Fire TV Stream Allocation</div>
+              <div class="cs-option-sub">The requirement was to give the front passenger a streaming experience. The constraint: two Fire TV SoCs, both already serving the rear screens. The design problem: how do you make two streaming instances feel like a value-add for the whole cabin, not a limitation?</div>
+            </div>
+          </div>
+          <div class="cs-option cs-option-chosen" style="margin-top:8px;">
+            <div class="cs-option-num">04</div>
             <div>
               <div class="cs-option-title">Legacy Feature Reframe · Parental Controls for Fire TV</div>
-              <div class="cs-option-sub">The parental controls feature had been designed for a simpler rear seat system. Fire TV's content depth — full library browsing, deep navigation, multi-level menus — introduced a cognitive load the legacy two-thumbnail architecture wasn't built to handle. A senior design manager and I disagreed on how far to reframe it. I commissioned a formal A/B study with Lextant to resolve it — and what came back wasn't a preference result. It was a performance gap: users said they preferred the familiar two-thumbnail view, but performed measurably better with the single-screen architecture under realistic driver-load conditions. The solution was a contextual architecture — the system defaulted to the user's preferred view, but automatically surfaced the single-screen layout when an interaction was required.</div>
+              <div class="cs-option-sub">The constraint: parental controls built for a simpler system, now expected to handle Fire TV's full content depth — library browsing, deep navigation, multi-level menus. The design problem: how do you retrofit a legacy feature to support a significantly richer experience without increasing cognitive load for the driver?</div>
             </div>
           </div>
 
