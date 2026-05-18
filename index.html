@@ -1097,8 +1097,11 @@
   @media (max-width: 640px) {
     .cs-panel { width: 100%; }
     .cs-meta-row { grid-template-columns: 1fr 1fr; }
-    .cs-impact-stats { flex-direction: column; gap: 12px; }
+    .cs-impact-stats { flex-direction: column; gap: 12px; align-items: flex-start; }
     .cs-impact-divider { display: none; }
+    .cs-impact-stat { text-align: left; padding-left: 0 !important; }
+    .cs-impact-num { text-align: left; }
+    .cs-impact-desc { text-align: left; }
     .cs-section { grid-template-columns: 40px 1fr; padding: 24px 20px; }
     .cs-pillars { grid-template-columns: 1fr; }
     .cs-research-grid { grid-template-columns: 1fr; }
@@ -1106,6 +1109,23 @@
     .cs-results-header, .cs-results-row { grid-template-columns: 2fr 1fr 1fr; }
     .cs-results-header > *:nth-child(4), .cs-results-row > *:nth-child(4) { display: none; }
     .cs-hero { padding: 24px 20px 28px; }
+    .cs-hero-fullbleed { min-height: 280px; }
+    .cs-hero-fullbleed-content { padding: 20px 20px 24px; }
+    /* FCA context 2x2 grid → single column on mobile */
+    #modal-fca .cs-section-body > div[style*="grid-template-columns:1fr 55%"],
+    #modal-fca .cs-section-body > div[style*="grid-template-rows:auto auto"] {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 16px !important;
+    }
+    #modal-fca .cs-section-body > div[style*="grid-template-rows:auto auto"] > div {
+      width: 100% !important;
+    }
+    #modal-fca .cs-section-body > div[style*="grid-template-rows:auto auto"] img {
+      width: 55% !important;
+      margin: 16px auto !important;
+      display: block !important;
+    }
   }
 
   /* ═══════════════════════════════════════
@@ -2608,9 +2628,9 @@
             <!-- Row 1 left: title + passenger screen text -->
             <div>
               <h3 class="cs-section-title">Context</h3>
-              <p style="font-family:'DM Sans',sans-serif;font-size:15.5px;font-weight:500;color:rgba(26,46,74,0.9);line-height:1.65;margin-bottom:20px;">When this work began, no consumer vehicle had a passenger screen built for entertainment and copilot use. The Connected Cabin Ecosystem shipped on the 2022 Jeep Grand Wagoneer and the 2022 Chrysler Pacifica. What came out of it became the industry standard for in-vehicle Fire TV, since adopted by Ford, Lincoln, and BMW.</p>
-              <p class="cs-body-text">The passenger screen work came first. What we were building was a 10.25-inch interactive display that would let the front passenger run navigation, entertainment, and camera feeds independently of the driver, behind a privacy coating that made the screen invisible from the driver's seat. The closest precedent was the Ferrari GTC4Lusso, which used its passenger display for performance metrics only, a fundamentally different proposition. The connected rear seat system would follow, bringing Amazon Fire TV into the cabin for the first time.</p>
-              <p class="cs-body-text">I came in at the functional requirements stage, after executives had signed off on the feature set. I owned and released the logic and flow spec, including wireframe designs, and led the user research effort. For formal usability and validation, I partnered with Lextant, a human factors firm. Visual design was owned by studio.</p>
+              <p style="font-family:'DM Sans',sans-serif;font-size:15.5px;font-weight:500;color:rgba(26,46,74,0.9);line-height:1.65;margin-bottom:20px;">When this work began, no consumer vehicle had a passenger screen built for entertainment and copilot use. The Connected Cabin Ecosystem shipped on the 2022 Jeep Grand Wagoneer and the 2022 Chrysler Pacifica, and what came out of it became the industry standard for in-vehicle Fire TV, since adopted by Ford, Lincoln, and BMW.</p>
+              <p class="cs-body-text">The passenger screen work came first: a 10.25-inch interactive display letting the front passenger run navigation, entertainment, and camera feeds independently of the driver, behind a privacy coating that made the screen invisible from their seat. No consumer precedent existed for this use case.</p>
+              <p class="cs-body-text">I came in at the functional requirements stage. I owned the logic and flow spec, including wireframe designs, and led the user research effort. Formal validation was conducted with Lextant, a human factors firm. Visual design was owned by studio.</p>
             </div>
             <!-- Row 1 right: passenger screen image -->
             <div>
@@ -2620,8 +2640,8 @@
             <!-- Row 2 left: RSE placeholder text -->
             <div>
               <p class="cs-body-text">About eight months in, the Connected Rear Seat Entertainment program was approved. I took on logic and flow ownership for the rear seat system and redesigned the front-seat parental controls that would coordinate with it.</p>
-              <p class="cs-body-text">Fire TV had never been in a car before. It had only existed as a living-room platform, controlled by remote, designed for a single household audience. Bringing it into a vehicle meant redesigning the interaction model for touch input in a moving environment, supporting two rear passengers who might want independent streams or share one, and integrating with vehicle-specific systems including cross-cabin parental controls, headphone audio routing, and Alexa across multiple screens.</p>
-              <p class="cs-body-text">Amazon owned the Fire TV platform-level design. I owned the in-vehicle adaptation and led the partnership work to make it vehicle-ready. That included co-designing the Jeep partner tab, the pull-out control patterns, and a cobranding model that protected both brands. It also meant raising problems the vehicle context introduced, including the multi-occupant Alexa challenge: rear passengers needed to invoke voice for their own content while front occupants could direct rear content through parental controls. Amazon owned the voice disambiguation solution; my role was to specify the use cases and design the in-vehicle response.</p>
+              <p class="cs-body-text">Fire TV had never been in a car before. It had only existed as a living-room platform, controlled by remote, for a single shared audience. Bringing it into a vehicle meant redesigning for touch input in a moving environment, two rear passengers who might want independent streams, and vehicle-specific integrations: cross-cabin parental controls, headphone audio routing, and multi-screen Alexa.</p>
+              <p class="cs-body-text">Amazon owned the platform-level design. I owned the in-vehicle adaptation and led the partnership work to make it vehicle-ready — co-designing the Jeep partner tab, pull-out control patterns, and a cobranding model that protected both brands. I also surfaced problems the vehicle context introduced, including the multi-occupant Alexa challenge: rear passengers needed to invoke voice for their own content while front occupants could direct rear screens through parental controls. Amazon owned the disambiguation solution; I specified the use cases and designed the in-vehicle response.</p>
             </div>
             <!-- Row 2 right: RSE image -->
             <div>
@@ -2734,7 +2754,7 @@
         <div class="cs-section-num">05</div>
         <div class="cs-section-body">
           <h3 class="cs-section-title">Validation &amp; Outcome</h3>
-          <p class="cs-body-text">Formal usability validation was conducted with Lextant across N=30 participants. System acceptance scores informed the final architecture decisions across all three problem areas.</p>
+          <p class="cs-body-text">Formal usability testing and validation was conducted with Lextant across N=30 participants. System acceptance scores informed the final architecture decisions across all three problem areas.</p>
           <p class="cs-body-text">The Passenger Screen shipped first on the 2022 Jeep Grand Wagoneer — the first consumer vehicle to offer a passenger-facing entertainment and copilot display. The Connected Rear Seat Entertainment system followed on the 2022 Chrysler Pacifica, marking the first deployment of Amazon Fire TV in an automotive environment.</p>
           <p class="cs-body-text">The Amazon Fire Automotive template established through that work became the new in-vehicle infotainment standard — subsequently adopted by Ford, Lincoln, and BMW.</p>
 
