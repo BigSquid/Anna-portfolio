@@ -48,17 +48,18 @@ const PASSWORD_PAGE = `<!DOCTYPE html>
     .name-first {
       display: block;
       font-family: 'Kalnia', serif;
-      font-size: clamp(13px, 2.2vw, 18px);
-      font-weight: 400;
+      font-size: clamp(44px, 7.6vw, 88px);
+      font-weight: 600;
       color: #9bb3d4;
-      letter-spacing: 0.32em;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
-      margin-bottom: 6px;
+      line-height: 1;
+      margin-bottom: 14px;
     }
     .name-last {
       display: block;
       font-family: 'Kalnia', serif;
-      font-size: clamp(36px, 7vw, 82px);
+      font-size: clamp(34px, 6.4vw, 76px);
       font-weight: 600;
       color: #f0ead8;
       letter-spacing: -0.01em;
@@ -217,7 +218,7 @@ export async function onRequest(context) {
         status: 302,
         headers: {
           Location: request.url,
-          "Set-Cookie": `${COOKIE_NAME}=granted; Path=/; HttpOnly; SameSite=Lax; Max-Age=86400`
+          "Set-Cookie": `${COOKIE_NAME}=granted; Path=/; HttpOnly; SameSite=Lax; Max-Age=7776000`
         }
       });
       return response;
