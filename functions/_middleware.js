@@ -48,18 +48,18 @@ const PASSWORD_PAGE = `<!DOCTYPE html>
     .name-first {
       display: block;
       font-family: 'Kalnia', serif;
-      font-size: clamp(44px, 7.6vw, 88px);
+      font-size: clamp(32px, 4.2vw, 48px);
       font-weight: 600;
       color: #9bb3d4;
       letter-spacing: 0.04em;
       text-transform: uppercase;
       line-height: 1;
-      margin-bottom: 14px;
+      margin-bottom: 10px;
     }
     .name-last {
       display: block;
       font-family: 'Kalnia', serif;
-      font-size: clamp(34px, 6.4vw, 76px);
+      font-size: clamp(22px, 2.8vw, 32px);
       font-weight: 600;
       color: #f0ead8;
       letter-spacing: -0.01em;
