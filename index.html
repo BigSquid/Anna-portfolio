@@ -1110,6 +1110,8 @@
     .cs-results-header > *:nth-child(4), .cs-results-row > *:nth-child(4) { display: none; }
     .cs-hero { padding: 24px 20px 28px; }
     .cs-hero-fullbleed { min-height: 280px; }
+    #modal-fca .cs-section-body div[style*="width:55%;border-radius:8px"] { width: 85% !important; }
+    #modal-fca img[alt="Cabin System Map — 4-Screen Architecture"] { width: 100% !important; }
     .cs-hero-fullbleed-content { padding: 20px 20px 24px; }
     /* FCA context 2x2 grid → single column on mobile */
     #modal-fca .cs-section-body > div[style*="grid-template-columns:1fr 55%"],
@@ -1122,7 +1124,7 @@
       width: 100% !important;
     }
     #modal-fca .cs-section-body > div[style*="grid-template-rows:auto auto"] img {
-      width: 55% !important;
+      width: 100% !important;
       margin: 16px auto !important;
       display: block !important;
     }
@@ -2661,7 +2663,7 @@
           <p class="cs-body-text">Every interesting design problem on this project lived in the seams between those screens.</p>
 
           <div style="margin:36px 0;display:flex;flex-direction:column;align-items:center;">
-            <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/ConnectedCabinLabels.png" alt="Cabin System Map — 4-Screen Architecture" style="width:55%;border-radius:8px;display:block;"/>
+            <img src="https://raw.githubusercontent.com/BigSquid/Anna-portfolio/main/ConnectedCabinLabels.png" alt="Cabin System Map — 4-Screen Architecture" style="width:55%;max-width:100%;border-radius:8px;display:block;"/>
             <p style="font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(26,46,74,0.45);font-style:italic;margin-top:10px;text-align:center;">Three occupant zones, four screens, one system. Each display had a defined role and a defined relationship to the others.</p>
           </div>
 
