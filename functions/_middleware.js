@@ -48,7 +48,7 @@ const PASSWORD_PAGE = `<!DOCTYPE html>
     .name-first {
       display: block;
       font-family: 'Kalnia', serif;
-      font-size: clamp(32px, 4.2vw, 48px);
+      font-size: clamp(22px, 2.8vw, 32px);
       font-weight: 600;
       color: #9bb3d4;
       letter-spacing: 0.04em;
